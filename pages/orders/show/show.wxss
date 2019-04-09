@@ -47,25 +47,10 @@
 }
 
 .text-nutrients {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: solid 1px lightgray;
+  text-align: center;
+  padding: 20px;
 }
 
 .section-quantity {
-  display: flex;
-}
-
-.dishes {
-  position: fixed;
-  bottom: 60px;
-}
-
-.image-icon {
-  width: 24px;
-  height: 24px;
-}
-
-.dish {
   display: flex;
 }

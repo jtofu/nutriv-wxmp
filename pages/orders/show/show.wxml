@@ -3,71 +3,39 @@
 <view class='section-main'>
   <view class='text-title'>Summary</view>
   <view class='text-nutrients'>
-    <view>Calories</view>
-    <view>230</view>
+    <view>Calories 230</view>
+    <view>Total Fat 8g</view>
+    <view>Saturated Fat 1g</view>
+    <view>Trans Fat 0g</view>
+    <view>Protein 3g</view>
+    <view>Total Carbs 37g</view>     
+    <view>Sodium 160mg</view>
   </view>
-  <view class='text-nutrients'>
-    <view>Total Fat</view>
-    <view>8g</view>
-  </view>
-  <view class='text-nutrients'>
-    <view>Saturated Fat</view>
-    <view>1g</view>
-  </view>
-  <view class='text-nutrients'>
-    <view>Trans Fat</view>
-    <view>0g</view>
-  </view>
-  <view class='text-nutrients'>
-    <view>Protein</view>
-    <view>3g</view>
-  </view>
-  <view class='text-nutrients'>
-    <view>Total Carbs 37g</view>
-    <view>3g</view>
-  </view>
-</view>
 <!-- total nutrients end -->
-
-<view class="page__bd dishes">
-    <view class="weui-panel weui-panel_access">
-        <view class="weui-panel__hd">Dishes</view>
-        <view class="weui-panel__bd">
-            <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
-                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-                    <image class="weui-media-box__thumb" src="{{icon60}}" />
-                </view>
-                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-                    <view class="weui-media-box__title">Chicken Salad</view>
-                    <!-- <view class="weui-media-box__desc">
-                      <image  class='image-icon' src='/images/plus-button.png'></image>
-                      <view>0</view>
-                      <image  class='image-icon' src='/images/minus-symbol.png'></image>
-                    </view> -->
-                </view>
-            </navigator>
-            <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
-                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-                    <image class="weui-media-box__thumb" src="{{icon60}}" />
-                </view>
-                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-                    <view class="weui-media-box__title">Cheeseburger</view>
-                    <!-- <view class="weui-media-box__desc">
-                      <image  class='image-icon' src='/images/plus-button.png'></image>
-                      <view>0</view>
-                      <image  class='image-icon' src='/images/minus-symbol.png'></image>
-                    </view> -->
-                </view>
-            </navigator>
+  <!-- list of order items start -->
+  <view class="weui-panel__bd">
+    <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="{{icon60}}" />
         </view>
-        <view class="weui-panel__ft">
-            <view class="weui-cell weui-cell_access weui-cell_link">
-                <!-- <view class="weui-cell__bd">查看更多</view>
-                <view class="weui-cell__ft weui-cell__ft_in-access"></view> -->
-            </view>
+        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title">Chicken Salad</view>
+            <view class="weui-media-box__desc">- 1+</view>
         </view>
-    </view>
+    </navigator>
+    <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="{{icon60}}" />
+        </view>
+        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title">Hamburger</view>
+            <view class="weui-media-box__desc">-0+</view>
+        </view>
+    </navigator>
   </view>
+  <!-- list of order items end -->
+</view>
+  
 <view id='footer'>
   <view>500 Calories</view>
   <navigator url='../../bookings/new/new?training_id={{id}}' class="btn-flat picker">Confirm Meal</navigator>

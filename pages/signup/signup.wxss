@@ -24,7 +24,7 @@ button {
 }
 
 .banner {
-  background-image: url('/images/kristen-kaethler-1398358-unsplash.jpg');
   background-size: cover;
+  background-position: center;
   height: 100vh;
 }

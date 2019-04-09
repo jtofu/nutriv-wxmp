@@ -1,2 +1,45 @@
 <!--pages/meals/index/index.wxml-->
-<text>pages/meals/index/index.wxml</text>
+<view class="banner" style="background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(128,248,174,0.6) 0%, rgba(223,244,148,0.6) 90% ), url('https://images.unsplash.com/photo-1543362906-acfc16c67564?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=401&q=80');">
+<text>Nutriv</text>
+<!-- 
+  <view class="page__bd">
+    <view class="weui-search-bar">
+        <view class="weui-search-bar__form">
+            <view class="weui-search-bar__box">
+              <icon bindtap="tagButtonInput" data-tag="{{inputVal}}" class="weui-icon-search_in-box" type="search" size="14"></icon>
+              <input name="tag" type="text" id="search" class="weui-search-bar__input" placeholder="meal..." value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping"/>
+              <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                <icon type="clear" size="14"></icon>
+              </view>
+            </view>
+        </view>
+    </view>
+  </view> -->
+</view>
+
+  <view class="border">
+      <text>Dishes</text>
+  </view>
+
+<view class="card-dishes">
+  <view class="card-dish">
+    <image mode="aspectFill" src="https://images.unsplash.com/photo-1547516453-01c9910aafbf?ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80"></image>
+    <textarea></textarea>
+  </view>
+    <view class="card-dish">
+    <image mode="aspectFill" src="https://images.unsplash.com/photo-1503442947665-4c7bb47d5daf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=806&q=80"></image>
+    <textarea></textarea>
+  </view>
+     <view class="card-dish">
+    <image mode="aspectFill" src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"></image>
+    <textarea></textarea>
+  </view>
+     <view class="card-dish">
+    <image mode="aspectFill" src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"></image>
+    <textarea></textarea>
+  </view>
+     <view class="card-dish">
+    <image mode="aspectFill" src="https://images.unsplash.com/photo-1545840773-71d991d7b03b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"></image>
+    <textarea></textarea>
+  </view>
+</view>
