@@ -18,28 +18,43 @@
 </view>
 
   <view class="border">
-      <text>Dishes</text>
+      <text class="border-text">Dishes</text>
   </view>
 
 <view class="card-dishes">
   <view class="card-dish">
     <image mode="aspectFill" src="https://images.unsplash.com/photo-1547516453-01c9910aafbf?ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80"></image>
-    <textarea></textarea>
+    <view class="card-text">
+      <text class="dish-title">Quinoa</text>
+      <text class="calories">Calories: 200 </text>
+    </view>
   </view>
     <view class="card-dish">
     <image mode="aspectFill" src="https://images.unsplash.com/photo-1503442947665-4c7bb47d5daf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=806&q=80"></image>
-    <textarea></textarea>
+    <view class="card-text">
+      <text class="dish-title">Poached eggs</text>
+      <text class="calories">Calories: 300 </text>
+    </view>
   </view>
      <view class="card-dish">
     <image mode="aspectFill" src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"></image>
-    <textarea></textarea>
+    <view class="card-text">
+      <text class="dish-title">Salmon</text>
+      <text class="calories">Calories: 250 </text>
+    </view>
   </view>
      <view class="card-dish">
     <image mode="aspectFill" src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"></image>
-    <textarea></textarea>
+    <view class="card-text">
+      <text class="dish-title">Chicken breast</text>
+      <text class="calories">Calories: 400</text>
+    </view>
   </view>
      <view class="card-dish">
     <image mode="aspectFill" src="https://images.unsplash.com/photo-1545840773-71d991d7b03b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"></image>
-    <textarea></textarea>
+    <view class="card-text">
+      <text class="dish-title">Avocado</text>
+      <text class="calories">Calories: 450 </text>
+    </view>
   </view>
 </view>
