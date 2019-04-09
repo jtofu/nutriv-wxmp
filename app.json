@@ -24,12 +24,6 @@
         "selectedIconPath": "images/home.png"
       },
       {
-        "pagePath": "pages/orders/show/show",
-        "text": "Charts",
-        "iconPath": "images/chart.png",
-        "selectedIconPath": "images/chart.png"
-      },
-      {
         "pagePath": "pages/users/show/show",
         "text": "Profile",
         "iconPath": "images/profile.png",

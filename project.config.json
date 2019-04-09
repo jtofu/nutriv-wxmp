@@ -14,7 +14,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.6.5",
 	"appid": "wx35d444e966855f0d",
-	"projectname": "Nutriv",
+	"projectname": "nutriv-wxmp",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
