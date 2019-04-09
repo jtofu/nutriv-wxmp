@@ -48,13 +48,13 @@
 }
 
 .text-nutrients {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: solid 1px lightgray;
+  text-align: center;
+  padding: 20px;
 }
 
 .section-quantity {
   display: flex;
+
 }
 
 .dishes {

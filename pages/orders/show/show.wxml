@@ -3,31 +3,16 @@
 <view class='section-main'>
   <view class='text-title'>Summary</view>
   <view class='text-nutrients'>
-    <view>Calories</view>
-    <view>230</view>
+    <view>Calories 230</view>
+    <view>Total Fat 8g</view>
+    <view>Saturated Fat 1g</view>
+    <view>Trans Fat 0g</view>
+    <view>Protein 3g</view>
+    <view>Total Carbs 37g</view>     
+    <view>Sodium 160mg</view>
   </view>
-  <view class='text-nutrients'>
-    <view>Total Fat</view>
-    <view>8g</view>
-  </view>
-  <view class='text-nutrients'>
-    <view>Saturated Fat</view>
-    <view>1g</view>
-  </view>
-  <view class='text-nutrients'>
-    <view>Trans Fat</view>
-    <view>0g</view>
-  </view>
-  <view class='text-nutrients'>
-    <view>Protein</view>
-    <view>3g</view>
-  </view>
-  <view class='text-nutrients'>
-    <view>Total Carbs 37g</view>
-    <view>3g</view>
-  </view>
-</view>
 <!-- total nutrients end -->
+
 <view class="page__bd dishes">
     <view class="weui-panel weui-panel_access">
         <view class="weui-panel__hd">Dishes</view>
@@ -61,6 +46,8 @@
         </view>
     </view>
   </view>
+</view>
+  
 <view id='footer'>
   <view>500 Calories</view>
   <navigator url='../../bookings/new/new?training_id={{id}}' class="btn-flat picker">Confirm Meal</navigator>
