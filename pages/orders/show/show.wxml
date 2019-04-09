@@ -28,7 +28,6 @@
   </view>
 </view>
 <!-- total nutrients end -->
-
 <view class="page__bd dishes">
     <view class="weui-panel weui-panel_access">
         <view class="weui-panel__hd">Dishes</view>
@@ -37,13 +36,13 @@
                 <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
                     <image class="weui-media-box__thumb" src="{{icon60}}" />
                 </view>
-                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg dish">
                     <view class="weui-media-box__title">Chicken Salad</view>
-                    <!-- <view class="weui-media-box__desc">
+                    <view class="weui-media-box__desc dish-quantity">
                       <image  class='image-icon' src='/images/plus-button.png'></image>
                       <view>0</view>
                       <image  class='image-icon' src='/images/minus-symbol.png'></image>
-                    </view> -->
+                    </view>
                 </view>
             </navigator>
             <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
@@ -52,19 +51,13 @@
                 </view>
                 <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
                     <view class="weui-media-box__title">Cheeseburger</view>
-                    <!-- <view class="weui-media-box__desc">
+                    <view class="weui-media-box__desc dish-quantity">
                       <image  class='image-icon' src='/images/plus-button.png'></image>
                       <view>0</view>
                       <image  class='image-icon' src='/images/minus-symbol.png'></image>
-                    </view> -->
+                    </view>
                 </view>
             </navigator>
-        </view>
-        <view class="weui-panel__ft">
-            <view class="weui-cell weui-cell_access weui-cell_link">
-                <!-- <view class="weui-cell__bd">查看更多</view>
-                <view class="weui-cell__ft weui-cell__ft_in-access"></view> -->
-            </view>
         </view>
     </view>
   </view>

@@ -39,6 +39,7 @@
 .card-dish {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .text-title {
@@ -57,8 +58,8 @@
 }
 
 .dishes {
-  position: fixed;
-  bottom: 60px;
+  position: relative;
+  bottom: 10px;
 }
 
 .image-icon {
@@ -66,6 +67,12 @@
   height: 24px;
 }
 
-.dish {
+.dish-quantity {
   display: flex;
+  position: fixed;
+  right: 10px;
+}
+
+.dish {
+  position: relative;
 }
