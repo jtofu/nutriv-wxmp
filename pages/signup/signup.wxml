@@ -1,0 +1,11 @@
+<!--pages/signup/signup.wxml-->
+<view class='banner' style="background-image: linear-gradient(-225deg, rgba(230,230,230,0.2) 0%, rgba(230,230,230,0.6) 50%), url('/images/kristen-kaethler-1398358-unsplash.jpg');">
+<view id='title'>Nutriv</view>
+<view id='subtitle'>Make healthy choices simple</view>
+<view id='description'>Join Nutriv and find meals nearby that are curated just for you. Pick your own nutritional goals and easily keep track of the meals you have enjoyed. </view>
+
+<button class="button" open-type="getUserInfo" bindgetuserinfo="getUserInfo" data-id="{{globalData.userId}}" data-user-info="{{globalData.userInfo}}">Join Nutriv</button>
+<button>No Thanks</button>
+
+</view>
+

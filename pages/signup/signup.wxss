@@ -1,0 +1,30 @@
+/* pages/signup/signup.wxss */
+#title {
+  font-size: 24px;
+  text-align: center;
+  padding-top: 56px;
+  margin-bottom: 56px;
+  font-weight: bold;
+}
+
+#subtitle {
+  font-weight: bold;
+  text-align: center;
+  padding: 8px;
+}
+
+#description {
+  text-align: center;
+  padding: 0 24px;
+  margin-bottom: 64px;
+}
+
+button {
+  margin-bottom: 8px;
+}
+
+.banner {
+  background-image: url('/images/kristen-kaethler-1398358-unsplash.jpg');
+  background-size: cover;
+  height: 100vh;
+}
