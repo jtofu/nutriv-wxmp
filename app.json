@@ -3,6 +3,9 @@
     "pages/signup/signup",
     "pages/orders/show/show",
     "pages/meals/index/index",
+    "pages/meals/new/new",
+    "pages/meals/add/add",
+    "pages/meals/save/save",
     "pages/users/show/show"
   ],
   "window":{
