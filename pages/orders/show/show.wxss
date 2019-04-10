@@ -72,7 +72,7 @@
   display: flex;
   position: absolute;
   right: 16px;
-  bottom: 8px;
+  bottom: 0;
   align-items: center;
 }
 
@@ -82,6 +82,7 @@
 
 .dish-name {
   font-weight: bold;
+  font-size: 14px;
 }
 
 .dish-nutrition {

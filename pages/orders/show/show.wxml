@@ -4,11 +4,11 @@
   <view class='text-title'>Summary</view>
   <view class='text-nutrients'>
     <view>Calories</view>
-    <view>230</view>
+    <view>{{calorie}}</view>
   </view>
   <view class='text-nutrients'>
     <view>Total Fat</view>
-    <view>8g</view>
+    <view>{{calorie}}g</view>
   </view>
   <view class='text-nutrients'>
     <view>Saturated Fat</view>
@@ -23,62 +23,37 @@
     <view>3g</view>
   </view>
   <view class='text-nutrients'>
-    <view>Total Carbs 37g</view>
-    <view>3g</view>
+    <view>Total Carbs</view>
+    <view>{{carb}}</view>
   </view>
 </view>
 <!-- total nutrients end -->
 <view class="page__bd dishes">
-    <view class="weui-panel weui-panel_access">
-        <view class="weui-panel__hd">Dishes</view>
-        <view class="weui-panel__bd">
-            <view url="" class="weui-media-box weui-media-box_appmsg dish" hover-class="weui-cell_active">
-                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-                    <image class="weui-media-box__thumb" src="{{icon60}}" />
-                </view>
-                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-                    <view class="weui-media-box__title dish-description">
-                    <view class='dish-name'>Chicken Salad</view>
-                    <view class='dish-nutrition'>230 Calories</view>
-                    </view>
-                    <view class="dish-quantity">
-                      <image  class='image-icon' src='/images/minus-symbol.png'></image>
-                      <view class='dish-number'>1</view>
-                      <image  class='image-icon' src='/images/plus-button.png'></image>
-                    </view>
-                </view>
+  <view class="weui-panel weui-panel_access">
+    <view class="weui-panel__hd">Dishes</view>
+    <view class="weui-panel__bd">
+      <block wx:for='{{dishes}}' wx:for-item='dish' wx:key='dish.id'>
+        <view url="" class="weui-media-box weui-media-box_appmsg dish" hover-class="weui-cell_active">
+            <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                <image class="weui-media-box__thumb" src="{{icon60}}" />
             </view>
-            <view url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
-                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-                    <image class="weui-media-box__thumb" src="{{icon60}}" />
+            <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                <view class="weui-media-box__title dish-description">
+                <view class='dish-name'>{{dish.name}}</view>
+                <view class='dish-nutrition'>{{dish.nutrients[1].amount}} Calories</view>
                 </view>
-                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-                    <view class="weui-media-box__title">
-                      <view class='dish-name'>Cheeseburger</view>
-                      <view class='dish-nutrition'>450 Calories</view>
-                    </view>
-                    <view class="dish-quantity">
-                      <image  class='image-icon' src='/images/minus-symbol.png'></image>
-                      <view class='dish-number'>0</view>
-                      <image  class='image-icon' src='/images/plus-button.png'></image>
-                    </view>
+                <view class="dish-quantity">
+                  <image bindtap='subtractAmount' data-id='{{index}}' class='image-icon' src='/images/minus-symbol.png'></image>
+                  <view class='dish-number'>{{dish.quantity}}</view>
+                  <image bindtap='addAmount' data-id='{{index}}' class='image-icon' src='/images/plus-button.png'></image>
                 </view>
             </view>
         </view>
+      </block>
     </view>
   </view>
-<!-- <view class='card'>
-  <view>
-    <view class='dish-name'>Cheeseburger</view>
-    <view class='dish-nutrition'>230 Calories</view>
-    <view class='dish-quantity'>
-      <image  class='image-icon' src='/images/minus-symbol.png'></image>
-      <view>0</view>
-      <image  class='image-icon' src='/images/plus-button.png'></image>
-    </view>
-  </view>
-  
-</view> -->
+</view>
+
 <view id='footer'>
   <view>230 Calories</view>
   <navigator url='../../bookings/new/new?training_id={{id}}' class="btn-flat picker">Confirm Meal</navigator>
