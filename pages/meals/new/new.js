@@ -1,4 +1,6 @@
 // pages/meals/new/new.js
+const app = getApp();
+
 Page({
 
   /**
@@ -62,5 +64,11 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  addNewMeal() {
+    wx.navigateTo({
+      url: '/pages/meals/add/add',
+    })
   }
 })

@@ -27,6 +27,12 @@
         "selectedIconPath": "images/home.png"
       },
       {
+        "pagePath": "pages/meals/new/new",
+        "text": "Add Meal",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home.png"
+      },
+      {
         "pagePath": "pages/users/show/show",
         "text": "Profile",
         "iconPath": "images/profile.png",

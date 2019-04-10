@@ -1,2 +1,6 @@
-<!--pages/meals/new/new.wxml-->
-<text>pages/meals/new/new.wxml</text>
+<view class='banner'>Some Banner</view>
+<view class='h2'>New Meal</view>
+<view>
+  <button type='default'>Scan QR Code</button>
+  <button type='default' bindtap='addNewMeal'>Add New</button>
+</view>
