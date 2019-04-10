@@ -131,5 +131,31 @@ Page({
       sugar: sugar,
       protein: protein
     });
-  }
+  },
+
+  addToMeal(e) {
+    console.log(e)
+    const url = app.globalData.url;
+    let user_id = app.globalData.userId;
+    
+
+    page.data.dishes.forEach((dish) => {
+
+    })
+    
+    let dish_id = e.currentTarget.dataset.id;
+    let meal = { quantity: 1, user_id: user_id, dish_id: dish_id };
+
+    wx.request({
+      url: `${url}meals`,
+      method: "POST",
+      data: meal,
+      success(res) {
+        console.log(res)
+        wx.switchTab({
+          url: `/pages/meals/index/index?user_id=${user_id}`
+        })
+      }
+    })
+  },
 })
