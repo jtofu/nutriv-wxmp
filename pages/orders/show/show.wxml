@@ -74,5 +74,5 @@
 
 <view id='footer'>
   <view>{{calorie}} Calories</view>
-  <navigator url='../../bookings/new/new?training_id={{id}}' class="btn-flat picker">Confirm Meal</navigator>
+  <navigator bindtap='addToMeal' url='../../meals/index/index' class="btn-flat picker">Confirm Meal</navigator>
 </view>
