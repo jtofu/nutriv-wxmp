@@ -1,4 +1,5 @@
 // pages/meals/index/index.js
+// const app = getApp();
 Page({
 
   /**
@@ -12,7 +13,15 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    // const url = app.globalData.url;
+    // const page = this
 
+    // wx.request({
+    //   url: `${url}/users/2`,
+    //   success(res) {
+    //     console.log(res);
+    //   }
+    // })
   },
 
   /**
