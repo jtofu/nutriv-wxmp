@@ -61,6 +61,7 @@
 .dishes {
   position: relative;
   bottom: 10px;
+  margin-top: 56px;
 }
 
 .image-icon {

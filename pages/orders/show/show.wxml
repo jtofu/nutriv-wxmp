@@ -1,6 +1,7 @@
 <!--pages/orders/show/show.wxml-->
-<!-- total nutrients start -->
+
 <view class='section-main'>
+  <!-- total nutrients start -->
   <view class='text-title'>Summary</view>
   <view class='text-nutrients'>
     <view>Calories</view>
@@ -8,53 +9,70 @@
   </view>
   <view class='text-nutrients'>
     <view>Total Fat</view>
-    <view>{{calorie}}g</view>
+    <view>{{total_fat}}g</view>
   </view>
   <view class='text-nutrients'>
     <view>Saturated Fat</view>
-    <view>1g</view>
+    <view>{{sat_fat}}g</view>
   </view>
   <view class='text-nutrients'>
-    <view>Trans Fat</view>
-    <view>0g</view>
+    <view>Cholesterol</view>
+    <view>{{cholesterol}}mg</view>
+  </view>
+  <view class='text-nutrients'>
+    <view>Sodium</view>
+    <view>{{sodium}}mg</view>
+  </view>
+  <view class='text-nutrients'>
+    <view>Total Carbohydrate</view>
+    <view>{{carb}}g</view>
+  </view>
+  <view class='text-nutrients'>
+    <view>Dietary Fiber</view>
+    <view>{{fiber}}g</view>
+  </view>
+  <view class='text-nutrients'>
+    <view>Sugars</view>
+    <view>{{sugar}}g</view>
   </view>
   <view class='text-nutrients'>
     <view>Protein</view>
-    <view>3g</view>
+    <view>{{protein}}g</view>
   </view>
-  <view class='text-nutrients'>
-    <view>Total Carbs</view>
-    <view>{{carb}}</view>
-  </view>
-</view>
-<!-- total nutrients end -->
-<view class="page__bd dishes">
-  <view class="weui-panel weui-panel_access">
-    <view class="weui-panel__hd">Dishes</view>
-    <view class="weui-panel__bd">
-      <block wx:for='{{dishes}}' wx:for-item='dish' wx:key='dish.id'>
-        <view url="" class="weui-media-box weui-media-box_appmsg dish" hover-class="weui-cell_active">
-            <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-                <image class="weui-media-box__thumb" src="{{icon60}}" />
-            </view>
-            <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-                <view class="weui-media-box__title dish-description">
-                <view class='dish-name'>{{dish.name}}</view>
-                <view class='dish-nutrition'>{{dish.nutrients[1].amount}} Calories</view>
-                </view>
-                <view class="dish-quantity">
-                  <image bindtap='subtractAmount' data-id='{{index}}' class='image-icon' src='/images/minus-symbol.png'></image>
-                  <view class='dish-number'>{{dish.quantity}}</view>
-                  <image bindtap='addAmount' data-id='{{index}}' class='image-icon' src='/images/plus-button.png'></image>
-                </view>
-            </view>
-        </view>
-      </block>
+  <!-- total nutrients end -->
+
+  <!-- dishes start -->
+  <view class="page__bd dishes">
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__hd">Dishes</view>
+      <view class="weui-panel__bd">
+        <block wx:for='{{dishes}}' wx:for-item='dish' wx:key='dish.id'>
+          <view url="" class="weui-media-box weui-media-box_appmsg dish" hover-class="weui-cell_active">
+              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                  <image class="weui-media-box__thumb" src="{{icon60}}" />
+              </view>
+              <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                  <view class="weui-media-box__title dish-description">
+                  <view class='dish-name'>{{dish.name}}</view>
+                  <view class='dish-nutrition'>{{dish.nutrients[1].amount}} Calories</view>
+                  </view>
+                  <view class="dish-quantity">
+                    <image bindtap='subtractAmount' data-id='{{index}}' class='image-icon' src='/images/minus-symbol.png'></image>
+                    <view class='dish-number'>{{dish.quantity}}</view>
+                    <image bindtap='addAmount' data-id='{{index}}' class='image-icon' src='/images/plus-button.png'></image>
+                  </view>
+              </view>
+          </view>
+        </block>
+      </view>
     </view>
   </view>
+  <!-- dishes end -->
 </view>
 
+
+
 <view id='footer'>
-  <view>230 Calories</view>
+  <view>{{calorie}} Calories</view>
   <navigator url='../../bookings/new/new?training_id={{id}}' class="btn-flat picker">Confirm Meal</navigator>
 </view>
