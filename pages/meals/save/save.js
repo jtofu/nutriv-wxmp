@@ -1,4 +1,5 @@
 // pages/meals/save/save.js
+const app = getApp();
 Page({
 
   /**
@@ -12,7 +13,17 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    const page = this;
+    const url = app.globalData.url;
+    wx.request({
+      url: `${url}dishes/${options.id}`,
+      method: 'GET',
+      success(res) {
+        const dish = res.data;
+        page.setData(dish)
+        console.log(11, dish)
+      }
+    })
   },
 
   /**
@@ -62,5 +73,27 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+  addToMeal(e) {
+    console.log(e)
+    const url = app.globalData.url;
+
+    let dish_id = e.currentTarget.dataset.id;
+    let user_id = app.globalData.userId;
+
+    let meal = { quantity: 1, user_id: user_id, dish_id: dish_id };
+
+    wx.request({
+      url: `${url}meals`,
+      method: "POST",
+      data: meal,
+      success(res) {
+        console.log(res)
+        wx.switchTab({
+          url: `/pages/meals/index/index?user_id=${user_id}`
+        })
+      }
+    })
+  },
 })
