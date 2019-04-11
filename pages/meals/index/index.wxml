@@ -77,40 +77,50 @@
 
 
 <view class="border">
-    <text class="border-text">Dishes</text>
+    <text class="border-text">My Meals</text>
 </view>
 
 
 
 <view class="card-dishes">
-  <block wx:for='{{dishes}}' wx:for-item='dish' wx:key='dish.id'>
+  <block wx:for='{{meals}}' wx:for-item='meal' wx:key='meal.id'>
     <view class="card-dish">
       <image mode="aspectFill" src="https://images.unsplash.com/photo-1547516453-01c9910aafbf?ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80"></image>
       <view class="card-text">
-        <text class="dish-title">{{dish.name}}</text>
+        <text class="dish-title">{{meal.dish_short}}</text>
 
-        <view class="fat">
-              <view class="fat-icon-title">
-                <image class="fat-icon" mode="aspectFit" src="/images/avocado.png"></image>
-                <text class="fat-text">Fat</text>
-              </view>
-              <text class="text-count">{{dish.nutrients[2].amount}}{{dish.nutrients[1].unit}}</text>
+        <!-- <view class="fat"> -->
+        <view class="nutrient">
+          <view class="nutrient-icon-title">
+            <view class='nutrient-icon'>
+              <image class="fat-icon" mode="aspectFit" src="/images/avocado.png"></image>
+            </view>      
+            <view class="nutrient-text">Fat</view>
+          </view>
+
+          <view class="text-count">{{meal.nutrients[2].amount}}{{meal.nutrients[2].unit}}</view>
         </view>
 
-        <view class="calories">
-          <view class="calorie-icon-title">
-            <image class="calorie-icon" mode="aspectFit" src="/images/fire.png"></image>
-            <text class="calories-text">Calories</text>
+        <!-- <view class="calories"> -->
+        <view class="nutrient">
+          <view class="nutrient-icon-title">
+            <view class='nutrient-icon'>
+              <image class="calorie-icon" mode="aspectFit" src="/images/fire.png"></image>
+            </view>
+            <text class="nutrient-text">Calories</text>
           </view>
-          <text class="text-count">{{dish.nutrients[1].amount}}{{dish.nutrients[1].unit}}</text>
+          <view class="text-count">{{meal.nutrients[1].amount}}{{meal.nutrients[1].unit}}</view>
         </view>
 
-        <view class="proteins">
-          <view class="proteins-icon-title">
-            <image class="protein-icon" mode="aspectFit" src="/images/steak.png"></image>
-            <text class="proteins-text">Proteins</text>
+        <!-- <view class="proteins"> -->
+        <view class="nutrient">
+          <view class="nutrient-icon-title">
+            <view class='nutrient-icon'>
+              <image class="protein-icon" mode="aspectFit" src="/images/steak.png"></image>
+            </view>
+            <view class="nutrient-text">Proteins</view>
           </view>
-            <text class="text-count">{{dish.nutrients[8].amount}}{{dish.nutrients[1].unit}}</text>
+          <view class="text-count">{{meal.nutrients[8].amount}}{{meal.nutrients[8].unit}}</view>
         </view>
       </view>
     </view>
