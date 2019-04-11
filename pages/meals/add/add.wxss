@@ -17,14 +17,14 @@
   width: 100%;
 }
 
-.image-icon {
-  width: 24px;
-  height: 24px;
-}
-
 .icon.nutri {
   width: 60px;
   height: 60px;
+}
+
+.image-icon {
+  width: 24px;
+  height: 24px;
 }
 
 .card-dish {
