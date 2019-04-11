@@ -70,5 +70,15 @@ Page({
     wx.navigateTo({
       url: '/pages/meals/add/add',
     })
+  },
+
+  scanQrCode() {
+    // Allow scanning from camera only
+    wx.scanCode({
+      onlyFromCamera: true,
+      success: (res) => {
+        console.log(res)
+      }
+    })
   }
 })

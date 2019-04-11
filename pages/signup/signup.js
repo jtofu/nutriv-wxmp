@@ -89,7 +89,7 @@ Page({
       data: { profile_image: avatarUrl, username: nickName },
       success() {
         wx.switchTab({
-          url: `../meals/index/index`
+          url: '../meals/index/index'
         })
       }
     });

@@ -1,8 +1,6 @@
 App({
 
   onLaunch: function () {
-    // const host = 'http://localhost:3001/api/v1/'
-    // const host = 'http://localhost:3000/api/v1/'
     const host = this.globalData.url
 
     wx.login({
@@ -24,8 +22,10 @@ App({
     })
   },
   globalData: {
-     url: 'http://localhost:3000/api/v1/'
+    //  url: 'http://localhost:3000/api/v1/'
     // url: 'http://localhost:3001/api/v1/'
+    // PRODUCTION BELOW
+    url: 'https://nutriv.wogengapp.cn/api/v1/'
   }
 })
 

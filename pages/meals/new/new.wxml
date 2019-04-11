@@ -16,7 +16,7 @@
 <!-- OPTIONS TO ADD MEAL -->
 <view class='card-wrapper'>
   <view class='card-options'>
-    <view class='btn-option'>
+    <view class='btn-option' bindtap='scanQrCode'>
       <view class='card-content'>
         <image src="/images/qr-code.png" class='card-option-img'></image>
       </view>
@@ -24,7 +24,7 @@
         Scan QR Code
       </view>   
     </view>
-    <view class='btn-option'>
+    <view class='btn-option' bindtap='addNewMeal'>
       <view class='card-content'>
         <image src="/images/choose.png" class='card-option-img'></image>
       </view>
