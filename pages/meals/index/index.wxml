@@ -22,6 +22,8 @@
   </view>
 </view>
 
+
+
 <scroll-view class="scroll-view" scroll-x>
   <view class='scroll-row'>
       <view id="pic1" class="scroll-view-item_H bc_1">
@@ -72,164 +74,51 @@
   </view>
 </scroll-view>
 
+
+
 <view class="border">
     <text class="border-text">Dishes</text>
 </view>
 
+
+
 <view class="card-dishes">
-  <view class="card-dish">
-    <image mode="aspectFill" src="https://images.unsplash.com/photo-1547516453-01c9910aafbf?ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80"></image>
-    <view class="card-text">
-      <text class="dish-title">Quinoa</text>
-
-      <view class="fat">
-            <view class="fat-icon-title">
-              <image class="fat-icon" mode="aspectFit" src="/images/avocado.png"></image>
-              <text class="fat-text">Fat</text>
-            </view>
-            <text class="text-count">210</text>
-      </view>
-
-      <view class="calories">
-        <view class="calorie-icon-title">
-          <image class="calorie-icon" mode="aspectFit" src="/images/fire.png"></image>
-          <text class="calories-text">Calories</text>
-        </view>
-        <text class="text-count">210</text>
-      </view>
-
-      <view class="proteins">
-        <view class="proteins-icon-title">
-          <image class="protein-icon" mode="aspectFit" src="/images/steak.png"></image>
-          <text class="proteins-text">Proteins</text>
-        </view>
-          <text class="text-count">15g</text>
-        </view>
-      </view>
-    </view>
-
+  <block wx:for='{{dishes}}' wx:for-item='dish' wx:key='dish.id'>
     <view class="card-dish">
-    <image mode="aspectFill" src="https://images.unsplash.com/photo-1503442947665-4c7bb47d5daf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=806&q=80"></image>
-    <view class="card-text">
-      <text class="dish-title">Poached eggs</text>
+      <image mode="aspectFill" src="https://images.unsplash.com/photo-1547516453-01c9910aafbf?ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80"></image>
+      <view class="card-text">
+        <text class="dish-title">{{dish.name}}</text>
 
-      <view class="fat">
-        <view class="fat-icon-title">
-          <image class="fat-icon" mode="aspectFit" src="/images/avocado.png"></image>
-          <text class="fat-text">Fat</text>
+        <view class="fat">
+              <view class="fat-icon-title">
+                <image class="fat-icon" mode="aspectFit" src="/images/avocado.png"></image>
+                <text class="fat-text">Fat</text>
+              </view>
+              <text class="text-count">{{dish.nutrients[2].amount}}{{dish.nutrients[1].unit}}</text>
         </view>
-        <text class="text-count">210</text>
-      </view>
 
-      <view class="calories">
-        <view class="calorie-icon-title">
-          <image class="calorie-icon" mode="aspectFit" src="/images/fire.png"></image>
-          <text class="calories-text">Calories</text>
-         </view>
-        <text class="text-count">325</text>
-      </view>
-
-      <view class="proteins">
-        <view class="proteins-icon-title">
-          <image class="protein-icon" mode="aspectFit" src="/images/steak.png"></image>
-          <text class="proteins-text">Proteins</text>
-        </view>
-        <text class="text-count">25g</text>
-      </view>
-
-    </view>
-  </view>
-     <view class="card-dish">
-    <image mode="aspectFill" src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"></image>
-    <view class="card-text">
-      <text class="dish-title">Salmon</text>
-
-      <view class="fat">
-        <view class="fat-icon-title">
-          <image class="fat-icon" mode="aspectFit" src="/images/avocado.png"></image>
-          <text class="fat-text">Fat</text>
-        </view>
-        <text class="text-count">210</text>
-      </view>
-
-      <view class="calories">
-        <view class="calorie-icon-title">
-          <image class="calorie-icon" mode="aspectFit" src="/images/fire.png"></image>
-          <text class="calories-text">Calories</text>
-        </view>
-        <text class="text-count">450</text>
-      </view>
-
-      <view class="proteins">
-        <view class="proteins-icon-title">
-          <image class="protein-icon" mode="aspectFit" src="/images/steak.png"></image>
-          <text class="proteins-text">Proteins</text>
-        </view>
-        <text class="text-count">70g</text>
-      </view>
-
-    </view>
-  </view>
-     <view class="card-dish">
-    <image mode="aspectFill" src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"></image>
-    <view class="card-text">
-      <text class="dish-title">Chicken breast</text>
-
-      <view class="fat">
-        <view class="fat-icon-title">
-          <image class="fat-icon" mode="aspectFit" src="/images/avocado.png"></image>
-          <text class="fat-text">Fat</text>
-        </view>
-        <text class="text-count">210</text>
-      </view>
-
-      <view class="calories">
-        <view class="calorie-icon-title">
-          <image class="calorie-icon" mode="aspectFit" src="/images/fire.png"></image>
-          <text class="calories-text">Calories</text>
-         </view>
-        <text class="text-count">370</text>
-      </view>
-
-      <view class="proteins">
-        <view class="proteins-icon-title">
-          <image class="protein-icon" mode="aspectFit" src="/images/steak.png"></image>
-          <text class="proteins-text">Proteins</text>
-        </view>
-        <text class="text-count">80g</text>
-      </view>
-
-    </view>
-  </view>
-     <view class="card-dish">
-    <image mode="aspectFill" src="https://images.unsplash.com/photo-1545840773-71d991d7b03b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"></image>
-    <view class="card-text">
-      <text class="dish-title">Avocado</text>
-
-      <view class="fat">
-          <view class="fat-icon-title">
-            <image class="fat-icon" mode="aspectFit" src="/images/avocado.png"></image>
-            <text class="fat-text">Fat</text>
+        <view class="calories">
+          <view class="calorie-icon-title">
+            <image class="calorie-icon" mode="aspectFit" src="/images/fire.png"></image>
+            <text class="calories-text">Calories</text>
           </view>
-          <text class="text-count">210</text>
-      </view>
-
-      <view class="calories">
-        <view class="calorie-icon-title">
-          <image class="calorie-icon" mode="aspectFit" src="/images/fire.png"></image>
-          <text class="calories-text">Calories</text>
-          </view>
-        <text class="text-count">560</text>
-      </view>
-
-      <view class="proteins">
-        <view class="proteins-icon-title">
-          <image class="protein-icon" mode="aspectFit" src="/images/steak.png"></image>
-          <text class="proteins-text">Proteins</text>
+          <text class="text-count">{{dish.nutrients[1].amount}}{{dish.nutrients[1].unit}}</text>
         </view>
-        <text class="text-count">19g</text>
-      </view>
 
+        <view class="proteins">
+          <view class="proteins-icon-title">
+            <image class="protein-icon" mode="aspectFit" src="/images/steak.png"></image>
+            <text class="proteins-text">Proteins</text>
+          </view>
+            <text class="text-count">{{dish.nutrients[8].amount}}{{dish.nutrients[1].unit}}</text>
+        </view>
+      </view>
     </view>
+  </block>
+  <view class="weui-panel__ft">
+      <view class="weui-cell weui-cell_access weui-cell_link">
+          <view class="weui-cell__bd">load more</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </view>
   </view>
 </view>
