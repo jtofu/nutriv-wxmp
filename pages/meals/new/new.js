@@ -106,5 +106,16 @@ Page({
         })
       }
     })
-  }
+  },
+
+  mealMoreInfo(e) {
+    const url = app.globalData.url;
+
+    let dish_id = e.currentTarget.dataset.id;
+    let user_id = app.globalData.userId;
+
+    wx.navigateTo({
+      url: `/pages/meals/save/save?id=${dish_id}`
+    })
+  },
 })
