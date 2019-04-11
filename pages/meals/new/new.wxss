@@ -1,1 +1,83 @@
 /* pages/meals/new/new.wxss */
+
+/* BANNER */
+.banner {
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.banner-title {
+  margin-top: 0px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.banner-text {
+  width: 100%;
+}
+
+.icon.nutri {
+  width: 60px;
+  height: 60px;
+}
+
+/* H1 */
+.border {
+  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(128,248,174,0.8) 10%, rgba(223,244,148,0.8) 95% );
+  margin-bottom: 10px;
+  width: 100%;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.border-text {
+  margin-left: 45px;
+}
+
+/* OPTIONS */
+.card-wrapper {
+  /* margin: 0 auto; */
+  display: flex;
+  justify-content: center;
+}
+
+.card-options {
+  width: 87%;
+  /* margin: 0 auto; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* height: 100px; */
+}
+
+.btn-option {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  width: 90%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  justify-content: center;
+  font-weight: bold;
+  border: solid 1px rgba(0,0,0,0.4);
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
+  /* background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(128,248,174,0.8) 10%, rgba(223,244,148,0.8) 95% ); */
+}
+
+.card-content {
+  /* margin: 0 auto; */
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  width: 45%;
+}
+
+.card-option-img {
+  width: 80px;
+  height: 80px;
+}
