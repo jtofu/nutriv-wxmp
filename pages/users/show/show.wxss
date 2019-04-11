@@ -7,21 +7,85 @@
   font-weight: bold;  
 }
 
-.container {
+.banner {
+  height: 120px;
   display: flex;
-  height:50vh;
-  width: 100vw;
-  padding: 0px;
-  position: relative;
-  text-align: center;
+  /* flex-direction: column; */
+  /* text-align: center; */
+  align-items: center;
+  justify-content: center;
 }
+
+.banner-title {
+  margin-top: 0px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* .banner-text {
+  width: 100%;
+} */
+
 .profile {
   background-color: RGBA(101, 102, 201, 0.60);
   box-shadow: 1px 2px 4px 1px rgba(0, 0, 0,.10);
   border-radius: 50%;
-  width: 91px;
-  height: 91px;
-  position: absolute;
-  top: 85px;
-  right: 146px;
+  width: 70px;
+  height: 70px;
+  /* position: absolute; */
+  /* top: 85px; */
+  /* right: 146px; */
+}
+
+.icon.nutri {
+  width: 60px;
+  height: 60px;
+}
+
+.avatar {
+  margin-right: 20px;
+}
+
+
+/* H1 */
+.border {
+  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(128,248,174,0.8) 10%, rgba(223,244,148,0.8) 95% );
+  margin-bottom: 10px;
+  width: 100%;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.border-text {
+  margin-left: 45px;
+}
+
+/* CARD */
+
+
+.card-goal {
+  margin-left: 15px;
+  margin-top: 10px;
+  width: 87%;
+  /* height: 45px; */
+  background-color: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0,.06);
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-right: 15px;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-goal-plus-btn {
+  width: 26px;
+}
+
+.card-goal-minus-btn {
+  width: 26px;
+  height: 26px;
 }

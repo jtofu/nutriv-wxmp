@@ -16,15 +16,15 @@ Page({
     const avatarUrl = app.globalData.userInfo.avatarUrl;
     console.log(avatarUrl)
     const nickName = userInfo.nickName;    
-    wx.request({      
-      url: `${url}users/${id}`,      
-      method: "PUT",
-      data: { profile_image: avatarUrl, username: nickName },
-      success(res) {       
-        const user = res.data;       
-        page.setData(user);
-      }
-    })
+    // wx.request({      
+    //   url: `${url}users/${id}`,      
+    //   method: "PUT",
+    //   data: { profile_image: avatarUrl, username: nickName },
+    //   success(res) {       
+    //     const user = res.data;       
+    //     page.setData(user);
+    //   }
+    // })
   }, 
 
   /**
@@ -46,13 +46,14 @@ Page({
     const id = app.globalData.userId;
     const userInfo = app.globalData.userInfo;    
     const avatarUrl = app.globalData.userInfo.avatarUrl;    
-    const nickName = userInfo.nickName;    
+    const nickName = userInfo.nickName;  
+
     wx.request({     
-      url: `${url}users/${id}`,       
-      method: "PUT",
-      data: { profile_image: avatarUrl, username: nickName },
+      url: `${url}goals?user_id=${id}`,       
+      method: "GET",
       success(res) {       
-        const user = res.data;         
+        const user = res.data;   
+        console.log('onload user', user);      
         page.setData(user);
       }
     })
@@ -93,5 +94,35 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  destroyGoal(e) {
+    console.log(e)
+  },
+
+  addGoal(e) {
+    console.log(e);
+    const id = e.currentTarget.dataset.id;
+    console.log(id);
+
+    const url = app.globalData.url;
+
+    wx.navigateTo({
+      url: `/pages/goals/new/new?user_id=${id}`,
+    })
+
+    // const page = this;
+    
+
+    // const 
+
+    // wx.request({
+    //   url: `${url}goals`,
+    //   method: "POST",
+    //   data: ;
+    //   success() {
+
+    //   }
+    // })
   }
 })
