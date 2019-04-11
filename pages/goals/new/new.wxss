@@ -39,6 +39,9 @@
 
 .input-height {
   height: 3em;
+  display: flex;
+  align-items: center;
+  color: rgba(0,0,0,0.5);
 }
 
 .upload-preview {
@@ -84,4 +87,8 @@
 .btn-half {
   width: 100%;
   margin: 5px;
+}
+
+.picker {
+  margin-bottom: 20px;
 }

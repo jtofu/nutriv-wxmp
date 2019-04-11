@@ -79,6 +79,7 @@ Page({
   formSubmit: function (event) {
     const page = this;
     let nutrient = page.data.array[page.data.index];
+    console.log('nutrient', nutrient);
     let amount = parseInt(event.detail.value.amount);
     // let description = event.detail.value.description
     // let price_per_hour = event.detail.value.price_per_hour
@@ -91,6 +92,7 @@ Page({
 
     const url = app.globalData.url;
     const id = app.globalData.userId;
+
     wx.request({
       url: `${url}goals`,
       method: 'POST',
@@ -108,6 +110,14 @@ Page({
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       index: e.detail.value
+    })
+  },
+
+  cancelSubmit() {
+    const id = app.globalData.userId;
+
+    wx.switchTab({
+      url: `/pages/users/show/show?id=${id}`,
     })
   }
 })
