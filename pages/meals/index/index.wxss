@@ -52,15 +52,18 @@ image {
 }
 
 .dish-title {
-  text-align: center;
+  /* text-align: center; */
   font-weight: bold;
+  font-size: 16px;
 }
 
 .card-text {
   width: 60%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  /* justify-content: space-around; */
+  margin-left: 15px;
+  margin-right: 10px;
 }
 
 .calories {
@@ -71,7 +74,8 @@ image {
 .calories-text,
 .text-count,
 .proteins-text,
-.fat-text {
+.fat-text, 
+.nutrient-text {
   font-size: 14px;
 }
 
@@ -103,16 +107,41 @@ image {
   margin-right: 20px;
 }
 
+.nutrient-icon-title {
+  display: flex;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.7);
+  justify-content: space-between;
+  /* margin-left: 10px; */
+}
+
+.nutrient-icon {
+  width: 33px;
+}
+
+.nutrient {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 33px;
+  margin-top: 3px;
+}
+/* 
 .calorie-icon-title {
   display: flex;
   align-items: center;
+  color: rgba(0, 0, 0, 0.7);
+
 }
 
 .fat-icon-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
+  color: rgba(0, 0, 0, 0.7);
+} */
 
 .icon.nutri {
   width: 60px;
@@ -140,10 +169,10 @@ image {
   font-size: 14px;
 }
 
-.daily-calories,
-.proteins-icon-title {
+.daily-calories {
   display: flex;
   align-items: center;
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .daily-proteins {
@@ -168,7 +197,7 @@ image {
   height: 20px;
 }
 
-.proteins {
+/* .proteins {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -182,7 +211,7 @@ image {
   justify-content: space-between;
   padding-left: 30px;
   padding-right: 30px;
-}
+} */
 
 .goal1 {
   height: 300px;

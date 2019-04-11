@@ -108,16 +108,24 @@ Page({
   onShow: function () {
     const page = this;
     const url = app.globalData.url;
+    const user_id = app.globalData.userId;
+    console.log(user_id)
+
     wx.request({
-      url: `${url}dishes`,
+      // url: `${url}dishes`,
+      url: `${url}meals?user_id=${user_id}`,
       method: 'GET',
       success(res) {
-        const dishes = res.data.dishes;
+        console.log(res.data);
+        const meals = res.data.meals;
+        // page.setData(res.data);
+        console.log('meals', meals);
         page.setData({
-          dishes: dishes
-        });
+          meals: meals
+        })
+        
       }
-    })
+    });
   },
 
   /**
