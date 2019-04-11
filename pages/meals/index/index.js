@@ -106,7 +106,18 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-
+    const page = this;
+    const url = app.globalData.url;
+    wx.request({
+      url: `${url}dishes`,
+      method: 'GET',
+      success(res) {
+        const dishes = res.data.dishes;
+        page.setData({
+          dishes: dishes
+        });
+      }
+    })
   },
 
   /**
