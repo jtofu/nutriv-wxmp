@@ -8,6 +8,16 @@
   align-items: center;
 }
 
+.banner-title {
+  margin-top: 0px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.banner-text {
+  width: 100%;
+}
+
 .page__bd {
   width: 70%;
 }
@@ -70,16 +80,6 @@ image {
   width: 20px;
   height: 20px;
   margin-right: 5px;
-}
-
-.banner-title {
-  margin-top: 0px;
-  font-size: 30px;
-  font-weight: bold;
-}
-
-.banner-text {
-  width: 100%;
 }
 
 .bc_1 {
