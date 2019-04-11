@@ -1,4 +1,5 @@
 // pages/meals/index/index.js
+// const app = getApp();
 Page({
 
   /**
@@ -12,7 +13,7 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+  
   },
 
   /**

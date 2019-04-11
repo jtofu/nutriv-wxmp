@@ -1,0 +1,14 @@
+ <template name="form">
+
+  <view class='box'>
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view><input class="user-input input-height" name= "calories" value="{{calories}}" placeholder="Calories"></input></view>
+      <view><input class="user-input input-height" name= "carbs" value="{{carbs}}" placeholder="Carbs"></input></view>
+      <view><input class="user-input input-height" name= "proteins" value="{{proteins}}" placeholder="Proteins"></input></view>
+    <view class='button-inline'>       
+      <button class='btn-half' style="margin-bottom:20px" type="warn" bindtap="cancelSubmit">Cancel</button>     
+      <button style="margin-bottom:20px" type="primary" formType="submit" loading="{{loading}}" class='btn-half'>Submit</button>
+    </view> 
+    </form>
+  </view>
+</template>
