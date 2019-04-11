@@ -16,7 +16,7 @@ Page({
     const page = this;
     const url = app.globalData.url;
     wx.request({
-      url: `${url}orders/3`,
+      url: `${url}orders/1`,
       method: 'GET',
       success(res) {
         const dishes = res.data.dishes;
@@ -135,27 +135,26 @@ Page({
 
   addToMeal(e) {
     console.log(e)
+    const page = this;
     const url = app.globalData.url;
     let user_id = app.globalData.userId;
-    
 
     page.data.dishes.forEach((dish) => {
+      let dish_id = dish.id;
+      let quantity = dish.quantity
+      let meal = { quantity: quantity, user_id: user_id, dish_id: dish_id }
 
-    })
-    
-    let dish_id = e.currentTarget.dataset.id;
-    let meal = { quantity: 1, user_id: user_id, dish_id: dish_id };
-
-    wx.request({
-      url: `${url}meals`,
-      method: "POST",
-      data: meal,
-      success(res) {
-        console.log(res)
-        wx.switchTab({
-          url: `/pages/meals/index/index?user_id=${user_id}`
-        })
-      }
-    })
+      wx.request({
+        url: `${url}meals`,
+        method: "POST",
+        data: meal,
+        success(res) {
+          console.log(res)
+        }
+      })
+    });
+    wx.switchTab({
+      url: `/pages/meals/index/index?user_id=${user_id}`
+    });
   },
 })
