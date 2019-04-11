@@ -1,5 +1,4 @@
- <template name="form">
-
+<template name="form">
   <view class='box'>
     <form bindsubmit="formSubmit" bindreset="formReset">
       <view><input class="user-input input-height" name= "nutrient" value="{{name}}" placeholder="Calories, Carbohydrate, etc.."></input></view>
