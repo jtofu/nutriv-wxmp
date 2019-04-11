@@ -157,4 +157,35 @@ Page({
       url: `/pages/meals/index/index?user_id=${user_id}`
     });
   },
+
+  getUserInfo: function (e) {
+    const url = app.globalData.url;
+    console.log(22, e);
+    app.globalData.userInfo = e.detail.userInfo;
+    console.log('globalData', app.globalData.userInfo);
+    // console.log(app.globalData.userInfo)
+
+    const avatarUrl = app.globalData.userInfo.avatarUrl;
+    const nickName = app.globalData.userInfo.nickName;
+    const id = app.globalData.userId;
+    console.log('id', id);
+    console.log('avatar', avatarUrl);
+    console.log('nickName', nickName);
+
+    this.setData({
+      userInfo: e.detail.userInfo
+    });
+
+    wx.request({
+      url: `${url}users/${id}`, // static user_id for testing purposes 
+      method: "PUT",
+      data: { profile_image: avatarUrl, username: nickName },
+      success() {
+        // wx.switchTab({
+        //   url: '../meals/index/index'
+        // })
+      }
+    });
+  },
+
 })

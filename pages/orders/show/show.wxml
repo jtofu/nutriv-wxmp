@@ -73,5 +73,5 @@
 
 <view id='footer'>
   <view>{{calorie}} Calories</view>
-  <view bindtap='addToMeal' class="btn-flat picker">Confirm Meal</view>
+  <view bindtap='addToMeal' class="btn-flat picker" bindgetuserinfo="getUserInfo" data-id="{{globalData.userId}}" data-user-info="{{globalData.userInfo}}">Confirm Meal</view>
 </view>
