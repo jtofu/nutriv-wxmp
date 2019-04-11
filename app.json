@@ -21,16 +21,16 @@
     "color": "black",
     "list": [
       {
-        "pagePath": "pages/meals/index/index",
-        "text": "Home",
-        "iconPath": "images/home.png",
-        "selectedIconPath": "images/home.png"
-      },
-      {
         "pagePath": "pages/meals/new/new",
         "text": "Add Meal",
         "iconPath": "images/meal.png",
         "selectedIconPath": "images/meal.png"
+      },
+      {
+        "pagePath": "pages/meals/index/index",
+        "text": "Home",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home.png"
       },
       {
         "pagePath": "pages/users/show/show",
