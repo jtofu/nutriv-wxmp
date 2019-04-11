@@ -2,42 +2,44 @@
 
 <view class='section-main'>
   <!-- total nutrients start -->
-  <view class='text-title'>Summary</view>
-  <view class='text-nutrients'>
-    <view>Calories</view>
-    <view>{{calorie}}</view>
-  </view>
-  <view class='text-nutrients'>
-    <view>Total Fat</view>
-    <view>{{total_fat}}g</view>
-  </view>
-  <view class='text-nutrients'>
-    <view>Saturated Fat</view>
-    <view>{{sat_fat}}g</view>
-  </view>
-  <view class='text-nutrients'>
-    <view>Cholesterol</view>
-    <view>{{cholesterol}}mg</view>
-  </view>
-  <view class='text-nutrients'>
-    <view>Sodium</view>
-    <view>{{sodium}}mg</view>
-  </view>
-  <view class='text-nutrients'>
-    <view>Total Carbohydrate</view>
-    <view>{{carb}}g</view>
-  </view>
-  <view class='text-nutrients'>
-    <view>Dietary Fiber</view>
-    <view>{{fiber}}g</view>
-  </view>
-  <view class='text-nutrients'>
-    <view>Sugars</view>
-    <view>{{sugar}}g</view>
-  </view>
-  <view class='text-nutrients'>
-    <view>Protein</view>
-    <view>{{protein}}g</view>
+  <view class='section-summary'>
+    <view class='text-title'>Summary</view>
+    <view class='text-nutrients'>
+      <view>Calories</view>
+      <view>{{calorie}}kcal</view>
+    </view>
+    <view class='text-nutrients'>
+      <view>Total Fat</view>
+      <view>{{total_fat}}g</view>
+    </view>
+    <view class='text-nutrients'>
+      <view>Saturated Fat</view>
+      <view>{{sat_fat}}g</view>
+    </view>
+    <view class='text-nutrients'>
+      <view>Cholesterol</view>
+      <view>{{cholesterol}}mg</view>
+    </view>
+    <view class='text-nutrients'>
+      <view>Sodium</view>
+      <view>{{sodium}}mg</view>
+    </view>
+    <view class='text-nutrients'>
+      <view>Total Carbohydrate</view>
+      <view>{{carb}}g</view>
+    </view>
+    <view class='text-nutrients'>
+      <view>Dietary Fiber</view>
+      <view>{{fiber}}g</view>
+    </view>
+    <view class='text-nutrients'>
+      <view>Sugars</view>
+      <view>{{sugar}}g</view>
+    </view>
+    <view class='text-nutrients'>
+      <view>Protein</view>
+      <view>{{protein}}g</view>
+    </view>
   </view>
   <!-- total nutrients end -->
 
@@ -47,21 +49,18 @@
       <view class="weui-panel__hd">Dishes</view>
       <view class="weui-panel__bd">
         <block wx:for='{{dishes}}' wx:for-item='dish' wx:key='dish.id'>
-          <view url="" class="weui-media-box weui-media-box_appmsg dish" hover-class="weui-cell_active">
-              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-                  <image class="weui-media-box__thumb" src="{{icon60}}" />
-              </view>
-              <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-                  <view class="weui-media-box__title dish-description">
-                    <view class='dish-name'>{{dish.name}}</view>
-                    <view class='dish-nutrition'>{{dish.nutrients[1].amount}} Calories</view>
-                  </view>
-                  <view class="dish-quantity">
-                    <image bindtap='subtractAmount' data-id='{{index}}' class='image-icon' src='/images/minus-symbol.png'></image>
-                    <view class='dish-number'>{{dish.quantity}}</view>
-                    <image bindtap='addAmount' data-id='{{index}}' class='image-icon' src='/images/plus-button.png'></image>
-                  </view>
-              </view>
+          <view url="" class="weui-media-box weui-media-box_text dish" hover-class="weui-cell_active">
+            <view class="weui-media-box__title weui-media-box__title_in-text">
+              <view class='dish-name'>{{dish.name}}</view>
+            </view>
+            <view class="weui-media-box__desc">
+              <view class='dish-nutrition'>{{dish.nutrients[1].amount}} Calories</view>
+            </view>
+            <view class="dish-quantity">
+              <image bindtap='subtractAmount' data-id='{{index}}' class='image-icon' src='/images/minus-symbol.png'></image>
+              <view class='dish-number'>{{dish.quantity}}</view>
+              <image bindtap='addAmount' data-id='{{index}}' class='image-icon' src='/images/plus-button.png'></image>
+            </view>
           </view>
         </block>
       </view>
