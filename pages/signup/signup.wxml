@@ -1,11 +1,23 @@
 <!--pages/signup/signup.wxml-->
-<view class='banner' style="background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(128,248,174,0.6) 0%, rgba(223,244,148,0.6) 90% ), url('https://images.unsplash.com/photo-1543362906-acfc16c67564?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=401&q=80');">
-<view id='title'>Nutriv</view>
-<view id='subtitle'>Make healthy choices simple</view>
-<view id='description'>Join Nutriv and find meals nearby that are curated just for you. Pick your own nutritional goals and easily keep track of the meals you have enjoyed. </view>
+<view class='banner' style="background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(128,248,174,0.4) 0%, rgba(223,244,148,0.4) 90% ), url('https://greenkitchenstories.com/wp-content/uploads/2013/10/Smoothie_green_01.jpg');">
 
-<button class="button" open-type="getUserInfo" bindgetuserinfo="getUserInfo" data-id="{{globalData.userId}}" data-user-info="{{globalData.userInfo}}">Join Nutriv</button>
-<button>No Thanks</button>
 
+
+
+<view class="logo">
+  <view id='title'>Nutriv</view>
+  <!-- <image class="image-logo" src="/images/nutri.png"></image> -->
+</view>
+
+
+  <!-- <image class="profile-radius" src="/images/profile_nutriv.png"></image> -->
+
+<view class="card">
+  <text id='subtitle'>Make healthy choices simple!</text>
+  <text id='description'>Find meals nearby that are curated just for you! 
+  Pick your own nutritional goals and easily keep track of the meals you have enjoyed. </text>
+  <button class="button" open-type="getUserInfo" bindgetuserinfo="getUserInfo" data-id="{{globalData.userId}}" data-user-info="{{globalData.userInfo}}">Join Nutriv</button>
+
+</view>
 </view>
 

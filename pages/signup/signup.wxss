@@ -2,29 +2,63 @@
 #title {
   font-size: 24px;
   text-align: center;
-  padding-top: 56px;
-  margin-bottom: 56px;
   font-weight: bold;
+  color: white;
 }
 
 #subtitle {
   font-weight: bold;
   text-align: center;
   padding: 8px;
+  margin-top: 20px;
+  font-size: 
 }
 
 #description {
   text-align: center;
   padding: 0 24px;
-  margin-bottom: 64px;
+  font-size: 14px;
+  margin-top: 10px;
+
 }
 
 button {
   margin-bottom: 8px;
+  margin-top: 60px;
+  box-shadow: 1px 2px 4px 1px rgba(0, 0, 0,.10);
+  width: 50%;
 }
 
 .banner {
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  height: 125vh;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+  margin-bottom: 40px;
+}
+
+.image-logo {
+  width: 50px;
+  height: 60px;
+  margin-top: 10px;
+}
+
+.card {
+  box-shadow: 1px 2px 4px 1px rgba(0, 0, 0,.08);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 300px;
+  background-color:RGBA(247, 249, 252, 0.50);
+  position: absolute;
+  bottom: 0px;
+  display: flex;
+  align-items: center;
 }

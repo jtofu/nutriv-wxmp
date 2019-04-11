@@ -184,16 +184,13 @@ image {
   padding-right: 30px;
 }
 
-.goal1 {
-  height: 300px;
+.goal1,
+.goal2 {
+  height: 320px;
   width: 375px;
   margin-top: 20px;
 }
 
-.goal2 {
-  height: 300px;
-  width: 375px;
-}
 
 .bc_2 {
   height:320px;

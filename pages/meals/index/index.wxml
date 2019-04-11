@@ -75,7 +75,6 @@
 </scroll-view>
 
 
-
 <view class="border">
     <text class="border-text">Dishes</text>
 </view>
