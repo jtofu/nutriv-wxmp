@@ -1,4 +1,3 @@
-// pages/goals/new/new.js
 const app = getApp();
 
 Page({
@@ -82,7 +81,7 @@ Page({
     const id = app.globalData.userId;
     wx.request({
       url: `${url}goals`,
-      method: "POST",
+      method: 'POST',
       data: goal,
       success(res) {
         // const id = res.data.id
