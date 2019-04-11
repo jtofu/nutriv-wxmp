@@ -3,7 +3,7 @@
 const wxCharts = require('../../../utils/wxcharts.js');
 const app = getApp();
 const order = ['pic1', 'pic2', 'pic3', 'pic4']
-const pieChart = null;
+let pieChart = null;
 
 Page({
   data: {
