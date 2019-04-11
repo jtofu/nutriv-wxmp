@@ -1,8 +1,10 @@
 // pages/meals/index/index.js
-var wxCharts = require('../../../utils/wxcharts.js');
-var app = getApp();
-var order = ['pic1', 'pic2', 'pic3', 'pic4']
-var pieChart = null;
+
+const wxCharts = require('../../../utils/wxcharts.js');
+const app = getApp();
+const order = ['pic1', 'pic2', 'pic3', 'pic4']
+const pieChart = null;
+
 Page({
   data: {
     toView: 'pic1',

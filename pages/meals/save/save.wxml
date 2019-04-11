@@ -1,0 +1,9 @@
+<view class='h1'>{{name}}</view>
+<view wx:for="{{nutrients}}" wx:for-item="nutrient" wx:key="{{nutrient.id}}">
+  {{nutrient.name}}: {{nutrient.amount}} {{nutrient.unit}}
+</view>
+
+<view>Total Calories: {{nutrients[1].amount}} kCal</view>
+<view bindtap="addToMeal" data-id="{{id}}">
+  <button type="primary">SAVE!</button>
+</view>

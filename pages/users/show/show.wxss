@@ -1,1 +1,27 @@
 /* pages/users/show/show.wxss */
+.background {
+  width: 100vw;
+  height:100vh;
+}
+.title {
+  font-weight: bold;  
+}
+
+.container {
+  display: flex;
+  height:50vh;
+  width: 100vw;
+  padding: 0px;
+  position: relative;
+  text-align: center;
+}
+.profile {
+  background-color: RGBA(101, 102, 201, 0.60);
+  box-shadow: 1px 2px 4px 1px rgba(0, 0, 0,.10);
+  border-radius: 50%;
+  width: 91px;
+  height: 91px;
+  position: absolute;
+  top: 85px;
+  right: 146px;
+}

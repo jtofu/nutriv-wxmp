@@ -1,19 +1,31 @@
 // pages/users/show/show.js
-Page({
 
-  /**
-   * Page initial data
-   */
+const app = getApp();
+
+Page({
   data: {
 
   },
-
-  /**
-   * Lifecycle function--Called when page load
-   */
-  onLoad: function (options) {
-
-  },
+  
+  onShow: function (options) {    
+    const page = this;
+    const url = app.globalData.url;    
+    const id = app.globalData.userId;
+    console.log(id)
+    const userInfo = app.globalData.userInfo;
+    const avatarUrl = app.globalData.userInfo.avatarUrl;
+    console.log(avatarUrl)
+    const nickName = userInfo.nickName;    
+    wx.request({      
+      url: `${url}users/${id}`,      
+      method: "PUT",
+      data: { profile_image: avatarUrl, username: nickName },
+      success(res) {       
+        const user = res.data;       
+        page.setData(user);
+      }
+    })
+  }, 
 
   /**
    * Lifecycle function--Called when page is initially rendered
@@ -25,9 +37,28 @@ Page({
   /**
    * Lifecycle function--Called when page show
    */
-  onShow: function () {
-
+  onLoad: function () {
+    this.setData({
+      userInfo: app.globalData.userInfo
+    })   
+    const page = this;
+    const url = app.globalData.url;    
+    const id = app.globalData.userId;
+    const userInfo = app.globalData.userInfo;    
+    const avatarUrl = app.globalData.userInfo.avatarUrl;    
+    const nickName = userInfo.nickName;    
+    wx.request({     
+      url: `${url}users/${id}`,       
+      method: "PUT",
+      data: { profile_image: avatarUrl, username: nickName },
+      success(res) {       
+        const user = res.data;         
+        page.setData(user);
+      }
+    })
   },
+
+  
 
   /**
    * Lifecycle function--Called when page hide
