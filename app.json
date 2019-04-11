@@ -6,7 +6,8 @@
     "pages/meals/new/new",
     "pages/meals/add/add",
     "pages/meals/save/save",
-    "pages/users/show/show"
+    "pages/users/show/show",
+    "pages/goals/new/new"
   ],
   "window": {
     "backgroundTextStyle": "light",
