@@ -1,2 +1,12 @@
-<import src="../../shared/form.wxml"/>
-<template is="form"/>
+<view class='box'>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <button type="default">{{array[index]}}</button>
+    </picker>
+    <view><input class="user-input input-height" name= "amount" value="{{name}}" placeholder="amount.."></input></view>
+  <view class='button-inline'>       
+    <button class='btn-half' style="margin-bottom:20px" type="warn" bindtap="cancelSubmit">Cancel</button>     
+    <button style="margin-bottom:20px" type="primary" formType="submit" loading="{{loading}}" class='btn-half'>Submit</button>
+  </view> 
+  </form>
+</view>

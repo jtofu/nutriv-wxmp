@@ -6,7 +6,18 @@ Page({
    * Page initial data
    */
   data: {
-
+    array: [
+      "Calories",
+      "Protein",
+      "Sugars",
+      "Carbohydrate",
+      "Dietary Fiber",
+      "Total Fat",
+      "Saturated Fat",
+      "Cholesterol",
+      "Sodium"
+    ],
+    index: 0,
   },
 
   /**
@@ -66,7 +77,8 @@ Page({
   },
 
   formSubmit: function (event) {
-    let nutrient_id = parseInt(event.detail.value.nutrient);
+    const page = this;
+    let nutrient = page.data.array[page.data.index];
     let amount = parseInt(event.detail.value.amount);
     // let description = event.detail.value.description
     // let price_per_hour = event.detail.value.price_per_hour
@@ -75,7 +87,7 @@ Page({
     // let image = this.data.photoUrl
     // let category = event.detail.value.category
 
-    let goal = { nutrient_id: nutrient_id, user_id: user_id, amount: amount }
+    let goal = { nutrient: nutrient, user_id: user_id, amount: amount }
 
     const url = app.globalData.url;
     const id = app.globalData.userId;
@@ -91,4 +103,11 @@ Page({
       }
     });
   },
+
+  bindPickerChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      index: e.detail.value
+    })
+  }
 })
