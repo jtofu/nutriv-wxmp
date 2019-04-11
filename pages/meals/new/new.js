@@ -14,7 +14,30 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    const url = app.globalData.url;
+    const userId = app.globalData.userId;
+    const page = this;
+    console.log(11,userId);
+    wx.request({
+      url: `${url}dishes`,
+      method: 'GET',
+      success(res) {
+        console.log(res.data);
+        page.setData(res.data);
+      }
+    });
 
+    wx.request({
+      url: `${url}goals?user_id=${userId}`,
+      method: 'GET',
+      success(res) {
+        console.log(res.data);
+        const goals = res.data.goals;
+        page.setData({
+          goals: goals
+        });
+      }
+    });
   },
 
   /**

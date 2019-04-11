@@ -34,3 +34,24 @@
     </view>
   </view>
 </view>
+
+<!-- H1 TITLE -->
+<view class="border">
+  <text class="border-text">Recommended Meals</text>
+</view>
+
+<!-- Dishes -->
+<view wx:for="{{dishes}}" wx:for-item="dish" wx:key="{{dish.id}}">
+
+  <view class='card-dish'>
+    <!-- DISH NAME -->
+    {{dish.name}} 
+    <!-- - {{dish.nutrients[1]["name"]}}: {{dish.nutrients[1]["amount"]}} {{dish.nutrients[1]["unit"]}} -->
+    <!-- PLUS BUTTON -->
+    <view class='card-dish-plus-btn'>
+      <image src="/images/plus-button.png" bindtap="mealMoreInfo" data-id="{{dish.id}}" class='image-icon'></image>
+    </view>
+    
+  </view>
+
+</view>
