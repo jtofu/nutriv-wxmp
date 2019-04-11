@@ -1,12 +1,11 @@
 /* pages/meals/index/index.wxss */
 
 .banner {
-  height: 160px;
+  height: 120px;
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
-  margin-bottom: 20px;
 }
 
 .page__bd {
@@ -18,8 +17,10 @@
 }
 
 .border {
-  border-bottom: 1px solid black;
+  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(128,248,174,0.8) 10%, rgba(223,244,148,0.8) 95% );
   margin-bottom: 10px;
+  width: 100%;
+  font-weight: bold;
 }
 
 .card-dish {
@@ -27,13 +28,13 @@
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0,.06);
   overflow: hidden;
   width: 100%;
-  height: 150px;
+  height: 160px;
   margin-bottom: 10px;
 }
 
 image {
   width: 40%;
-  height: 150px;
+  height: 160px;
 }
 
 .border-text {
@@ -59,7 +60,8 @@ image {
 
 .calories-text,
 .text-count,
-.proteins-text {
+.proteins-text,
+.fat-text {
   font-size: 14px;
 }
 
@@ -71,7 +73,7 @@ image {
 }
 
 .banner-title {
-  margin-top: 5px;
+  margin-top: 0px;
   font-size: 30px;
   font-weight: bold;
 }
@@ -80,9 +82,14 @@ image {
   width: 100%;
 }
 
-.banner-daily {
+.bc_1 {
+  height: 320px;
   display: flex;
   justify-content: space-around;
+  background-color: RGBA(247, 249, 252, 0.60);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0,.06);
+  margin-right: 15px;
+
 }
 
 .icon {
@@ -90,9 +97,21 @@ image {
   height: 40px;
 }
 
+.icon-fat{
+  width: 40px;
+  height: 30px;
+  margin-right: 20px;
+}
+
 .calorie-icon-title {
   display: flex;
   align-items: center;
+}
+
+.fat-icon-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .icon.nutri {
@@ -104,11 +123,18 @@ image {
   width: 30px;
   height: 25px;
   margin-bottom: 10px;
+  margin-right: 30px;
 }
 
 .icon.steak {
-  margin-right: 5px;
+  margin-right: 20px;
 }
+
+.icon.fat {
+  width: 30px;
+  height: 30px;
+}
+
 
 .daily-text {
   font-size: 14px;
@@ -123,6 +149,13 @@ image {
 .daily-proteins {
   display: flex;
   align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.daily-fat {
+  display: flex;
+  align-items: center;
 }
 
 .protein-icon {
@@ -130,13 +163,124 @@ image {
   height: 30px;
 }
 
+.fat-icon {
+  width: 20px;
+  height: 20px;
+}
+
 .proteins {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  padding-right:5px;
+
 }
 
-/* .goal {
-  height: 100px;
-  background-color: RGBA(44, 43, 43, 1.00);
-} */
+.fat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.goal1 {
+  height: 300px;
+  width: 375px;
+  margin-top: 20px;
+}
+
+.goal2 {
+  height: 300px;
+  width: 375px;
+}
+
+.bc_2 {
+  height:320px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-between;
+  background-color: RGBA(247, 249, 252, 0.60);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0,.06);
+  padding:0rpx 0;
+  box-sizing:border-box;
+}
+
+canvas {
+  width:100%;
+  height:auto;
+  display:block;
+  position:relative;
+}
+
+.scroll-row {
+  display: flex;
+  flex-direction: row;
+  width: 750px;
+  position: relative;
+}
+
+.scroll-view {
+  margin-bottom:5px;
+  height:340px;
+}
+
+.fat-icon {
+  margin-right: 5px;
+}
+
+.daily {
+  margin-left: 15px;
+  margin-top: 20px;
+  width: 50%;
+  background-color: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0,.06);
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+}
+
+.goals-block {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-right: 15px;
+  justify-content: space-between;
+}
+
+.goals {
+  text-align: center;
+  background-color: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0,.06);
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.protein-goal {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.block1 {
+  display: flex;
+}
+
+.progress {
+  margin-left: 15px;
+  margin-top: 10px;
+  width: 87%;
+  height: 45px;
+  background-color: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0,.06);
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-right: 15px;
+
+}
