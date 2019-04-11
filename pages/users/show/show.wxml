@@ -26,7 +26,7 @@
 
     <!-- MINUS BUTTON -->
     <view class='card-goal-minus-btn'>
-      <image src="/images/minus-symbol.png" bindtap="destroyGoal" data-id="{{goal.id}}" class='card-goal-minus-btn'></image>
+      <image src="/images/minus-symbol.png" bindtap="destroyGoal" data-goal_id="{{goal.id}}" data-id="{{id}}" class='card-goal-minus-btn'></image>
     </view>
     
   </view>

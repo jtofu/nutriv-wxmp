@@ -8,14 +8,14 @@ Page({
   },
   
   onShow: function (options) {    
-    const page = this;
-    const url = app.globalData.url;    
-    const id = app.globalData.userId;
-    console.log(id)
-    const userInfo = app.globalData.userInfo;
-    const avatarUrl = app.globalData.userInfo.avatarUrl;
-    console.log(avatarUrl)
-    const nickName = userInfo.nickName;    
+    // const page = this;
+    // const url = app.globalData.url;    
+    // const id = app.globalData.userId;
+    // console.log(id)
+    // const userInfo = app.globalData.userInfo;
+    // const avatarUrl = app.globalData.userInfo.avatarUrl;
+    // console.log(avatarUrl)
+    // const nickName = userInfo.nickName;    
     // wx.request({      
     //   url: `${url}users/${id}`,      
     //   method: "PUT",
@@ -97,7 +97,21 @@ Page({
   },
 
   destroyGoal(e) {
-    console.log(e)
+    console.log(e);
+    const goal_id = e.currentTarget.dataset.goal_id;
+    const url = app.globalData.url;
+    const id = e.currentTarget.dataset.id;
+    console.log(id);
+
+    wx.request({
+      url: `${url}goals/${goal_id}`,
+      method: "delete",
+      success() {
+        wx.reLaunch({
+          url: `/pages/users/show/show?id=${id}`,
+        })
+      }
+    })
   },
 
   addGoal(e) {
