@@ -53,8 +53,8 @@
               </view>
               <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
                   <view class="weui-media-box__title dish-description">
-                  <view class='dish-name'>{{dish.name}}</view>
-                  <view class='dish-nutrition'>{{dish.nutrients[1].amount}} Calories</view>
+                    <view class='dish-name'>{{dish.name}}</view>
+                    <view class='dish-nutrition'>{{dish.nutrients[1].amount}} Calories</view>
                   </view>
                   <view class="dish-quantity">
                     <image bindtap='subtractAmount' data-id='{{index}}' class='image-icon' src='/images/minus-symbol.png'></image>
@@ -74,5 +74,5 @@
 
 <view id='footer'>
   <view>{{calorie}} Calories</view>
-  <navigator bindtap='addToMeal' url='../../meals/index/index' class="btn-flat picker">Confirm Meal</navigator>
+  <view bindtap='addToMeal' class="btn-flat picker">Confirm Meal</view>
 </view>
