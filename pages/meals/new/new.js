@@ -100,7 +100,10 @@ Page({
     wx.scanCode({
       onlyFromCamera: true,
       success: (res) => {
-        console.log(res)
+        console.log(res);
+        wx.navigateTo({
+          url: "/"+res.path,
+        })
       }
     })
   }
