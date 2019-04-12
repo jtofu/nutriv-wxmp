@@ -1,8 +1,8 @@
 {
   "pages": [
     "pages/signup/signup",
-    "pages/orders/show/show",
     "pages/meals/index/index",
+    "pages/orders/show/show",
     "pages/meals/new/new",
     "pages/meals/add/add",
     "pages/meals/save/save",

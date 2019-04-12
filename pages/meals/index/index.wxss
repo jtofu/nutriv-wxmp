@@ -233,6 +233,19 @@ image {
   width: 375px;
   margin-top: 20px;
 }
+
+.bc_3 {
+  height:320px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-between;
+  background-color: RGBA(247, 249, 252, 0.60);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0,.06);
+  padding:0rpx 0;
+  box-sizing:border-box;
+}
+
 .bc_2 {
   height:320px;
   display:flex;
@@ -313,10 +326,44 @@ canvas {
   padding-top: 10px;
   margin-right: 15px;
 }
+
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.container {
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-between;
+  padding: 0;
+  box-sizing:border-box;
+}
+
 .navbar-image {
   width: 26px;
   height: 26px;
 }
+
 #navbar {
   position: fixed;
   bottom: 0px;

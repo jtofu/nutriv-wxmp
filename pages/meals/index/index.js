@@ -8,7 +8,35 @@ let pieChart = null;
 Page({
   data: {
     toView: 'pic1',
-    scrollTop: 100
+    scrollTop: 100, 
+    scaleTextStyle: {
+      show: true,
+      size: 12,
+      color: '#666'
+    },
+    indicatorTextStyle: {
+      show: true,
+      size: 16,
+      text: 'Calories'
+    },
+    indicatorValueStyle: {
+      show: true,
+      size: 55,
+      color: '#4575e8'
+    },
+    indicatorCircleStyle: {
+      show: true,
+      boderColor: [
+        {
+          progress: 0,
+          value: "#4575e8"
+        },
+        {
+          progress: 1,
+          value: "#fff"
+        }
+      ]
+    }
   },
   touchHandler: function (e) {
     console.log(pieChart.getCurrentDataIndex(e));
