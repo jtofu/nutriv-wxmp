@@ -1,0 +1,121 @@
+.background {
+  width: 100vw;
+  height:100vh;
+}
+.title {
+  font-weight: bold;  
+}
+
+.box {
+  padding: 5px 20px; 
+}
+
+.banner {
+  height: 120px;
+  display: flex;
+  /* flex-direction: column; */
+  /* text-align: center; */
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+}
+
+.banner-title {
+  margin-top: 0px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* .banner-text {
+  width: 100%;
+} */
+
+.profile {
+  background-color: RGBA(101, 102, 201, 0.60);
+  box-shadow: 1px 2px 4px 1px rgba(0, 0, 0,.10);
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  /* position: absolute; */
+  /* top: 85px; */
+  /* right: 146px; */
+}
+
+.icon.nutri {
+  width: 60px;
+  height: 60px;
+}
+
+.avatar {
+  margin-right: 20px;
+}
+
+
+/* H1 */
+.border {
+  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(128,248,174,0.8) 10%, rgba(223,244,148,0.8) 95% );
+  margin-bottom: 10px;
+  width: 100%;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.border-text {
+  margin-left: 45px;
+}
+
+.navbar-image {
+  width: 26px;
+  height: 26px;
+}
+
+#navbar {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 0px;
+  font-size: 10px;
+  border-top: 1px solid lightgray;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  background-color: rgb(254, 254, 254);
+}
+
+.navbar-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60px;
+}
+
+.active {
+  color: steelblue;
+}
+
+.section-main {
+  /* height: calc(100vh - 63px); */
+  margin-bottom: 63px;
+  padding-bottom: 10px;
+}
+
+.card-goal {
+  margin-left: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 87%;
+  /* height: 45px; */
+  background-color: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0,.06);
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-right: 15px;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

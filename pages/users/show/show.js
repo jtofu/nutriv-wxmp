@@ -144,28 +144,38 @@ Page({
     // })
   },
 
-  formSubmit: function (event) {
-    const page = this;   
-    let first_name = event.detail.value.firstName;    
-    let last_name = event.detail.value.lastName;   
-    let user_id = app.globalData.userId
-    let userDetail = { first_name: first_name, last_name: last_name }
+  // formSubmit: function (event) {
+  //   const page = this;   
+  //   let first_name = event.detail.value.firstName;    
+  //   let last_name = event.detail.value.lastName;   
+  //   let user_id = app.globalData.userId
+  //   let userDetail = { first_name: first_name, last_name: last_name }
 
-    console.log(first_name)
-    console.log(last_name)
+  //   console.log(first_name)
+  //   console.log(last_name)
 
-    const url = app.globalData.url;
-    const id = app.globalData.userId;
+  //   const url = app.globalData.url;
+  //   const id = app.globalData.userId;
 
-    wx.request({     
-      url: `${url}users/${id}`,
-      method: 'PUT',
-      data: userDetail,
-      success(res) {        
-        wx.reLaunch({
-          url: `/pages/users/show/show?id=${id}`
-        });
-      }
-    });
+  //   wx.request({     
+  //     url: `${url}users/${id}`,
+  //     method: 'PUT',
+  //     data: userDetail,
+  //     success(res) {        
+  //       wx.reLaunch({
+  //         url: `/pages/users/show/show?id=${id}`
+  //       });
+  //     }
+  //   });
+  // },
+
+  editProfile(e) {
+    const page = this;
+    console.log(e.currentTarget.dataset.id);
+    const id = e.currentTarget.dataset.id;
+
+    wx.navigateTo({
+      url: `/pages/users/edit/edit?id=${id}`,
+    })
   }
 })
