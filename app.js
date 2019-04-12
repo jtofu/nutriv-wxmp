@@ -14,6 +14,7 @@ App({
             code: res.code
           },
           success: (res) => {
+            console.log('receiving reply')
             console.log('res', res)
             this.globalData.userId = res.data.userId
           }
@@ -23,9 +24,9 @@ App({
   },
   globalData: {
     //  url: 'http://localhost:3000/api/v1/'
-    // url: 'http://localhost:3001/api/v1/'
+    url: 'http://localhost:3001/api/v1/'
     // PRODUCTION BELOW
-    url: 'https://nutriv.wogengapp.cn/api/v1/'
+    // url: 'https://nutriv.wogengapp.cn/api/v1/'
   }
 })
 
