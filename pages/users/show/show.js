@@ -39,24 +39,28 @@ Page({
    */
   onLoad: function () {
     this.setData({
-      userInfo: app.globalData.userInfo
+      userInfo: app.globalData.userInfo      
     })   
+    console.log(33, userInfo);
     const page = this;
     const url = app.globalData.url;    
     const id = app.globalData.userId;
     const userInfo = app.globalData.userInfo;    
     const avatarUrl = app.globalData.userInfo.avatarUrl;    
     const nickName = userInfo.nickName;  
+    console.log(44, userInfo);
 
     wx.request({     
-      url: `${url}goals?user_id=${id}`,       
+      url: `${url}users/${id}`,       
       method: "GET",
-      success(res) {       
+      success(res) {  
+        console.log(res)     
         const user = res.data;   
         console.log('onload user', user);      
         page.setData(user);
       }
     })
+    
   },
 
   
@@ -138,5 +142,30 @@ Page({
 
     //   }
     // })
+  },
+
+  formSubmit: function (event) {
+    const page = this;   
+    let first_name = event.detail.value.firstName;    
+    let last_name = event.detail.value.lastName;   
+    let user_id = app.globalData.userId
+    let userDetail = { first_name: first_name, last_name: last_name }
+
+    console.log(first_name)
+    console.log(last_name)
+
+    const url = app.globalData.url;
+    const id = app.globalData.userId;
+
+    wx.request({     
+      url: `${url}users/${id}`,
+      method: 'PUT',
+      data: userDetail,
+      success(res) {        
+        wx.reLaunch({
+          url: `/pages/users/show/show?id=${id}`
+        });
+      }
+    });
   }
 })

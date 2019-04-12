@@ -8,8 +8,17 @@
   <view class="banner-text">
     <text class="banner-title">{{username}}</text>
   </view>
-
   
+</view>
+
+<!-- FirstName LastName -->
+
+<view class='box'>
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view><input class="card-goal" name= "firstName" value="{{first_name}}" placeholder="Enter Your First Name"></input></view>
+      <view><input class="card-goal" name= "lastName" value="{{last_name}}" placeholder="Enter Your Last Name"></input></view>
+      <button style="margin-bottom:10px" type="primary" formType="submit" loading="{{loading}}" class='btn-half'>Submit</button>
+    </form>
 </view>
 
 <!-- H1 TITLE -->

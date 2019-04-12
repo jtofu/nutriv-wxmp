@@ -7,6 +7,10 @@
   font-weight: bold;  
 }
 
+.box {
+  padding: 5px 20px; 
+}
+
 .banner {
   height: 120px;
   display: flex;
@@ -66,6 +70,7 @@
 .card-goal {
   margin-left: 15px;
   margin-top: 10px;
+  margin-bottom: 10px;
   width: 87%;
   /* height: 45px; */
   background-color: white;
