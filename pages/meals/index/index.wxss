@@ -358,12 +358,13 @@ canvas {
   padding: 0;
   box-sizing:border-box;
 }
-=======
-}
+
+
 .navbar-image {
   width: 26px;
   height: 26px;
 }
+
 #navbar {
   position: fixed;
   bottom: 0px;
