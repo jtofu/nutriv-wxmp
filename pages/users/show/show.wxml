@@ -49,15 +49,15 @@
 
 <!-- navbar -->
 <view id='navbar'>
-  <navigator class='navbar-selection' url='../../meals/new/new'>
+  <navigator class='navbar-selection' url='../../meals/new/new' open-type='reLaunch'>
     <image class='navbar-image' src='../../../images/meal.png'></image>
     <view>Add Meal</view>
   </navigator>
-  <navigator class='navbar-selection' url='../../meals/index/index'>
+  <navigator class='navbar-selection' url='../../meals/index/index' open-type='reLaunch'>
     <image class='navbar-image' src='../../../images/home.png'></image>
     <view>Home</view>
   </navigator>
-  <navigator class='navbar-selection active'>
+  <navigator class='navbar-selection active' open-type='reLaunch'>
     <image class='navbar-image' src='../../../images/profile.png'></image>
     <view>Profile</view>
   </navigator>
