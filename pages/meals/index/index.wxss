@@ -403,5 +403,6 @@ canvas {
 }
 
 .section-main {
-  height: calc(100vh - 63px);
+  /* height: calc(100vh - 63px); */
+  margin-bottom: 63px;
 }
