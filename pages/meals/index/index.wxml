@@ -40,7 +40,7 @@
               </view>
 
               <view class="daily-nutrient-stat">
-                <image class="icon-fat" mode="aspectFit" src="/images/avocado.png"></image>
+                <image class="icon-fat" mode="aspectFit" src="/images/Avocado.png"></image>
                 <text class="daily-text">{{todayFat}}g fat</text>
               </view>
             </view>
@@ -59,7 +59,7 @@
               </view>
 
               <view class="daily-nutrient-stat">
-                <image class="icon-fat" mode="aspectFit" src="/images/avocado.png"></image>
+                <image class="icon-fat" mode="aspectFit" src="/images/Avocado.png"></image>
                 <text class="daily-text">{{fat}}g fat</text>
               </view>
             </view>
@@ -101,7 +101,7 @@
           <view class="nutrient">
             <view class="nutrient-icon-title">
               <view class='nutrient-icon'>
-                <image class="fat-icon" mode="aspectFit" src="/images/avocado.png"></image>
+                <image class="fat-icon" mode="aspectFit" src="/images/Avocado.png"></image>
               </view>
               <view class="nutrient-text">Fat</view>
             </view>
