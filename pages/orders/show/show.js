@@ -16,8 +16,8 @@ Page({
     const page = this;
     const url = app.globalData.url;
     wx.request({
-      // url: `${url}orders/${options.id}`,
-      url: `${url}orders/1`,
+      url: `${url}orders/${options.id}`,
+      // url: `${url}orders/1`,
       method: 'GET',
       success(res) {
         const dishes = res.data.dishes;
