@@ -359,7 +359,6 @@ canvas {
   box-sizing:border-box;
 }
 
-
 .navbar-image {
   width: 26px;
   height: 26px;

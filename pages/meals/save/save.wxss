@@ -33,7 +33,7 @@
 }
 
 .section-main {
-  height: calc(100vh - 66px);
+  margin-bottom: 60px;
 }
 
 .section-summary {

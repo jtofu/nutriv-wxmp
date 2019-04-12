@@ -14,7 +14,7 @@ const defaultObjectProps = {
     value: {
       show: false,
       size: 12,
-      color: '#6366',
+      color: 'black',
       text: ''
     }
   },
