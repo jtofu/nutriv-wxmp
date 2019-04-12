@@ -1,20 +1,6 @@
-<!--pages/meals/index/index.wxml-->
+<!-- BANNER -->
 <view class="banner" style="background-position:center; background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(128,248,174,0.6) 0%, rgba(223,244,148,0.6) 90% ), url('https://images.unsplash.com/photo-1543362906-acfc16c67564?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=401&q=80');">
 <text class="banner-title">Nutriv</text>
-<!-- 
-  <view class="page__bd">
-    <view class="weui-search-bar">
-        <view class="weui-search-bar__form">
-            <view class="weui-search-bar__box">
-              <icon bindtap="tagButtonInput" data-tag="{{inputVal}}" class="weui-icon-search_in-box" type="search" size="14"></icon>
-              <input name="tag" type="text" id="search" class="weui-search-bar__input" placeholder="meal..." value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping"/>
-              <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
-                <icon type="clear" size="14"></icon>
-              </view>
-            </view>
-        </view>
-    </view>
-  </view> -->
   <view class="banner-text">
     <view class="icons">
       <image class="icon nutri" mode="aspectFit" src="/images/nutri.png"></image>
@@ -23,49 +9,78 @@
 </view>
 
 
-
+<!-- HORIZONTAL SCROLLING -->
 <scroll-view class="scroll-view" scroll-x>
   <view class='scroll-row'>
-      <view id="pic1" class="scroll-view-item_H bc_1">
-        <view class="goal1">
+    <view id="pic1" class="scroll-view-item_H bc_1">
 
-          <view class="border">
-            <text class="border-text">Daily Info {{}}</text>
+      <!-- TOP BLOCK WITH DATE AVATAR AND DAILY STAT -->
+      <view class="goal1">
+        <!-- SHOW DATE & AVATAR -->
+        <view class="border-avatar">
+          <view class="border-text">{{currentDate}}</view>
+          <view class='avatar' style="background-image: url('{{avatarUrl}}');"></view>         
+        </view>
+
+          <!-- DAILY NUTRIENT STAT -->
+        <view class="block1">
+
+          <!-- DAILY NUTRIENT INTAKE -->
+          <view class="daily">
+            <view class='today-intake'>Today's Intake</view>
+            <view class="daily-nutrient-stat">
+              <image class="icon fire" mode="aspectFit" src="/images/fire.png"></image>
+              <text class="daily-text">{{todayCal}} kcal</text>
+            </view>
+
+            <view class="daily-nutrient-stat">
+              <image class="icon steak" mode="aspectFit" src="/images/steak.png"></image>
+              <text class="daily-text">{{todayProtein}} g protein</text>
+            </view>
+
+            <view class="daily-nutrient-stat">
+              <image class="icon-fat" mode="aspectFit" src="/images/avocado.png"></image>
+              <text class="daily-text">{{todayFat}}g fat</text>
+            </view>
           </view>
 
-          <view class="block1">
-
-            <view class="daily">
-
-              <view class="daily-calories">
-                <image class="icon fire" mode="aspectFit" src="/images/fire.png"></image>
-                <text class="daily-text">200 calories</text>
-              </view>
-
-              <view class="daily-proteins">
-                <image class="icon steak" mode="aspectFit" src="/images/steak.png"></image>
-                <text class="daily-text">200g proteins</text>
-              </view>
-
-              <view class="daily-fat">
-                <image class="icon-fat" mode="aspectFit" src="/images/avocado.png"></image>
-                <text class="daily-text">200g fat</text>
-              </view>
+          <!-- STATIC DAILY GOAL -->
+          <view class="daily">
+            <view class='today-intake'>Daily Goal</view>
+            <view class="daily-nutrient-stat">
+              <image class="icon fire" mode="aspectFit" src="/images/fire.png"></image>
+              <text class="daily-text">{{calories}} kcal</text>
             </view>
-            <view class="goals-block">
-              <text class="daily-text goals">1000 calories</text>
-              <text class="daily-text goals protein-goal">200g proteins</text>
-              <text class="daily-text goals">150g fat</text>
+
+            <view class="daily-nutrient-stat">
+              <image class="icon steak" mode="aspectFit" src="/images/steak.png"></image>
+              <text class="daily-text">{{protein}} g protein</text>
             </view>
+
+            <view class="daily-nutrient-stat">
+              <image class="icon-fat" mode="aspectFit" src="/images/avocado.png"></image>
+              <text class="daily-text">{{fat}}g fat</text>
+            </view>
+          </view>
+
+
+          <!-- <view class="goals-block">
+            <text>Daily Goal</text>
+            <text class="daily-text goals">{{calories}} kcal</text>
+            <text class="daily-text goals protein-goal">{{protein}}g proteins</text>
+            <text class="daily-text goals">{{fat}}g fat</text>
+          </view> -->
             
-          </view>
+        </view>
 
-          <view class="progress">
-            <text style="font-size: 12px;">Calories Progress</text>
-            <progress percent="110" stroke-width="6" color="red" show-info />
-          </view>
+        <view class="progress">
+          <text style="font-size: 12px;">Calories Progress</text>
+          <progress percent="30" stroke-width="6" color="green" show-info />
         </view>
       </view>
+    </view>
+
+    <!-- SECOND CAROUSEL ITEM -->
       <view id="pic2" class="scroll-view-item_H bc_2">
         <view class="goal2">
           <canvas canvas-id="pieCanvas" class="canvas" style="height:300px"  bindtouchstart="touchHandler"></canvas>
@@ -75,18 +90,20 @@
 </scroll-view>
 
 
+<!-- TODAY's MEALS -->
 <view class="border">
-    <text class="border-text">My Meals</text>
+    <text class="border-text">Today's Meals</text>
 </view>
 
+<!-- style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png); -->
 
 
 <view class="card-dishes">
   <block wx:for='{{meals}}' wx:for-item='meal' wx:key='meal.id'>
-    <view class="card-dish">
-      <image mode="aspectFill" src="https://images.unsplash.com/photo-1547516453-01c9910aafbf?ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80"></image>
+    <view class="card-dish" wx:if="{{meal.date === currentDate}}" style="background-image: linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.7)), url('/images/breakfast.png')">
+      
       <view class="card-text">
-        <text class="dish-title">{{meal.dish_short}}</text>
+        <text class="dish-title">{{meal.dish}}</text>
 
         <!-- <view class="fat"> -->
         <view class="nutrient">
@@ -121,7 +138,14 @@
           </view>
           <view class="text-count">{{meal.nutrients[8].amount}}{{meal.nutrients[8].unit}}</view>
         </view>
+      <!-- END OF CARD-TEXT -->
       </view>
+    
+    <!-- TAGGING BREAKFAST LUNCH DINNER -->
+    <view class='meal-type'>
+      {{meal.time}}
+    </view>
+
     </view>
   </block>
   <view class="weui-panel__ft">
