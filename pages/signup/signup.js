@@ -84,15 +84,15 @@ Page({
     });
 
     wx.request({
-      url: `${url}users/${id}`, // static user_id for testing purposes 
+      url: `${url}users/${id}`, // static user_id for testing purposes
       method: "PUT",
       data: { profile_image: avatarUrl, username: nickName },
       success() {
-        wx.switchTab({
+        wx.navigateTo({
           url: '../meals/index/index'
         })
       }
     });
   },
-  
+
 })

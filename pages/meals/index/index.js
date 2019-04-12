@@ -41,7 +41,114 @@ Page({
   touchHandler: function (e) {
     console.log(pieChart.getCurrentDataIndex(e));
   },
+
+  formatDate(currentDate) {
+    var monthNames = [
+      "January", "February", "March",
+      "April", "May", "June", "July",
+      "August", "September", "October",
+      "November", "December"
+    ];
+
+    var day = currentDate.getDate();
+    var monthIndex = currentDate.getMonth();
+    var year = currentDate.getFullYear();
+
+    // return monthNames[monthIndex] + ' ' + year;
+    return `${monthNames[monthIndex]} ${day}, ${year}`
+  },
+
   onLoad: function (e) {
+    // SET TODAY'S DATE and PROFILE IMAGE
+    const currentDate = new Date();
+    console.log('todaysDate', currentDate);
+    const formattedDate = this.formatDate(currentDate);
+    console.log('formatted', formattedDate);
+    const avatarUrl = app.globalData.userInfo.avatarUrl;
+
+    this.setData({
+      currentDateNoFormat: currentDate,
+      currentDate: formattedDate,
+      avatarUrl: avatarUrl
+    });
+
+    // GET USER'S GOALS and CURRENT MEAL's NUTRIENTS
+    const page = this;
+    const url = app.globalData.url;
+    const user_id = app.globalData.userId;
+    console.log(user_id)
+
+    // GOALS LIST
+    wx.request({
+      url: `${url}goals?user_id=${user_id}`,
+      method: 'GET',
+      success(res) {
+        console.log('goal res', res.data.goals)
+        const goals = res.data.goals
+        let calories = 0;
+        let protein = 0;
+        let fat = 0;
+
+        goals.forEach((goal) => {
+          if (goal.name === "Calories") {
+            calories = goal.amount
+          } else if (goal.name === "Protein") {
+            protein = goal.amount
+          } else if (goal.name === "Total Fat") {
+            fat = goal.amount
+          }
+        });
+
+        page.setData({
+          calories: calories,
+          protein: protein,
+          fat: fat
+        });
+      }
+    });
+
+    // USER'S MEAL LIST
+    let todayCal = 0;
+    let todayProtein = 0;
+    let todayFat = 0;
+
+    wx.request({
+      // url: `${url}dishes`,
+      url: `${url}meals?user_id=${user_id}`,
+      method: 'GET',
+      success(res) {
+        console.log(res.data);
+        const meals = res.data.meals;
+
+        meals.forEach((meal) => {
+          let mealDate = page.formatDate(new Date(meal.date));
+          meal.date = mealDate
+          if (mealDate === page.data.currentDate) {
+            meal.nutrients.forEach((nutrient) => {
+              if (nutrient.name === "Calories") {
+                todayCal += nutrient.amount;
+              } else if (nutrient.name === "Protein") {
+                todayProtein += nutrient.amount;
+              } else if (nutrient.name === "Total Fat") {
+                todayFat += nutrient.amount;
+              }
+            });
+          }
+        })
+
+        page.setData({
+          todayCal: todayCal, todayProtein: todayProtein, todayFat: todayFat
+        });
+        console.log('todayCal', todayCal);
+
+        // page.setData(res.data);
+        console.log('meals', meals);
+        page.setData({
+          meals: meals
+        });
+      }
+    });
+
     var windowWidth = 320;
     try {
       var res = wx.getSystemInfoSync();
@@ -134,26 +241,26 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-    const page = this;
-    const url = app.globalData.url;
-    const user_id = app.globalData.userId;
-    console.log(user_id)
+    // const page = this;
+    // const url = app.globalData.url;
+    // const user_id = app.globalData.userId;
+    // console.log(user_id)
 
-    wx.request({
-      // url: `${url}dishes`,
-      url: `${url}meals?user_id=${user_id}`,
-      method: 'GET',
-      success(res) {
-        console.log(res.data);
-        const meals = res.data.meals;
-        // page.setData(res.data);
-        console.log('meals', meals);
-        page.setData({
-          meals: meals
-        })
-        
-      }
-    });
+    // wx.request({
+    //   // url: `${url}dishes`,
+    //   url: `${url}meals?user_id=${user_id}`,
+    //   method: 'GET',
+    //   success(res) {
+    //     console.log(res.data);
+    //     const meals = res.data.meals;
+    //     // page.setData(res.data);
+    //     console.log('meals', meals);
+    //     page.setData({
+    //       meals: meals
+    //     })
+
+    //   }
+    // });
   },
 
   /**
@@ -189,5 +296,7 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+
 })
