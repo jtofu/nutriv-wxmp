@@ -1,41 +1,42 @@
-<!-- BANNER -->
-<view class="banner" style="background-position:center; background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(128,248,174,0.6) 0%, rgba(223,244,148,0.6) 90% ), url('https://images.unsplash.com/photo-1543362906-acfc16c67564?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=401&q=80');">
-  
-  <view class="avatar">
-    <image class="profile" mode="aspectFill"  src="{{userInfo.avatarUrl}}"></image>
-  </view>
-
-  <view class="banner-text">
-    <text class="banner-title">{{username}}</text>
-  </view>
-
-  
-</view>
-
-<!-- H1 TITLE -->
-<view class="border">
-    <text class="border-text">My daily goals</text>
-</view>
-
-<!-- GOALS in cards -->
-<view wx:for="{{goals}}" wx:for-item="goal" wx:key="{{goal.id}}">
-
-  <view class='card-goal'>
-    <!-- DISH NAME -->
-    {{goal.name}} : {{goal.amount}} {{goal.unit}}
-
-    <!-- MINUS BUTTON -->
-    <view class='card-goal-minus-btn'>
-      <image src="/images/minus-symbol.png" bindtap="destroyGoal" data-goal_id="{{goal.id}}" data-id="{{id}}" class='card-goal-minus-btn'></image>
+<view section-main>
+  <!-- BANNER -->
+  <view class="banner" style="background-position:center; background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(128,248,174,0.6) 0%, rgba(223,244,148,0.6) 90% ), url('https://images.unsplash.com/photo-1543362906-acfc16c67564?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=401&q=80');">
+    
+    <view class="avatar">
+      <image class="profile" mode="aspectFill"  src="{{userInfo.avatarUrl}}"></image>
     </view>
+
+    <view class="banner-text">
+      <text class="banner-title">{{username}}</text>
+    </view>
+
     
   </view>
 
-</view>
+  <!-- H1 TITLE -->
+  <view class="border">
+      <text class="border-text">My daily goals</text>
+  </view>
 
-<!-- CREATE NEW -->
+  <!-- GOALS in cards -->
+  <view wx:for="{{goals}}" wx:for-item="goal" wx:key="{{goal.id}}">
 
-<view class='card-goal'>
+    <view class='card-goal'>
+      <!-- DISH NAME -->
+      {{goal.name}} : {{goal.amount}} {{goal.unit}}
+
+      <!-- MINUS BUTTON -->
+      <view class='card-goal-minus-btn'>
+        <image src="/images/minus-symbol.png" bindtap="destroyGoal" data-goal_id="{{goal.id}}" data-id="{{id}}" class='card-goal-minus-btn'></image>
+      </view>
+      
+    </view>
+
+  </view>
+
+  <!-- CREATE NEW -->
+
+  <view class='card-goal'>
     <!-- DISH NAME -->
     Create new goal
 
@@ -43,5 +44,21 @@
     <view class='card-goal-minus-btn'>
       <image src="/images/plus-button.png" bindtap="addGoal" data-id="{{id}}" class='card-goal-minus-btn'></image>
     </view>
-    
   </view>
+</view>
+
+<!-- navbar -->
+<view id='navbar'>
+  <navigator class='navbar-selection' url='../../meals/new/new'>
+    <image class='navbar-image' src='../../../images/meal.png'></image>
+    <view>Add Meal</view>
+  </navigator>
+  <navigator class='navbar-selection' url='../../meals/index/index'>
+    <image class='navbar-image' src='../../../images/home.png'></image>
+    <view>Home</view>
+  </navigator>
+  <navigator class='navbar-selection active'>
+    <image class='navbar-image' src='../../../images/profile.png'></image>
+    <view>Profile</view>
+  </navigator>
+</view>

@@ -370,3 +370,38 @@ canvas {
   margin-right: 15px;
 
 }
+
+.navbar-image {
+  width: 26px;
+  height: 26px;
+}
+
+#navbar {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 0px;
+  font-size: 10px;
+  border-top: 1px solid lightgray;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  background-color: rgb(254, 254, 254);
+}
+
+.navbar-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60px;
+}
+
+.active {
+  color: steelblue;
+}
+
+.section-main {
+  height: calc(100vh - 63px);
+}

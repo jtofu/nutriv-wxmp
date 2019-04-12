@@ -6,8 +6,6 @@
       <image class="icon nutri" mode="aspectFit" src="/images/nutri.png"></image>
     </view>
   </view>
-</view>
-
 
 <!-- HORIZONTAL SCROLLING -->
 <scroll-view class="scroll-view" scroll-x>
@@ -84,18 +82,16 @@
       <view id="pic2" class="scroll-view-item_H bc_2">
         <view class="goal2">
           <canvas canvas-id="pieCanvas" class="canvas" style="height:300px"  bindtouchstart="touchHandler"></canvas>
+
         </view>
-      </view>
-  </view>
-</scroll-view>
+    </view>
+  </scroll-view>
 
 
 <!-- TODAY's MEALS -->
 <view class="border">
     <text class="border-text">Today's Meals</text>
 </view>
-
-<!-- style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png); -->
 
 
 <view class="card-dishes">
@@ -105,38 +101,39 @@
       <view class="card-text">
         <text class="dish-title">{{meal.dish}}</text>
 
-        <!-- <view class="fat"> -->
-        <view class="nutrient">
-          <view class="nutrient-icon-title">
-            <view class='nutrient-icon'>
-              <image class="fat-icon" mode="aspectFit" src="/images/avocado.png"></image>
-            </view>      
-            <view class="nutrient-text">Fat</view>
-          </view>
-
-          <view class="text-count">{{meal.nutrients[2].amount}}{{meal.nutrients[2].unit}}</view>
-        </view>
-
-        <!-- <view class="calories"> -->
-        <view class="nutrient">
-          <view class="nutrient-icon-title">
-            <view class='nutrient-icon'>
-              <image class="calorie-icon" mode="aspectFit" src="/images/fire.png"></image>
+          <!-- <view class="fat"> -->
+          <view class="nutrient">
+            <view class="nutrient-icon-title">
+              <view class='nutrient-icon'>
+                <image class="fat-icon" mode="aspectFit" src="/images/avocado.png"></image>
+              </view>      
+              <view class="nutrient-text">Fat</view>
             </view>
-            <text class="nutrient-text">Calories</text>
-          </view>
-          <view class="text-count">{{meal.nutrients[1].amount}}{{meal.nutrients[1].unit}}</view>
-        </view>
 
-        <!-- <view class="proteins"> -->
-        <view class="nutrient">
-          <view class="nutrient-icon-title">
-            <view class='nutrient-icon'>
-              <image class="protein-icon" mode="aspectFit" src="/images/steak.png"></image>
-            </view>
-            <view class="nutrient-text">Proteins</view>
+            <view class="text-count">{{meal.nutrients[2].amount}}{{meal.nutrients[2].unit}}</view>
           </view>
-          <view class="text-count">{{meal.nutrients[8].amount}}{{meal.nutrients[8].unit}}</view>
+
+          <!-- <view class="calories"> -->
+          <view class="nutrient">
+            <view class="nutrient-icon-title">
+              <view class='nutrient-icon'>
+                <image class="calorie-icon" mode="aspectFit" src="/images/fire.png"></image>
+              </view>
+              <text class="nutrient-text">Calories</text>
+            </view>
+            <view class="text-count">{{meal.nutrients[1].amount}}{{meal.nutrients[1].unit}}</view>
+          </view>
+
+          <!-- <view class="proteins"> -->
+          <view class="nutrient">
+            <view class="nutrient-icon-title">
+              <view class='nutrient-icon'>
+                <image class="protein-icon" mode="aspectFit" src="/images/steak.png"></image>
+              </view>
+              <view class="nutrient-text">Proteins</view>
+            </view>
+            <view class="text-count">{{meal.nutrients[8].amount}}{{meal.nutrients[8].unit}}</view>
+          </view>
         </view>
       <!-- END OF CARD-TEXT -->
       </view>
@@ -147,11 +144,20 @@
     </view>
 
     </view>
-  </block>
-  <view class="weui-panel__ft">
-      <view class="weui-cell weui-cell_access weui-cell_link">
-          <view class="weui-cell__bd">load more</view>
-          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-      </view>
   </view>
+</view>
+
+<view id='navbar'>
+  <navigator class='navbar-selection' url='../new/new'>
+    <image class='navbar-image' src='../../../images/meal.png'></image>
+    <view>Add Meal</view>
+  </navigator>
+  <navigator class='navbar-selection active'>
+    <image class='navbar-image' src='../../../images/home.png'></image>
+    <view>Home</view>
+  </navigator>
+  <navigator class='navbar-selection' url='../../users/show/show'>
+    <image class='navbar-image' src='../../../images/profile.png'></image>
+    <view>Profile</view>
+  </navigator>
 </view>

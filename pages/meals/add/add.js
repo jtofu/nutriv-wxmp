@@ -84,7 +84,7 @@ Page({
   addToMeal(e) {
     console.log(e)
     const url = app.globalData.url;
-    
+
     let dish_id = e.currentTarget.dataset.id;
     let user_id = app.globalData.userId;
 
@@ -96,7 +96,7 @@ Page({
       data: meal,
       success(res) {
         console.log(res)
-        wx.switchTab({
+        wx.navigateTo({
           url: `/pages/meals/index/index?user_id=${user_id}`
         })
       }
@@ -145,7 +145,7 @@ Page({
   clearInput: function () {
     const url = app.globalData.url;
     const page = this;
-    
+
     this.setData({
       inputVal: ""
     });

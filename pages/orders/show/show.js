@@ -16,8 +16,8 @@ Page({
     const page = this;
     const url = app.globalData.url;
     wx.request({
-      url: `${url}orders/${options.id}`,
-      // url: `${url}orders/1`,
+      // url: `${url}orders/${options.id}`,
+      url: `${url}orders/1`,
       method: 'GET',
       success(res) {
         const dishes = res.data.dishes;
@@ -155,7 +155,7 @@ Page({
         }
       })
     });
-    wx.switchTab({
+    wx.navigateTo({
       url: `/pages/meals/index/index?user_id=${user_id}`
     });
   },
@@ -179,11 +179,11 @@ Page({
     });
 
     wx.request({
-      url: `${url}users/${id}`, // static user_id for testing purposes 
+      url: `${url}users/${id}`, // static user_id for testing purposes
       method: "PUT",
       data: { profile_image: avatarUrl, username: nickName },
       success() {
-        // wx.switchTab({
+        // wx.navigateTo({
         //   url: '../meals/index/index'
         // })
       }

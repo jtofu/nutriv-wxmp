@@ -137,7 +137,7 @@ Page({
       data: meal,
       success(res) {
         console.log(res);
-        wx.switchTab({
+        wx.navigateTo({
           url: `/pages/meals/index/index?user_id=${user_id}`
         });
       }
@@ -159,7 +159,7 @@ Page({
   //     data: meal,
   //     success(res) {
   //       console.log(res)
-  //       wx.switchTab({
+  //       wx.navigateTo({
   //         url: `/pages/meals/index/index?user_id=${user_id}`
   //       })
   //     }
