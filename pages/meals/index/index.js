@@ -13,7 +13,31 @@ Page({
   touchHandler: function (e) {
     console.log(pieChart.getCurrentDataIndex(e));
   },
+
+  formatDate(currentDate) {
+    var monthNames = [
+      "January", "February", "March",
+      "April", "May", "June", "July",
+      "August", "September", "October",
+      "November", "December"
+    ];
+
+    var day = currentDate.getDate();
+    var monthIndex = currentDate.getMonth();
+    var year = currentDate.getFullYear();
+
+    return day + ' ' + monthNames[monthIndex] + ' ' + year;
+  },
+
   onLoad: function (e) {
+    const currentDate = new Date();
+    console.log('todaysDate', currentDate);
+    const formattedDate = this.formatDate(currentDate);
+    console.log('formatted', formattedDate)
+    this.setData({
+      currentDate: formattedDate
+    })
+
     var windowWidth = 320;
     try {
       var res = wx.getSystemInfoSync();
@@ -161,5 +185,7 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+  
 })

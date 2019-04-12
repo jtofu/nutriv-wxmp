@@ -5,7 +5,7 @@
 
 
 <view class="logo">
-  <view id='title'>Nutriv</view>
+  <view id='title' class="logo-bordered">Nutriv</view>
   <!-- <image class="image-logo" src="/images/nutri.png"></image> -->
 </view>
 
