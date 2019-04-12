@@ -67,6 +67,24 @@
         </view>
       </view>
       <view id="pic2" class="scroll-view-item_H bc_2">
+        <view id="a1" class="container">
+            <gauge 
+            height="750" 
+            r="135" 
+            bgWidth="13"
+            gaugeid="g1"
+            animateMsec="700" 
+            scaleTextStyle="{{scaleTextStyle}}" 
+            indicatorTextStyle='{{indicatorTextStyle}}'
+            indicatorValueStyle='{{indicatorValueStyle}}'
+            indicatorCircleStyle='{{indicatorCircleStyle}}'
+            min="0"
+            max="1000"
+            value="600"
+            />
+        </view>
+      </view>
+      <view id="pic3" class="scroll-view-item_H bc_3">
         <view class="goal2">
           <canvas canvas-id="pieCanvas" class="canvas" style="height:300px"  bindtouchstart="touchHandler"></canvas>
         </view>
