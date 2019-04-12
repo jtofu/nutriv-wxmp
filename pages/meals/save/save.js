@@ -81,19 +81,19 @@ Page({
   addAmount() {
     const page = this;
     let data2 = page.data
-    data2.quantity += 1
+    data2.quantity += 0.5
     page.setData(data2)
     page.setTotal();
-    console.log(page.data.dishes);
   },
 
   subtractAmount(e) {
     const page = this;
     let data2 = page.data
-    data2.quantity -= 1
-    page.setData(data2)
-    page.setTotal();
-    console.log(page.data.dishes);
+    if (data2.quantity > 0) {
+      data2.quantity -= 0.5
+      page.setData(data2)
+      page.setTotal();
+    };
   },
 
   setTotal() {
@@ -127,24 +127,21 @@ Page({
     const page = this;
     const url = app.globalData.url;
     let user_id = app.globalData.userId;
+    let dish_id = page.data.dish.id;
+    let quantity = page.data.quantity
+    let meal = { quantity: quantity, user_id: user_id, dish_id: dish_id }
 
-    // page.data.dishes.forEach((dish) => {
-      let dish_id = page.data.dish.id;
-      let quantity = page.data.quantity
-      let meal = { quantity: quantity, user_id: user_id, dish_id: dish_id }
-
-      wx.request({
-        url: `${url}meals`,
-        method: "POST",
-        data: meal,
-        success(res) {
-          console.log(res);
-          wx.switchTab({
-            url: `/pages/meals/index/index?user_id=${user_id}`
-          });
-        }
-      })
-    // });
+    wx.request({
+      url: `${url}meals`,
+      method: "POST",
+      data: meal,
+      success(res) {
+        console.log(res);
+        wx.switchTab({
+          url: `/pages/meals/index/index?user_id=${user_id}`
+        });
+      }
+    });
   },
 
   // addToMeal(e) {
