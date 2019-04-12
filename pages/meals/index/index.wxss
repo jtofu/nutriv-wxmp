@@ -6,6 +6,7 @@
   flex-direction: column;
   text-align: center;
   align-items: center;
+  background-size: cover;
 }
 
 .banner-title {
@@ -22,10 +23,6 @@
   width: 70%;
 }
 
-.weui-search-bar {
- 
-}
-
 .border {
   background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(128,248,174,0.8) 10%, rgba(223,244,148,0.8) 95% );
   margin-bottom: 10px;
@@ -33,13 +30,66 @@
   font-weight: bold;
 }
 
+.border-avatar {
+  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(128,248,174,0.8) 10%, rgba(223,244,148,0.8) 95% );
+  margin-bottom: 10px;
+  width: 100%;
+  font-weight: bold;
+  display: flex;
+  position: relative;
+}
+
+.avatar {
+  background-size: cover;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  /* border: solid 1px black; */
+  position: absolute;
+  right: 30px;
+  top: -5px;
+}
+
+.today-intake {
+  width: 100%;
+  /* background-color: rgba(0, 0, 0, 0.2); */
+  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(128,248,174,0.8) 10%, rgba(223,244,148,0.8) 95% );
+  font-size: 14px;
+  /* font-weight: bold; */
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* CARD DISH */
 .card-dish {
   display: flex;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0,.06);
   overflow: hidden;
   width: 100%;
-  height: 160px;
+  height: 120px;
+  padding: 20px;
   margin-bottom: 10px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.meal-type {
+  position: absolute;
+  bottom: 10px;
+  right: 50px;
+  min-width: 100px;
+  min-height: 30px;
+  background-color: rgba(255,255,255,0.8);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 image {
@@ -53,8 +103,10 @@ image {
 
 .dish-title {
   /* text-align: center; */
+
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 .card-text {
@@ -169,7 +221,13 @@ image {
   font-size: 14px;
 }
 
-.daily-calories {
+.daily-nutrient-stat {
+  display: flex;
+  align-items: center;
+  margin: 5px 0px 5px 10px;
+}
+
+/* .daily-calories {
   display: flex;
   align-items: center;
   color: rgba(0, 0, 0, 0.7);
@@ -185,7 +243,7 @@ image {
 .daily-fat {
   display: flex;
   align-items: center;
-}
+} */
 
 .protein-icon {
   width: 30px;
@@ -258,14 +316,15 @@ canvas {
 
 .daily {
   margin-left: 15px;
+  margin-right: 15px;
   margin-top: 20px;
   width: 50%;
   background-color: white;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0,.06);
-  padding-left: 10px;
+  /* padding-left: 10px; */
   padding-bottom: 10px;
-  padding-top: 10px;
-  padding-right: 10px;
+  padding-top: 15px;
+  /* padding-right: 10px; */
 }
 
 .goals-block {
@@ -294,6 +353,7 @@ canvas {
 
 .block1 {
   display: flex;
+  justify-content: space-around;
 }
 
 .progress {
