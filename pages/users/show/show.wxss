@@ -18,6 +18,7 @@
   /* text-align: center; */
   align-items: center;
   justify-content: center;
+  background-size: cover;
 }
 
 .banner-title {
@@ -127,5 +128,12 @@
 }
 
 .section-main {
-  height: calc(100vh - 63px);
+  /* height: calc(100vh - 63px); */
+  margin-bottom: 63px;
+  padding-bottom: 10px;
+}
+
+.goal-name {
+  font-weight: bold;
+  min-width: 120px;
 }

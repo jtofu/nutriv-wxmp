@@ -7,6 +7,7 @@
     "pages/meals/add/add",
     "pages/meals/save/save",
     "pages/users/show/show",
+    "pages/users/edit/edit",
     "pages/goals/new/new"
   ],
   "window": {
