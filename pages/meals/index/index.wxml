@@ -82,7 +82,6 @@
     </view>
   </scroll-view>
 
-
   <!-- TODAY's MEALS -->
   <view class="border">
     <text class="border-text">Today's Meals</text>
