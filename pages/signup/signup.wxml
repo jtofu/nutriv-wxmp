@@ -5,7 +5,7 @@
 
 
 <view class="logo">
-  <view id='title'>Nutriv</view>
+  <view id='title' class="logo-bordered">Nutriv</view>
   <!-- <image class="image-logo" src="/images/nutri.png"></image> -->
 </view>
 
@@ -13,8 +13,8 @@
   <!-- <image class="profile-radius" src="/images/profile_nutriv.png"></image> -->
 
 <view class="card">
-  <text id='subtitle'>Make healthy choices simple!</text>
-  <text id='description'>Find meals nearby that are curated just for you! 
+  <text id='subtitle'>Make healthy choices simple</text>
+  <text id='description'>Find meals nearby that are curated just for you. 
   Pick your own nutritional goals and easily keep track of the meals you have enjoyed. </text>
   <button class="button" open-type="getUserInfo" bindgetuserinfo="getUserInfo" data-id="{{globalData.userId}}" data-user-info="{{globalData.userInfo}}">Join Nutriv</button>
 

@@ -1,62 +1,98 @@
 /* pages/meals/index/index.wxss */
-
 .banner {
   height: 120px;
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
+  background-size: cover;
 }
-
 .banner-title {
   margin-top: 0px;
   font-size: 30px;
   font-weight: bold;
 }
-
 .banner-text {
   width: 100%;
 }
-
 .page__bd {
   width: 70%;
 }
-
-.weui-search-bar {
- 
-}
-
 .border {
   background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(128,248,174,0.8) 10%, rgba(223,244,148,0.8) 95% );
   margin-bottom: 10px;
   width: 100%;
   font-weight: bold;
 }
-
+.border-avatar {
+  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(128,248,174,0.8) 10%, rgba(223,244,148,0.8) 95% );
+  margin-bottom: 10px;
+  width: 100%;
+  font-weight: bold;
+  display: flex;
+  position: relative;
+}
+.avatar {
+  background-size: cover;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  /* border: solid 1px black; */
+  position: absolute;
+  right: 30px;
+  top: -5px;
+}
+.today-intake {
+  width: 100%;
+  /* background-color: rgba(0, 0, 0, 0.2); */
+  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(128,248,174,0.8) 10%, rgba(223,244,148,0.8) 95% );
+  font-size: 14px;
+  /* font-weight: bold; */
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* CARD DISH */
 .card-dish {
   display: flex;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0,.06);
   overflow: hidden;
   width: 100%;
-  height: 160px;
+  height: 120px;
+  padding: 20px;
   margin-bottom: 10px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
-
+.meal-type {
+  position: absolute;
+  bottom: 10px;
+  right: 50px;
+  min-width: 100px;
+  min-height: 30px;
+  background-color: rgba(255,255,255,0.8);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+}
 image {
   width: 40%;
   height: 160px;
 }
-
 .border-text {
   margin-left: 45px;
 }
-
 .dish-title {
   /* text-align: center; */
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
-
 .card-text {
   width: 60%;
   display: flex;
@@ -65,12 +101,10 @@ image {
   margin-left: 15px;
   margin-right: 10px;
 }
-
 .calories {
  display: flex;
  justify-content: space-around;
 }
-
 .calories-text,
 .text-count,
 .proteins-text,
@@ -78,14 +112,12 @@ image {
 .nutrient-text {
   font-size: 14px;
 }
-
 .calorie-icon,
 .protein-icon {
   width: 20px;
   height: 20px;
   margin-right: 5px;
 }
-
 .bc_1 {
   height: 320px;
   display: flex;
@@ -93,20 +125,16 @@ image {
   background-color: RGBA(247, 249, 252, 0.60);
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0,.06);
   margin-right: 15px;
-
 }
-
 .icon {
   width: 40px;
   height: 40px;
 }
-
 .icon-fat{
   width: 40px;
   height: 30px;
   margin-right: 20px;
 }
-
 .nutrient-icon-title {
   display: flex;
   align-items: center;
@@ -114,11 +142,9 @@ image {
   justify-content: space-between;
   /* margin-left: 10px; */
 }
-
 .nutrient-icon {
   width: 33px;
 }
-
 .nutrient {
   display: flex;
   align-items: center;
@@ -133,78 +159,67 @@ image {
   display: flex;
   align-items: center;
   color: rgba(0, 0, 0, 0.7);
-
 }
-
 .fat-icon-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: rgba(0, 0, 0, 0.7);
 } */
-
 .icon.nutri {
   width: 60px;
   height: 60px;
 }
-
 .icon.fire {
   width: 30px;
   height: 25px;
   margin-bottom: 10px;
   margin-right: 30px;
 }
-
 .icon.steak {
   margin-right: 20px;
 }
-
 .icon.fat {
   width: 30px;
   height: 30px;
 }
-
-
 .daily-text {
   font-size: 14px;
 }
-
-.daily-calories {
+.daily-nutrient-stat {
+  display: flex;
+  align-items: center;
+  margin: 5px 0px 5px 10px;
+}
+/* .daily-calories {
   display: flex;
   align-items: center;
   color: rgba(0, 0, 0, 0.7);
 }
-
 .daily-proteins {
   display: flex;
   align-items: center;
   margin-top: 10px;
   margin-bottom: 10px;
 }
-
 .daily-fat {
   display: flex;
   align-items: center;
-}
-
+} */
 .protein-icon {
   width: 30px;
   height: 30px;
 }
-
 .fat-icon {
   width: 20px;
   height: 20px;
 }
-
 /* .proteins {
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding-right:5px;
-
 }
-
 .fat {
   display: flex;
   align-items: center;
@@ -212,15 +227,12 @@ image {
   padding-left: 30px;
   padding-right: 30px;
 } */
-
 .goal1,
 .goal2 {
   height: 320px;
   width: 375px;
   margin-top: 20px;
 }
-
-
 .bc_2 {
   height:320px;
   display:flex;
@@ -232,42 +244,37 @@ image {
   padding:0rpx 0;
   box-sizing:border-box;
 }
-
 canvas {
   width:100%;
   height:auto;
   display:block;
   position:relative;
 }
-
 .scroll-row {
   display: flex;
   flex-direction: row;
   width: 750px;
   position: relative;
 }
-
 .scroll-view {
   margin-bottom:5px;
   height:340px;
 }
-
 .fat-icon {
   margin-right: 5px;
 }
-
 .daily {
   margin-left: 15px;
+  margin-right: 15px;
   margin-top: 20px;
   width: 50%;
   background-color: white;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0,.06);
-  padding-left: 10px;
+  /* padding-left: 10px; */
   padding-bottom: 10px;
-  padding-top: 10px;
-  padding-right: 10px;
+  padding-top: 15px;
+  /* padding-right: 10px; */
 }
-
 .goals-block {
   width: 50%;
   display: flex;
@@ -277,7 +284,6 @@ canvas {
   margin-right: 15px;
   justify-content: space-between;
 }
-
 .goals {
   text-align: center;
   background-color: white;
@@ -286,16 +292,14 @@ canvas {
   padding-bottom: 10px;
   padding-top: 10px;
 }
-
 .protein-goal {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-
 .block1 {
   display: flex;
+  justify-content: space-around;
 }
-
 .progress {
   margin-left: 15px;
   margin-top: 10px;
@@ -308,5 +312,35 @@ canvas {
   padding-bottom: 10px;
   padding-top: 10px;
   margin-right: 15px;
-
+}
+.navbar-image {
+  width: 26px;
+  height: 26px;
+}
+#navbar {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 0px;
+  font-size: 10px;
+  border-top: 1px solid lightgray;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  background-color: rgb(254, 254, 254);
+}
+.navbar-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60px;
+}
+.active {
+  color: steelblue;
+}
+.section-main {
+  /* height: calc(100vh - 63px); */
+  margin-bottom: 63px;
 }

@@ -33,7 +33,7 @@
 }
 
 .section-main {
-  padding-bottom: 60px;
+  height: calc(100vh - 66px);
 }
 
 .section-summary {
@@ -76,7 +76,7 @@
   display: flex;
   position: absolute;
   right: 16px;
-  bottom: 0;
+  bottom: 4px;
   align-items: center;
 }
 
@@ -101,5 +101,6 @@
 }
 
 .dish-number {
-  padding: 8px;
+  width: 40px;
+  text-align: center;
 }

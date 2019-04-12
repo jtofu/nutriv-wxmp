@@ -116,7 +116,7 @@ Page({
   cancelSubmit() {
     const id = app.globalData.userId;
 
-    wx.switchTab({
+    wx.navigateTo({
       url: `/pages/users/show/show?id=${id}`,
     })
   }

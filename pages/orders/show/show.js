@@ -16,7 +16,8 @@ Page({
     const page = this;
     const url = app.globalData.url;
     wx.request({
-      url: `${url}orders/${options.id}`,
+      // url: `${url}orders/${options.id}`,
+      url: `${url}orders/1`,
       method: 'GET',
       success(res) {
         const dishes = res.data.dishes;
@@ -81,21 +82,22 @@ Page({
   addAmount(e) {
     const page = this;
     const index = e.currentTarget.dataset.id;
-    let data2 = page.data
-    data2.dishes[index].quantity += 1
+    const data2 = page.data
+    data2.dishes[index].quantity += 0.5
     page.setData(data2)
     page.setTotal();
-    console.log(page.data.dishes);
   },
 
   subtractAmount(e) {
     const page = this;
     const index = e.currentTarget.dataset.id;
-    let data2 = page.data
-    data2.dishes[index].quantity -= 1
-    page.setData(data2)
-    page.setTotal();
-    console.log(page.data.dishes);
+    const data2 = page.data
+    const quantity = data2.dishes[index].quantity
+    if (quantity > 0) {
+      data2.dishes[index].quantity -= 0.5
+      page.setData(data2)
+      page.setTotal();
+    };
   },
 
   setTotal() {
@@ -153,7 +155,7 @@ Page({
         }
       })
     });
-    wx.switchTab({
+    wx.navigateTo({
       url: `/pages/meals/index/index?user_id=${user_id}`
     });
   },
@@ -177,11 +179,11 @@ Page({
     });
 
     wx.request({
-      url: `${url}users/${id}`, // static user_id for testing purposes 
+      url: `${url}users/${id}`, // static user_id for testing purposes
       method: "PUT",
       data: { profile_image: avatarUrl, username: nickName },
       success() {
-        // wx.switchTab({
+        // wx.navigateTo({
         //   url: '../meals/index/index'
         // })
       }
