@@ -32,7 +32,7 @@ button {
 .banner {
   background-size: cover;
   background-position: center;
-  height: 125vh;
+  height: 100vh;
 }
 
 .logo {
