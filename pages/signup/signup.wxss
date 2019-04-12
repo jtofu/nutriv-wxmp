@@ -1,6 +1,6 @@
 /* pages/signup/signup.wxss */
 #title {
-  font-size: 24px;
+  font-size: 28px;
   text-align: center;
   font-weight: bold;
   color: white;
@@ -40,7 +40,7 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 40px;
+  padding-top: 80px;
   margin-bottom: 40px;
 }
 
@@ -61,4 +61,16 @@ button {
   bottom: 0px;
   display: flex;
   align-items: center;
+}
+
+.logo-bordered {
+  border: solid 3px #FFF;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.5);
+  /* background: rgba(255,255,255,0.3); */
 }

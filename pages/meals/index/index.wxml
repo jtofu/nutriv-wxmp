@@ -30,7 +30,7 @@
         <view class="goal1">
 
           <view class="border">
-            <text class="border-text">Daily Info</text>
+            <text class="border-text">Daily Info {{}}</text>
           </view>
 
           <view class="block1">
@@ -62,7 +62,7 @@
 
           <view class="progress">
             <text style="font-size: 12px;">Calories Progress</text>
-            <progress percent="80" stroke-width="6" color="green" show-info />
+            <progress percent="110" stroke-width="6" color="red" show-info />
           </view>
         </view>
       </view>
