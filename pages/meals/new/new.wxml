@@ -59,15 +59,15 @@
 </view>
 <!-- navbar -->
 <view id='navbar'>
-  <navigator class='navbar-selection active'>
+  <navigator class='navbar-selection active' open-type='reLaunch'>
     <image class='navbar-image' src='../../../images/meal.png'></image>
     <view>Add Meal</view>
   </navigator>
-  <navigator class='navbar-selection' url='../index/index'>
+  <navigator class='navbar-selection' url='../index/index' open-type='reLaunch'>
     <image class='navbar-image' src='../../../images/home.png'></image>
     <view>Home</view>
   </navigator>
-  <navigator class='navbar-selection' url='../../users/show/show'>
+  <navigator class='navbar-selection' url='../../users/show/show' open-type='reLaunch'>
     <image class='navbar-image' src='../../../images/profile.png'></image>
     <view>Profile</view>
   </navigator>
