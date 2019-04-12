@@ -92,7 +92,7 @@
 
     <block wx:for='{{meals}}' wx:for-item='meal' wx:key='meal.id'>
 
-      <view class="card-dish" wx:if="{{meal.date === currentDate}}" style="background-image: linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.7)), url('/images/breakfast.png')">
+      <view class="card-dish" wx:if="{{meal.date === currentDate}}" style="background-image: linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.7)), url('https://images.unsplash.com/photo-1467453678174-768ec283a940?ixlib=rb-1.2.1&auto=format&fit=crop&w=1456&q=80')">
 
         <view class="card-text">
           <text class="dish-title">{{meal.dish}}</text>
