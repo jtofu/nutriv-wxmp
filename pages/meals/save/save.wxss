@@ -33,7 +33,7 @@
 }
 
 .section-main {
-  padding-bottom: 60px;
+  height: calc(100vh - 66px);
 }
 
 .section-summary {
