@@ -15,9 +15,16 @@ Page({
   onLoad: function (options) {
     const page = this;
     const url = app.globalData.url;
+
+    page.setData({
+      user_id: app.globalData.userId
+      });
+
+    console.log('onLoad user_id', this.data.user_id)
+
     wx.request({
-      url: `${url}orders/${options.id}`,
-      // url: `${url}orders/1`,
+      // url: `${url}orders/${options.id}`,
+      url: `${url}orders/1`,
       method: 'GET',
       success(res) {
         const dishes = res.data.dishes;
@@ -140,6 +147,7 @@ Page({
     const page = this;
     const url = app.globalData.url;
     let user_id = app.globalData.userId;
+    console.log('addToMeal user_id', user_id);
 
     page.data.dishes.forEach((dish) => {
       let dish_id = dish.id;
@@ -155,6 +163,7 @@ Page({
         }
       })
     });
+
     wx.navigateTo({
       url: `/pages/meals/index/index?user_id=${user_id}`
     });
@@ -164,8 +173,9 @@ Page({
     const url = app.globalData.url;
     console.log(22, e);
     app.globalData.userInfo = e.detail.userInfo;
+
     console.log('globalData', app.globalData.userInfo);
-    // console.log(app.globalData.userInfo)
+    console.log(app.globalData.userInfo)
 
     const avatarUrl = app.globalData.userInfo.avatarUrl;
     const nickName = app.globalData.userInfo.nickName;
@@ -173,6 +183,8 @@ Page({
     console.log('id', id);
     console.log('avatar', avatarUrl);
     console.log('nickName', nickName);
+
+    const page = this;
 
     this.setData({
       userInfo: e.detail.userInfo
@@ -183,9 +195,7 @@ Page({
       method: "PUT",
       data: { profile_image: avatarUrl, username: nickName },
       success() {
-        // wx.navigateTo({
-        //   url: '../meals/index/index'
-        // })
+        page.addToMeal();
       }
     });
   },

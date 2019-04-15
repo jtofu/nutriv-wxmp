@@ -1,7 +1,11 @@
 <view class='section-main'>
+  <view class='title'>
+      <image src="/images/diet.png" class='icon-title'></image>
+      <text class="text-title">Nutritional Summary</text>
+    </view>
   <!-- total nutrients start -->
   <view class='section-summary'>
-    <view class='text-title'>Summary</view>
+    
     <view class='text-nutrients'>
       <view>Calories</view>
       <view>{{calorie}}kcal</view>
@@ -68,6 +72,7 @@
 
 
 <view id='footer'>
-  <view>{{calorie}} Calories</view>
-  <view bindtap='addToMeal' class="btn-flat picker">Confirm Meal</view>
+  <!-- <view>{{calorie}} Calories</view> -->
+  <!-- <view bindtap='addToMeal' class="btn-flat picker">Confirm Meal</view> -->
+  <button class="btn-flat" bindtap="addToMeal">Confirm Meal</button>
 </view>
