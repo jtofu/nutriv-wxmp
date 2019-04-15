@@ -15,6 +15,15 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    // SET TODAY'S DATE
+    const currentDate = new Date();
+    const formattedDate = this.formatDate(currentDate);
+
+    this.setData({
+      currentDateNoFormat: currentDate,
+      currentDate: formattedDate,
+    });
+
     const url = app.globalData.url;
     const userId = app.globalData.userId;
     const page = this;
@@ -25,6 +34,7 @@ Page({
       success(res) {
         console.log(res.data);
         page.setData(res.data);
+        page.setMealsRecommended();
       }
     });
 
@@ -40,6 +50,9 @@ Page({
           array.push(goal.name);
           page.setData(data2);
           console.log(page.data.array)
+        });
+        page.setData({
+          goals:goals
         });
       }
     });
@@ -63,20 +76,9 @@ Page({
           mealsToday: mealsToday
         });
         console.log('meals', mealsToday);
-        page.setTotal;
-        console.log(page.data.calorie)
+        page.setTotal();
       }
     });
-
-    // SET TODAY'S DATE
-    const currentDate = new Date();
-    const formattedDate = this.formatDate(currentDate);
-
-    this.setData({
-      currentDateNoFormat: currentDate,
-      currentDate: formattedDate,
-    });
-
   },
 
   /**
@@ -163,6 +165,7 @@ Page({
     this.setData({
       index: e.detail.value
     })
+    this.setMealsRecommended();
   },
 
   setTotal() {
@@ -176,7 +179,7 @@ Page({
     let fiber = 0;
     let sugar = 0;
     let protein = 0;
-    page.data.meals.forEach((dish) => {
+    page.data.mealsToday.forEach((dish) => {
       carb += dish.nutrients[0].amount * dish.quantity
       calorie += dish.nutrients[1].amount * dish.quantity
       total_fat += dish.nutrients[2].amount * dish.quantity
@@ -215,4 +218,30 @@ Page({
     // return monthNames[monthIndex] + ' ' + year;
     return `${monthNames[monthIndex]} ${day}, ${year}`
   },
+
+  setMealsRecommended() {
+    const page = this;
+    const mealsRecommended = [];
+    let current_intake = 0
+    const goal_amount = page.data.goals[page.data.index].amount;
+    page.data.mealsToday.forEach((dish) => {
+      dish.nutrients.forEach((nutrient) => {
+        if (nutrient.name === page.data.array[page.data.index]) {
+          current_intake += nutrient.amount;
+        };
+      });
+    });
+
+    page.data.dishes.forEach((dish) => {
+      dish.nutrients.forEach((nutrient) => {
+        if ((nutrient.name === page.data.array[page.data.index]) && (nutrient.amount <= goal_amount - current_intake)) {
+          mealsRecommended.push(dish);
+        }
+      });
+    });
+
+    page.setData({
+      mealsRecommended: mealsRecommended
+    })
+  }
 })
