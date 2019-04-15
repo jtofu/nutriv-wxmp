@@ -1,5 +1,9 @@
 const PI_3_2 = Math.PI * 1.5;
 const PI_1_2 = Math.PI * 0.5;
+const app = getApp();
+let max_calories = app.globalData.max_calories;
+
+
 
 const mergeProps = function (newVal, oldVal) {
   return {
@@ -14,7 +18,7 @@ const defaultObjectProps = {
     value: {
       show: false,
       size: 12,
-      color: 'black',
+      color: '#666',
       text: ''
     }
   },
@@ -136,7 +140,7 @@ Component({
     scale: {
       type: Array,
       value: [
-        0, 200, 400, 600, 800, 1000
+        0, 200, 400, 600, 800, max_calories
       ]
     },
     ...defaultObjectProps
@@ -274,7 +278,7 @@ Component({
       if (endAngle <= startAngle) {
         endAngle += 2 * Math.PI
       }
-      const currentAngle = (value / (max - min)) * (endAngle - startAngle) + startAngle
+      const currentAngle = (value / (max_calories - min)) * (endAngle - startAngle) + startAngle
       const newCfg = {
         ...config,
         backgroundColor: config.indicatorBgColor,
@@ -346,7 +350,7 @@ Component({
       ctx.setTextAlign('center')
       for (let i = 0; i < len; i++) {
         const value = scale[i]
-        let angle = (value / (max - min)) * (endAngle - startAngle) + startAngle
+        let angle = (value / (max_calories - min)) * (endAngle - startAngle) + startAngle
         if (angle >= Math.PI * 2) {
           angle = angle - Math.PI * 2
         }
@@ -381,7 +385,7 @@ Component({
       if (endAngle <= startAngle) {
         endAngle += 2 * Math.PI
       }
-      const currentAngle = (value / (max - min)) * (endAngle - startAngle) + startAngle
+      const currentAngle = (value / (max_calories - min)) * (endAngle - startAngle) + startAngle
       const outPoint = this.getPoint(x, y, r, currentAngle);
       const innerPoint = this.getPoint(x, y, r - bgWidth, currentAngle);
       const point = {

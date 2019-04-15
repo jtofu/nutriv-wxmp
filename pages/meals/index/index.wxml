@@ -13,6 +13,32 @@
   <!-- HORIZONTAL SCROLLING -->
   <scroll-view class="scroll-view" scroll-x>
     <view class='scroll-row'>
+
+    <!-- SECOND CAROUSEL ITEM -->
+      <view id="pic2" class="scroll-view-item_H bc_2">
+        <view id="a1" class="container">
+            <gauge 
+            height="750" 
+            r="150" 
+            bgWidth="13"
+            gaugeid="g1"
+            animateMsec="700" 
+            scaleTextStyle="{{scaleTextStyle}}" 
+            indicatorTextStyle='{{indicatorTextStyle}}'
+            indicatorValueStyle='{{indicatorValueStyle}}'
+            indicatorCircleStyle='{{indicatorCircleStyle}}'
+            min="0"
+            max="{{calories}}"
+            value="{{todayCal}}"
+            />
+        </view>
+      </view>
+
+
+
+
+
+
       <view id="pic1" class="scroll-view-item_H bc_1">
 
         <!-- TOP BLOCK WITH DATE AVATAR AND DAILY STAT -->
@@ -64,33 +90,10 @@
               </view>
             </view>
           </view>
-
-          <view class="progress">
-            <text style="font-size: 12px;">Calories Progress</text>
-            <progress percent="30" stroke-width="6" color="green" show-info />
-          </view>
         </view>
       </view>
 
-      <!-- SECOND CAROUSEL ITEM -->
-      <view id="pic2" class="scroll-view-item_H bc_2">
-        <view id="a1" class="container">
-            <gauge 
-            height="750" 
-            r="135" 
-            bgWidth="13"
-            gaugeid="g1"
-            animateMsec="700" 
-            scaleTextStyle="{{scaleTextStyle}}" 
-            indicatorTextStyle='{{indicatorTextStyle}}'
-            indicatorValueStyle='{{indicatorValueStyle}}'
-            indicatorCircleStyle='{{indicatorCircleStyle}}'
-            min="0"
-            max="{{calories}}"
-            value="{{todayCal}}"
-            />
-        </view>
-      </view>
+      
       <view id="pic3" class="scroll-view-item_H bc_3">
         <view class="goal2">
           <canvas canvas-id="pieCanvas" class="canvas" style="height:300px" bindtouchstart="touchHandler"></canvas>
