@@ -1,47 +1,54 @@
 <!--pages/orders/show/show.wxml-->
 
-<view class='section-main'>
-  <!-- total nutrients start -->
-  <view class='section-summary'>
-    <view class='text-title'>Summary</view>
-    <view class='text-nutrients'>
-      <view>Calories</view>
-      <view>{{calorie}}kcal</view>
+<view class='section-main bg-color'>
+  <view class='nutrient-fixed-top'>
+    <view class='title'>
+      <image src="/images/diet.png" class='icon-title'></image>
+      <text class="text-title">Nutritional Summary</text>
     </view>
-    <view class='text-nutrients'>
-      <view>Total Fat</view>
-      <view>{{total_fat}}g</view>
+    <!-- total nutrients start -->
+    <view class='section-summary'>
+      
+      <view class='text-nutrients'>
+        <view>Calories</view>
+        <view>{{calorie}}kcal</view>
+      </view>
+      <view class='text-nutrients'>
+        <view>Total Fat</view>
+        <view>{{total_fat}}g</view>
+      </view>
+      <view class='text-nutrients'>
+        <view>Saturated Fat</view>
+        <view>{{sat_fat}}g</view>
+      </view>
+      <view class='text-nutrients'>
+        <view>Cholesterol</view>
+        <view>{{cholesterol}}mg</view>
+      </view>
+      <view class='text-nutrients'>
+        <view>Sodium</view>
+        <view>{{sodium}}mg</view>
+      </view>
+      <view class='text-nutrients'>
+        <view>Total Carbohydrate</view>
+        <view>{{carb}}g</view>
+      </view>
+      <view class='text-nutrients'>
+        <view>Dietary Fiber</view>
+        <view>{{fiber}}g</view>
+      </view>
+      <view class='text-nutrients'>
+        <view>Sugars</view>
+        <view>{{sugar}}g</view>
+      </view>
+      <view class='text-nutrients'>
+        <view>Protein</view>
+        <view>{{protein}}g</view>
+      </view>
     </view>
-    <view class='text-nutrients'>
-      <view>Saturated Fat</view>
-      <view>{{sat_fat}}g</view>
-    </view>
-    <view class='text-nutrients'>
-      <view>Cholesterol</view>
-      <view>{{cholesterol}}mg</view>
-    </view>
-    <view class='text-nutrients'>
-      <view>Sodium</view>
-      <view>{{sodium}}mg</view>
-    </view>
-    <view class='text-nutrients'>
-      <view>Total Carbohydrate</view>
-      <view>{{carb}}g</view>
-    </view>
-    <view class='text-nutrients'>
-      <view>Dietary Fiber</view>
-      <view>{{fiber}}g</view>
-    </view>
-    <view class='text-nutrients'>
-      <view>Sugars</view>
-      <view>{{sugar}}g</view>
-    </view>
-    <view class='text-nutrients'>
-      <view>Protein</view>
-      <view>{{protein}}g</view>
-    </view>
+    <!-- total nutrients end -->
   </view>
-  <!-- total nutrients end -->
+  
 
   <!-- dishes start -->
   <view class="page__bd dishes">
@@ -72,6 +79,11 @@
 
 
 <view id='footer'>
-  <view>{{calorie}} Calories</view>
-  <view bindtap='addToMeal' class="btn-flat picker" bindgetuserinfo="getUserInfo" data-id="{{globalData.userId}}" data-user-info="{{globalData.userInfo}}">Confirm Meal</view>
+  <!-- <view>{{calorie}} Calories</view> -->
+  <!-- <view open-type="getUserInfo" bindtap="getUserInfo" class="btn-flat picker" data-id="{{globalData.userId}}" data-user-info="{{globalData.userInfo}}">Confirm Meal</view> -->
+
+   
+   <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="btn-flat" data-id="{{globalData.userId}}" data-user-info="{{globalData.userInfo}}">Confirm Meal</button>
+
 </view>
+
