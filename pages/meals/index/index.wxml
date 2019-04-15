@@ -86,8 +86,8 @@
             indicatorValueStyle='{{indicatorValueStyle}}'
             indicatorCircleStyle='{{indicatorCircleStyle}}'
             min="0"
-            max="1000"
-            value="600"
+            max="{{calories}}"
+            value="{{todayCal}}"
             />
         </view>
       </view>
