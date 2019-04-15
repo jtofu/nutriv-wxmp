@@ -146,3 +146,10 @@
   width: 40px;
   text-align: center;
 }
+
+.label-green {
+  background-color: #1EBF66;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}

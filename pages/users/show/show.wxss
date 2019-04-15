@@ -137,3 +137,12 @@
   font-weight: bold;
   min-width: 120px;
 }
+
+.label-green {
+  background-color: #1EBF66;
+  color: white;
+  font-size: 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  font-weight: bold;
+}
