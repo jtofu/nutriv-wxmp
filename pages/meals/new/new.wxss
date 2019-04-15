@@ -22,7 +22,7 @@
 .icon.nutri {
   width: 60px;
   height: 60px;
-}
+}n
 
 /* H1 */
 .border {
@@ -55,17 +55,17 @@
 }
 
 .btn-option {
-  margin-bottom: 20px;
-  margin-top: 20px;
-  width: 90%;
-  height: 100px;
+  margin-top: 8px;
+  width: 98%;
+  height: 80px;
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: 8px;
   justify-content: center;
   font-weight: bold;
-  border: solid 1px rgba(0,0,0,0.4);
-  box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
+  border: solid 1px #1EBF66;
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+  border-radius: 10px;
   /* background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(128,248,174,0.8) 10%, rgba(223,244,148,0.8) 95% ); */
 }
 
@@ -83,15 +83,15 @@
 }
 
 .image-icon {
-  width: 24px;
-  height: 24px;
+  width: 8px;
+  height: 8px;
+  margin: 4px;
 }
 
-.card-dish {
+/* .card-dish {
   margin-left: 15px;
   margin-top: 10px;
   width: 87%;
-  /* height: 45px; */
   background-color: white;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0,.06);
   padding-left: 10px;
@@ -103,7 +103,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
+} */
 
 .card-dish-plus-btn {
   width: 26px;
@@ -142,4 +142,34 @@
 
 .section-main {
   margin-bottom: 63px;
+}
+
+.label-green {
+  background-color: #1EBF66;
+  color: white;
+  font-size: 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+
+.card-dish {
+  display: flex;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0,.06);
+  overflow: hidden;
+  width: 100%;
+  height: 120px;
+  padding: 20px;
+  margin-bottom: 10px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.btn-green {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  padding-bottom: 4px;
+  color: grey;
 }
