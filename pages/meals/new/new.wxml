@@ -41,6 +41,11 @@
     <text class="border-text">Recommended Meals</text>
   </view>
 
+  <!-- Filter -->
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <button type="default">{{array[index]}}</button>
+  </picker>
+
   <!-- Dishes -->
   <view wx:for="{{dishes}}" wx:for-item="dish" wx:key="{{dish.id}}">
 
