@@ -104,6 +104,12 @@ Page({
           protein: protein,
           fat: fat
         });
+
+        app.globalData.setData({
+          calories: calories,
+          protein: protein,
+          fat: fat
+        });
       }
     });
 
