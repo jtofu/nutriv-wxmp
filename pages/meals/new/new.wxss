@@ -105,10 +105,6 @@
   align-items: center;
 } */
 
-.card-dish-plus-btn {
-  width: 26px;
-}
-
 .navbar-image {
   width: 26px;
   height: 26px;
@@ -166,7 +162,7 @@
   position: relative;
 }
 
-.btn-green {
+.menu {
   display: flex;
   align-items: center;
   font-size: 14px;
