@@ -402,7 +402,7 @@ canvas {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 10px 0;
+  padding: 10px 0 16px 0;
   background-color: rgb(254, 254, 254);
 }
 .navbar-selection {

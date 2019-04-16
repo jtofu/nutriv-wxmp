@@ -39,22 +39,29 @@
 
   <!-- Filter -->
   <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-    <view class='btn-green' type="default">
+    <view class='menu' type="default">
       <text>{{array[index]}}</text>
       <image class='image-icon' src='/images/arrow-down.png'></image>
     </view>
   </picker>
 
+
+<!-- condition if goal vs if no goal -->
+  <block wx:if="{{no_goals}}">
+   <text>Please set your goal to get recommendations</text>
+  </block>
   <!-- Dishes -->
-  <view wx:for="{{mealsRecommended}}" wx:for-item="dish">
+  <block wx:else>
+    <view wx:for="{{mealsRecommended}}" wx:for-item="dish">
 
-    <view class='card-dish' bindtap="mealMoreInfo" data-id="{{dish.id}}" style="background-image: linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.7)), url('{{dish.image}}')">
-      <!-- DISH NAME -->
-      {{dish.name}} 
-      <!-- - {{dish.nutrients[1]["name"]}}: {{dish.nutrients[1]["amount"]}} {{dish.nutrients[1]["unit"]}} -->
+      <view class='card-dish' bindtap="mealMoreInfo" data-id="{{dish.id}}" style="background-image: linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.7)), url('{{dish.image}}')">
+        <!-- DISH NAME -->
+        {{dish.name}} 
+        <!-- - {{dish.nutrients[1]["name"]}}: {{dish.nutrients[1]["amount"]}} {{dish.nutrients[1]["unit"]}} -->
+      </view>
+
     </view>
-
-  </view>
+  </block>
 </view>
 <!-- navbar -->
 <view id='navbar'>

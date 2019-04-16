@@ -24,6 +24,7 @@
             </view>
           </view>
 
+
           <view id="a1" class="container">
               <gauge 
               height="750" 
