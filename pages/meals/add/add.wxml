@@ -9,7 +9,7 @@
 </view>
 
 <!-- SEARCH BAR -->
-<view class="page__bd">
+<!-- <view class="page__bd">
   <view class="weui-search-bar">
       <view class="weui-search-bar__form">
           <view class="weui-search-bar__box">
@@ -21,22 +21,41 @@
           </view>
       </view>
   </view>
-</view>
+</view> -->
+
+<view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="Search a dish.." value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+                    <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                        <icon type="clear" size="14"></icon>
+                    </view>
+                </view>
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text">Search</view>
+                </label>
+            </view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">Cancel</view>
+        </view>
+        <view class="searchbar-result" wx:if="{{inputVal.length > 0}}">
+            <view wx:for="{{dishes}}" wx:for-item="dish" wx:key="{{dish.id}}">
+
+              <view class='card-dish'>
+                <!-- DISH NAME -->
+                {{dish.name}} 
+                <!-- - {{dish.nutrients[1]["name"]}}: {{dish.nutrients[1]["amount"]}} {{dish.nutrients[1]["unit"]}} -->
+                <!-- PLUS BUTTON -->
+                <view class='card-dish-plus-btn'>
+                  <image src="/images/plus-button.png" bindtap="mealMoreInfo" data-id="{{dish.id}}" class='image-icon'></image>
+                </view>
+                
+              </view>
+
+            </view>
+        </view>
 
 <!-- LIST OF DISHES -->
 
 
-<view wx:for="{{dishes}}" wx:for-item="dish" wx:key="{{dish.id}}">
-
-  <view class='card-dish'>
-    <!-- DISH NAME -->
-    {{dish.name}} 
-    <!-- - {{dish.nutrients[1]["name"]}}: {{dish.nutrients[1]["amount"]}} {{dish.nutrients[1]["unit"]}} -->
-    <!-- PLUS BUTTON -->
-    <view class='card-dish-plus-btn'>
-      <image src="/images/plus-button.png" bindtap="mealMoreInfo" data-id="{{dish.id}}" class='image-icon'></image>
-    </view>
-    
-  </view>
-
-</view>
