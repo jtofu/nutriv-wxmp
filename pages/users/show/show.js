@@ -9,7 +9,23 @@ Page({
   },
   
   onShow: function (options) {    
-   
+    // const page = this;
+    // const url = app.globalData.url;    
+    // const id = app.globalData.userId;
+    // console.log(id)
+    // const userInfo = app.globalData.userInfo;
+    // const avatarUrl = app.globalData.userInfo.avatarUrl;
+    // console.log(avatarUrl)
+    // const nickName = userInfo.nickName;    
+    // wx.request({      
+    //   url: `${url}users/${id}`,      
+    //   method: "PUT",
+    //   data: { profile_image: avatarUrl, username: nickName },
+    //   success(res) {       
+    //     const user = res.data;       
+    //     page.setData(user);
+    //   }
+    // })
   }, 
 
   /**
