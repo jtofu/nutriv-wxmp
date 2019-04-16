@@ -172,27 +172,5 @@ Page({
         });
       }
     });
-  },
-
-  // addToMeal(e) {
-  //   console.log(e)
-  //   const url = app.globalData.url;
-
-  //   let dish_id = e.currentTarget.dataset.id;
-  //   let user_id = app.globalData.userId;
-
-  //   let meal = { quantity: 1, user_id: user_id, dish_id: dish_id };
-
-  //   wx.request({
-  //     url: `${url}meals`,
-  //     method: "POST",
-  //     data: meal,
-  //     success(res) {
-  //       console.log(res)
-  //       wx.navigateTo({
-  //         url: `/pages/meals/index/index?user_id=${user_id}`
-  //       })
-  //     }
-  //   })
-  // },
+  }
 })
