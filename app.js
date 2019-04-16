@@ -26,7 +26,8 @@ App({
     //  url: 'http://localhost:3000/api/v1/'
     // url: 'http://localhost:3001/api/v1/'
     // PRODUCTION BELOW
-    url: 'https://nutriv.wogengapp.cn/api/v1/'
+    url: 'https://nutriv.wogengapp.cn/api/v1/',
+    max_calories: 3000,
   }
 })
 

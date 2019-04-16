@@ -1,4 +1,5 @@
 const app = getApp();
+let max_calories = app.globalData.max_calories;
 
 Page({
 

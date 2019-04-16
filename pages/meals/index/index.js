@@ -4,6 +4,8 @@ const wxCharts = require('../../../utils/wxcharts.js');
 const app = getApp();
 const order = ['pic1', 'pic2', 'pic3', 'pic4']
 let pieChart = null;
+let max_calories = app.globalData.max_calories;
+
 
 Page({
   data: {
@@ -58,6 +60,7 @@ Page({
     return `${monthNames[monthIndex]} ${day}, ${year}`
   },
 
+  
   onLoad: function (e) {
     // SET TODAY'S DATE and PROFILE IMAGE
     const currentDate = new Date();
@@ -71,6 +74,7 @@ Page({
       currentDate: formattedDate,
       avatarUrl: avatarUrl
     });
+
 
     // GET USER'S GOALS and CURRENT MEAL's NUTRIENTS
     const page = this;
@@ -106,6 +110,7 @@ Page({
         });
       }
     });
+    
 
     // USER'S MEAL LIST
     let todayCal = 0;
