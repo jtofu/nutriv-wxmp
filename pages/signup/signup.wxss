@@ -27,7 +27,8 @@ button {
   margin-top: 60px;
   box-shadow: 1px 2px 4px 1px rgba(0, 0, 0,.10);
   width: 50%;
-  font-weight: bold;
+  background-color: #1EBF66;
+  color: white;
 }
 
 .banner {
@@ -38,10 +39,9 @@ button {
 
 .logo {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 80px;
+  padding-top: 144px;
   margin-bottom: 40px;
 }
 
@@ -74,4 +74,10 @@ button {
   align-items: center;
   background: rgba(0,0,0,0.5);
   /* background: rgba(255,255,255,0.3); */
+}
+
+.icon-title {
+  width: 40px;
+  height: 40px;
+  padding-right: 10px;
 }
