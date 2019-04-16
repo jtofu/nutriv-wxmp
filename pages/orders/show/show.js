@@ -119,15 +119,15 @@ Page({
     let sugar = 0;
     let protein = 0;
     page.data.dishes.forEach( (dish)  => {
-      carb += dish.nutrients[0].amount * dish.quantity
-      calorie += dish.nutrients[1].amount * dish.quantity
-      total_fat += dish.nutrients[2].amount * dish.quantity
-      sat_fat += dish.nutrients[3].amount * dish.quantity
-      cholesterol += dish.nutrients[4].amount * dish.quantity
-      sodium += dish.nutrients[5].amount * dish.quantity
+      carb += dish.nutrients[5].amount * dish.quantity
+      calorie += dish.nutrients[0].amount * dish.quantity
+      total_fat += dish.nutrients[1].amount * dish.quantity
+      sat_fat += dish.nutrients[2].amount * dish.quantity
+      cholesterol += dish.nutrients[3].amount * dish.quantity
+      sodium += dish.nutrients[4].amount * dish.quantity
       fiber += dish.nutrients[6].amount * dish.quantity
-      sugar += dish.nutrients[7].amount * dish.quantity
-      protein += dish.nutrients[8].amount * dish.quantity
+      sugar += dish.nutrients[8].amount * dish.quantity
+      protein += dish.nutrients[7].amount * dish.quantity
     });
     page.setData({
       carb: carb,
