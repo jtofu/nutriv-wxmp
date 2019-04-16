@@ -45,7 +45,13 @@
     </view>
   </picker>
 
+
+<!-- condition if goal vs if no goal -->
+  <block wx:if="{{no_goals}}">
+   <text>Please set your goal to get recommendations</text>
+  </block>
   <!-- Dishes -->
+  <block wx:else>
   <view wx:for="{{mealsRecommended}}" wx:for-item="dish">
 
     <view class='card-dish' bindtap="mealMoreInfo" data-id="{{dish.id}}" style="background-image: linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.7)), url('https://images.unsplash.com/photo-1467453678174-768ec283a940?ixlib=rb-1.2.1&auto=format&fit=crop&w=1456&q=80')">
@@ -55,6 +61,7 @@
     </view>
 
   </view>
+  </block>
 </view>
 <!-- navbar -->
 <view id='navbar'>
