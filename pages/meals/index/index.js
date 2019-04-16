@@ -110,11 +110,11 @@ Page({
         });
 
         app.globalData.calories = calories
-        // app.setData({
-        //   calories: calories,
-        //   protein: protein,
-        //   fat: fat
-        // });
+        app.setData({
+          calories: calories,
+          protein: protein,
+          fat: fat
+        });
       }
     });
     

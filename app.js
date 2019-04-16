@@ -28,6 +28,7 @@ App({
     // PRODUCTION BELOW
     url: 'https://nutriv.wogengapp.cn/api/v1/',
     max_calories: 3000,
+    calories: 1000
   }
 })
 
