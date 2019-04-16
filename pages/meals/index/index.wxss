@@ -197,6 +197,7 @@ image {
 }
 .daily-text {
   font-size: 14px;
+  border-bottom:dotted 1px #1EBF66;
 }
 .daily-nutrient-stat {
   display: flex;
@@ -219,10 +220,7 @@ image {
   display: flex;
   align-items: center;
 } */
-.protein-icon {
-  width: 30px;
-  height: 30px;
-}
+
 .fat-icon {
   width: 20px;
   height: 20px;
@@ -251,6 +249,7 @@ image {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content:center;
 }
 
 .bc_3 {
@@ -314,7 +313,7 @@ canvas {
   flex-direction:column;
   align-items:center;
   box-shadow:0 2px 4px 0 rgba(0, 0, 0,.06);
-
+  border:1px solid #1EBF66;
 }
 .goals-block {
   width: 50%;

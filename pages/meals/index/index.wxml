@@ -54,7 +54,7 @@
               <image class="icon fire" mode="aspectFit" src="/images/calories.png"></image>
               <view class="daily-nutrient-stat">
                 <text class="daily-text">{{todayCal}} kcal</text>
-                <text class="daily-text">{{calories}} kcal</text>
+                <text class="daily-text">Goal: {{calories}} kcal</text>
               </view>
             </view>
 
@@ -62,7 +62,7 @@
               <image class="icon steak" mode="aspectFit" src="/images/boiled.png"></image>
               <view class="daily-nutrient-stat">
                   <text class="daily-text">{{todayProtein}} g protein</text>
-                  <text class="daily-text">{{protein}} g protein</text>
+                  <text class="daily-text">Goal: {{protein}} g protein</text>
               </view>
             </view>
 
@@ -70,10 +70,10 @@
               <image class="icon-fat" mode="aspectFit" src="/images/avo.png"></image>
               <view class="daily-nutrient-stat">
                 <text class="daily-text">{{todayFat}}g fat</text>
-                <text class="daily-text">{{fat}}g fat</text>
+                <text class="daily-text">Goal: {{fat}}g fat</text>
               </view>
             </view>
-            
+
         </view>
       </view>
 
@@ -103,7 +103,7 @@
           <view class="nutrient">
             <view class="nutrient-icon-title">
               <view class='nutrient-icon'>
-                <image class="fat-icon" mode="aspectFit" src="/images/Avocado.png"></image>
+                <image class="fat-icon" mode="aspectFit" src="/images/avo.png"></image>
               </view>
               <view class="nutrient-text">Fat</view>
             </view>
@@ -115,7 +115,7 @@
           <view class="nutrient">
             <view class="nutrient-icon-title">
               <view class='nutrient-icon'>
-                <image class="calorie-icon" mode="aspectFit" src="/images/fire.png"></image>
+                <image class="calorie-icon" mode="aspectFit" src="/images/calories.png"></image>
               </view>
               <text class="nutrient-text">Calories</text>
             </view>
@@ -126,7 +126,7 @@
           <view class="nutrient">
             <view class="nutrient-icon-title">
               <view class='nutrient-icon'>
-                <image class="protein-icon" mode="aspectFit" src="/images/steak.png"></image>
+                <image class="protein-icon" mode="aspectFit" src="/images/boiled.png"></image>
               </view>
               <view class="nutrient-text">Proteins</view>
             </view>
