@@ -2,7 +2,7 @@ const PI_3_2 = Math.PI * 1.5;
 const PI_1_2 = Math.PI * 0.5;
 const app = getApp();
 let max_calories = app.globalData.max_calories;
-
+// let max_calories = app.globalData.calories;
 
 
 const mergeProps = function (newVal, oldVal) {
