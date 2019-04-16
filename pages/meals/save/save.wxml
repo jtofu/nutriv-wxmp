@@ -52,16 +52,16 @@
       <view class="weui-panel__bd">
         <view url="" class="weui-media-box weui-media-box_appmsg dish background-green">
             <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-                <image class="weui-media-box__thumb" src="{{icon60}}" />
+                <image class="weui-media-box__thumb" src="{{dish.image}}" />
             </view>
             <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
                 <view class="weui-media-box__title dish-description">
                   <view class='dish-name'>{{dish.name}}</view>
-                  <view class='dish-nutrition'>{{dish.nutrients[1].amount}} Calories</view>
+                  <view class='dish-nutrition'>{{dish.nutrients[0].amount}} Calories</view>
                 </view>
                 <view class="dish-quantity">
                   <image bindtap='subtractAmount' data-id='{{index}}' class='image-icon' src='/images/minus-symbol.png'></image>
-                  <view class='dish-number'>{{dish.quantity}}</view>
+                  <view class='dish-number'>{{quantity}}</view>
                   <image bindtap='addAmount' data-id='{{index}}' class='image-icon' src='/images/plus-button.png'></image>
                 </view>
             </view>

@@ -14,6 +14,7 @@
   <!-- <scroll-view class="scroll-view" scroll-x> -->
     <view class='scroll-row'>
 
+   
     <!-- SECOND CAROUSEL ITEM -->
       <!-- <view id="pic2" class="scroll-view-item_H bc_2">
         <view id="a1" class="container">
@@ -33,23 +34,30 @@
             />
         </view>
       </view> -->
-
-
-
-
-
+          <view id="a1" class="container">
+              <gauge 
+              height="750" 
+              r="150" 
+              bgWidth="13"
+              gaugeid="g1"
+              animateMsec="700" 
+              scaleTextStyle="{{scaleTextStyle}}" 
+              indicatorTextStyle='{{indicatorTextStyle}}'
+              indicatorValueStyle='{{indicatorValueStyle}}'
+              indicatorCircleStyle='{{indicatorCircleStyle}}'
+              min="0"
+              max="{{calories}}"
+              value="{{todayCal}}"
+              />
+          </view>
+      </view>
 
       <!-- <view id="pic1" class="scroll-view-item_H bc_1"> -->
       <view id="pic1" class="scroll-view-item_H">
 
         <!-- TOP BLOCK WITH DATE AVATAR AND DAILY STAT -->
         <view class="goal1">
-          <!-- SHOW DATE & AVATAR -->
-          <view class="border-avatar">
-            <view class="border-text">{{currentDate}}</view>
-            <view class='avatar' style="background-image: url('{{avatarUrl}}');"></view>
-          </view>
-
+         
           <!-- DAILY NUTRIENT STAT -->
           <view class="block1">
             
@@ -106,18 +114,24 @@
             <view class="daily">
               <view class='today-intake'>Today's Intake</view>
               <view class="daily-nutrient-stat">
-                <image class="icon fire" mode="aspectFit" src="/images/fire.png"></image>
                 <text class="daily-text">{{todayCal}} kcal</text>
+                <text class="daily-text">Goal: {{calories}} kcal</text>
               </view>
+            </view>
 
+            <view class="daily proteins">
+              <image class="icon steak" mode="aspectFit" src="/images/boiled.png"></image>
               <view class="daily-nutrient-stat">
-                <image class="icon steak" mode="aspectFit" src="/images/steak.png"></image>
-                <text class="daily-text">{{todayProtein}} g protein</text>
+                  <text class="daily-text">{{todayProtein}} g protein</text>
+                  <text class="daily-text">Goal: {{protein}} g protein</text>
               </view>
+            </view>
 
+            <view class="daily fat">
+              <image class="icon-fat" mode="aspectFit" src="/images/avo.png"></image>
               <view class="daily-nutrient-stat">
-                <image class="icon-fat" mode="aspectFit" src="/images/Avocado.png"></image>
                 <text class="daily-text">{{todayFat}}g fat</text>
+                <text class="daily-text">Goal: {{fat}}g fat</text>
               </view>
             </view>
             COMMENT OUT -->
@@ -142,8 +156,6 @@
             </view> -->
             
           </view>
-          
-
         </view>
       </view>
 
@@ -151,7 +163,6 @@
       <!-- <view id="pic3" class="scroll-view-item_H bc_3">
         <view class="goal2">
           <canvas canvas-id="pieCanvas" class="canvas" style="height:300px" bindtouchstart="touchHandler"></canvas>
-
         </view>
       </view> -->
 
@@ -170,16 +181,13 @@
 
 
   <!-- TODAY's MEALS -->
-  <view class="border">
-    <text class="border-text">Today's Meals</text>
-  </view>
-
+  <view class="weui-panel__hd label-green">Today's Meals</view>
 
   <view class="card-dishes">
 
     <block wx:for='{{meals}}' wx:for-item='meal' wx:key='meal.id'>
 
-      <view class="card-dish" wx:if="{{meal.date === currentDate}}" style="background-image: linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.7)), url('https://images.unsplash.com/photo-1467453678174-768ec283a940?ixlib=rb-1.2.1&auto=format&fit=crop&w=1456&q=80')">
+      <view class="card-dish" wx:if="{{meal.date === currentDate}}" style="background-image: linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.7)), url('{{meal.image}}')">
 
         <view class="card-text">
           <text class="dish-title">{{meal.dish}}</text>
@@ -188,34 +196,34 @@
           <view class="nutrient">
             <view class="nutrient-icon-title">
               <view class='nutrient-icon'>
-                <image class="fat-icon" mode="aspectFit" src="/images/Avocado.png"></image>
+                <image class="fat-icon" mode="aspectFit" src="/images/avo.png"></image>
               </view>
               <view class="nutrient-text">Fat</view>
             </view>
 
-            <view class="text-count">{{meal.nutrients[2].amount}}{{meal.nutrients[2].unit}}</view>
+            <view class="text-count">{{meal.nutrients[1].amount}}{{meal.nutrients[1].unit}}</view>
           </view>
 
           <!-- <view class="calories"> -->
           <view class="nutrient">
             <view class="nutrient-icon-title">
               <view class='nutrient-icon'>
-                <image class="calorie-icon" mode="aspectFit" src="/images/fire.png"></image>
+                <image class="calorie-icon" mode="aspectFit" src="/images/calories.png"></image>
               </view>
               <text class="nutrient-text">Calories</text>
             </view>
-            <view class="text-count">{{meal.nutrients[1].amount}}{{meal.nutrients[1].unit}}</view>
+            <view class="text-count">{{meal.nutrients[0].amount}}{{meal.nutrients[0].unit}}</view>
           </view>
 
           <!-- <view class="proteins"> -->
           <view class="nutrient">
             <view class="nutrient-icon-title">
               <view class='nutrient-icon'>
-                <image class="protein-icon" mode="aspectFit" src="/images/steak.png"></image>
+                <image class="protein-icon" mode="aspectFit" src="/images/boiled.png"></image>
               </view>
               <view class="nutrient-text">Proteins</view>
             </view>
-            <view class="text-count">{{meal.nutrients[8].amount}}{{meal.nutrients[8].unit}}</view>
+            <view class="text-count">{{meal.nutrients[7].amount}}{{meal.nutrients[7].unit}}</view>
           </view>
 
         </view>

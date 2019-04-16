@@ -2,6 +2,7 @@ const PI_3_2 = Math.PI * 1.5;
 const PI_1_2 = Math.PI * 0.5;
 const app = getApp();
 let max_calories = app.globalData.max_calories;
+let calories = app.globalData.calories;
 // let max_calories = app.globalData.calories;
 
 
@@ -140,7 +141,7 @@ Component({
     scale: {
       type: Array,
       value: [
-        0, 200, 400, 600, 800, max_calories
+        0, 200, 400, 600, calories, max_calories
       ]
     },
     ...defaultObjectProps

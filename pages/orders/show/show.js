@@ -23,8 +23,8 @@ Page({
     console.log('onLoad user_id', this.data.user_id)
 
     wx.request({
-      // url: `${url}orders/${options.id}`,
-      url: `${url}orders/1`,
+      url: `${url}orders/${options.id}`,
+      // url: `${url}orders/4`,
       method: 'GET',
       success(res) {
         const dishes = res.data.dishes;
@@ -109,25 +109,45 @@ Page({
 
   setTotal() {
     const page = this;
-    let carb = 0;
     let calorie = 0;
     let total_fat = 0;
     let sat_fat = 0;
     let cholesterol = 0;
     let sodium = 0;
+    let carb = 0;
     let fiber = 0;
-    let sugar = 0;
     let protein = 0;
+    let sugar = 0;
     page.data.dishes.forEach( (dish)  => {
-      carb += dish.nutrients[0].amount * dish.quantity
-      calorie += dish.nutrients[1].amount * dish.quantity
-      total_fat += dish.nutrients[2].amount * dish.quantity
-      sat_fat += dish.nutrients[3].amount * dish.quantity
-      cholesterol += dish.nutrients[4].amount * dish.quantity
-      sodium += dish.nutrients[5].amount * dish.quantity
-      fiber += dish.nutrients[6].amount * dish.quantity
-      sugar += dish.nutrients[7].amount * dish.quantity
-      protein += dish.nutrients[8].amount * dish.quantity
+      dish.nutrients.forEach((nutrient) => {
+        if (nutrient.name === 'Calories') {
+          calorie += nutrient.amount * dish.quantity;
+        }
+        if (nutrient.name === 'Total Fat') {
+          total_fat += nutrient.amount * dish.quantity;
+        }
+        if (nutrient.name === 'Saturated Fat') {
+          sat_fat += nutrient.amount * dish.quantity;
+        }
+        if (nutrient.name === 'Cholesterol') {
+          cholesterol += nutrient.amount * dish.quantity;
+        }
+        if (nutrient.name === 'Sodium') {
+          sodium += nutrient.amount * dish.quantity;
+        }
+        if (nutrient.name === 'Carbohydrate') {
+          carb += nutrient.amount * dish.quantity;
+        }
+        if (nutrient.name === 'Dietary Fiber') {
+          fiber += nutrient.amount * dish.quantity;
+        }
+        if (nutrient.name === 'Protein') {
+          protein += nutrient.amount * dish.quantity;
+        }
+        if (nutrient.name === 'Sugars') {
+          sugar += nutrient.amount * dish.quantity;
+        }
+      });
     });
     page.setData({
       carb: carb,

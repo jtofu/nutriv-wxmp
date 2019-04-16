@@ -99,15 +99,45 @@ Page({
   setTotal() {
     const page = this;
     const dish = page.data.dish;
-    let carb = dish.nutrients[0].amount * page.data.quantity;
-    let calorie = dish.nutrients[1].amount * page.data.quantity;
-    let total_fat = dish.nutrients[2].amount * page.data.quantity;
-    let sat_fat = dish.nutrients[3].amount * page.data.quantity;
-    let cholesterol = dish.nutrients[4].amount * page.data.quantity;
-    let sodium = dish.nutrients[5].amount * page.data.quantity;
-    let fiber = dish.nutrients[6].amount * page.data.quantity;
-    let sugar = dish.nutrients[7].amount * page.data.quantity;
-    let protein = dish.nutrients[8].amount * page.data.quantity;
+    let calorie = 0;
+    let total_fat = 0;
+    let sat_fat = 0;
+    let cholesterol = 0;
+    let sodium = 0;
+    let carb = 0;
+    let fiber = 0;
+    let protein = 0;
+    let sugar = 0;
+
+    dish.nutrients.forEach((nutrient) => {
+      if (nutrient.name === 'Calories') {
+        calorie += nutrient.amount * page.data.quantity;
+      }
+      if (nutrient.name === 'Total Fat') {
+        total_fat += nutrient.amount * page.data.quantity;
+      }
+      if (nutrient.name === 'Saturated Fat') {
+        sat_fat += nutrient.amount * page.data.quantity;
+      }
+      if (nutrient.name === 'Cholesterol') {
+        cholesterol += nutrient.amount * page.data.quantity;
+      }
+      if (nutrient.name === 'Sodium') {
+        sodium += nutrient.amount * page.data.quantity;
+      }
+      if (nutrient.name === 'Carbohydrate') {
+        carb += nutrient.amount * page.data.quantity;
+      }
+      if (nutrient.name === 'Dietary Fiber') {
+        fiber += nutrient.amount * page.data.quantity;
+      }
+      if (nutrient.name === 'Protein') {
+        protein += nutrient.amount * page.data.quantity;
+      }
+      if (nutrient.name === 'Sugars') {
+        sugar += nutrient.amount * page.data.quantity;
+      }
+    });
 
     page.setData({
       carb: carb,
@@ -142,27 +172,5 @@ Page({
         });
       }
     });
-  },
-
-  // addToMeal(e) {
-  //   console.log(e)
-  //   const url = app.globalData.url;
-
-  //   let dish_id = e.currentTarget.dataset.id;
-  //   let user_id = app.globalData.userId;
-
-  //   let meal = { quantity: 1, user_id: user_id, dish_id: dish_id };
-
-  //   wx.request({
-  //     url: `${url}meals`,
-  //     method: "POST",
-  //     data: meal,
-  //     success(res) {
-  //       console.log(res)
-  //       wx.navigateTo({
-  //         url: `/pages/meals/index/index?user_id=${user_id}`
-  //       })
-  //     }
-  //   })
-  // },
+  }
 })

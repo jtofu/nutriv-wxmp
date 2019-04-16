@@ -114,23 +114,6 @@ Page({
     })
   },
 
-  searchButtonInput: function (e) {
-    console.log(e)
-    let search = e.currentTarget.dataset.search
-    const url = app.globalData.url
-    const page = this;
-    wx.request({
-      url: `${url}dishes?search=${search}`,
-      success(res) {
-        console.log(res.data)
-        page.setData(
-          res.data
-        );
-      }
-    })
-
-  },
-
   showInput: function () {
     this.setData({
       inputShowed: true
@@ -163,5 +146,17 @@ Page({
     this.setData({
       inputVal: e.detail.value
     });
+
+    const url = app.globalData.url
+    const page = this;
+    wx.request({
+      url: `${url}dishes?search=${page.data.inputVal}`,
+      success(res) {
+        console.log(res.data)
+        page.setData(
+          res.data
+        );
+      }
+    })
   },
 })

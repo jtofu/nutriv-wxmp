@@ -42,14 +42,19 @@
   width: 100%;
   font-weight: bold;
 }
+
+.items {
+  text-align: center;
+}
+
 .border-avatar {
-  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(128,248,174,0.8) 10%, rgba(223,244,148,0.8) 95% );
-  margin-bottom: 10px;
+  /* background-color: #1EBF66; */
   width: 100%;
-  font-weight: bold;
+  font-size: 12px;
   display: flex;
   position: relative;
 }
+
 .avatar {
   background-size: cover;
   border-radius: 50%;
@@ -58,12 +63,12 @@
   /* border: solid 1px black; */
   position: absolute;
   right: 30px;
-  top: -5px;
+  top: 10px;
 }
 .today-intake {
   width: 100%;
   /* background-color: rgba(0, 0, 0, 0.2); */
-  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(128,248,174,0.8) 10%, rgba(223,244,148,0.8) 95% );
+  /* background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(128,248,174,0.8) 10%, rgba(223,244,148,0.8) 95% ); */
   font-size: 14px;
   /* font-weight: bold; */
   color: #000;
@@ -145,13 +150,21 @@ image {
   margin-right: 15px;
 }
 .icon {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
+  border-radius:50%;
+  background-color:white;
+  padding:5px;
+  /* box-shadow:0 2px 4px 0 rgba(0, 0, 0,.06); */
 }
 .icon-fat{
-  width: 40px;
+  width: 30px;
   height: 30px;
-  margin-right: 20px;
+  /* margin-right: 20px; */
+  border-radius:50%;
+  background-color:white;
+  padding:5px;
+  /* box-shadow:0 2px 4px 0 rgba(0, 0, 0,.06); */
 }
 .nutrient-icon-title {
   display: flex;
@@ -167,10 +180,8 @@ image {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-left: 15px;
-  padding-right: 15px;
   height: 33px;
-  margin-top: 3px;
+  margin-top: 5px;
 }
 /* 
 .calorie-icon-title {
@@ -195,7 +206,7 @@ image {
   margin-right: 5px;
 }
 .icon.steak {
-  margin-right: 20px;
+  /* margin-right: 20px; */
 }
 .icon.fat {
   width: 30px;
@@ -203,11 +214,13 @@ image {
 }
 .daily-text {
   font-size: 14px;
+  border-bottom:dotted 1px #1EBF66;
 }
 .daily-nutrient-stat {
   display: flex;
   align-items: center;
-  margin: 5px 0px 5px 10px;
+  /* margin: 5px 0px 5px 10px; */
+  flex-direction:column;
 }
 /* .daily-calories {
   display: flex;
@@ -224,10 +237,7 @@ image {
   display: flex;
   align-items: center;
 } */
-.protein-icon {
-  width: 30px;
-  height: 30px;
-}
+
 .fat-icon {
   width: 20px;
   height: 20px;
@@ -252,6 +262,13 @@ image {
   margin-top: 20px;
 }
 
+.goal1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:center;
+}
+
 .bc_3 {
   height:320px;
   display:flex;
@@ -274,6 +291,7 @@ image {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0,.06);
   padding:0rpx 0;
   box-sizing:border-box;
+  margin-right:15px;
 }
 canvas {
   width:100%;
@@ -297,14 +315,22 @@ canvas {
 .daily {
   margin-left: 15px;
   margin-right: 15px;
-  margin-top: 20px;
-  width: 50%;
-  background-color: white;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0,.06);
+  /* margin-top: 20px; */
+  width: 40%;
+  height: 100px;
+  /* background-color: white; */
+  /* box-shadow: 0 2px 4px 0 rgba(0, 0, 0,.06); */
   /* padding-left: 10px; */
   padding-bottom: 10px;
   padding-top: 15px;
   /* padding-right: 10px; */
+  background-color:white;
+  border-radius:10px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  box-shadow:0 2px 4px 0 rgba(0, 0, 0,.06);
+  border:1px solid #1EBF66;
 }
 .goals-block {
   width: 50%;
@@ -404,7 +430,7 @@ canvas {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 10px 0;
+  padding: 10px 0 16px 0;
   background-color: rgb(254, 254, 254);
 }
 .navbar-selection {

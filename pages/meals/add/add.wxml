@@ -1,15 +1,15 @@
 <!-- BANNER -->
-<view class="banner" style="background-position:center; background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(128,248,174,0.6) 0%, rgba(223,244,148,0.6) 90% ), url('https://images.unsplash.com/photo-1543362906-acfc16c67564?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=401&q=80');">
+<!-- <view class="banner" style="background-position:center; background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(128,248,174,0.6) 0%, rgba(223,244,148,0.6) 90% ), url('https://images.unsplash.com/photo-1543362906-acfc16c67564?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=401&q=80');">
   <text class="banner-title">Nutriv</text>
   <view class="banner-text">
     <view class="icons">
       <image class="icon nutri" mode="aspectFit" src="/images/nutri.png"></image>
     </view>
   </view>
-</view>
+</view> -->
 
 <!-- SEARCH BAR -->
-<view class="page__bd">
+<!-- <view class="page__bd">
   <view class="weui-search-bar">
       <view class="weui-search-bar__form">
           <view class="weui-search-bar__box">
@@ -21,22 +21,36 @@
           </view>
       </view>
   </view>
+</view> -->
+
+<view class="weui-search-bar">
+  <view class="weui-search-bar__form">
+      <view class="weui-search-bar__box">
+          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+          <input type="text" class="weui-search-bar__input" placeholder="Search a dish.." value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+          <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+              <icon type="clear" size="14"></icon>
+          </view>
+      </view>
+      <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+          <icon class="weui-icon-search" type="search" size="14"></icon>
+          <view class="weui-search-bar__text">Search</view>
+      </label>
+  </view>
+  <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">Cancel</view>
+</view>
+<view class="searchbar-result" wx:if="{{inputVal.length > 0}}">
+  <view wx:for="{{dishes}}" wx:for-item="dish" wx:key="{{dish.id}}">
+
+    <view class='card-dish' style="background-image: linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.7)), url('{{dish.image}}')">
+      <!-- DISH NAME -->
+      {{dish.name}} 
+      <!-- - {{dish.nutrients[1]["name"]}}: {{dish.nutrients[1]["amount"]}} {{dish.nutrients[1]["unit"]}} -->   
+    </view>
+
+  </view>
 </view>
 
 <!-- LIST OF DISHES -->
 
 
-<view wx:for="{{dishes}}" wx:for-item="dish" wx:key="{{dish.id}}">
-
-  <view class='card-dish'>
-    <!-- DISH NAME -->
-    {{dish.name}} 
-    <!-- - {{dish.nutrients[1]["name"]}}: {{dish.nutrients[1]["amount"]}} {{dish.nutrients[1]["unit"]}} -->
-    <!-- PLUS BUTTON -->
-    <view class='card-dish-plus-btn'>
-      <image src="/images/plus-button.png" bindtap="mealMoreInfo" data-id="{{dish.id}}" class='image-icon'></image>
-    </view>
-    
-  </view>
-
-</view>
