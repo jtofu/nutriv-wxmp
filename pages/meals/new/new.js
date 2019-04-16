@@ -32,9 +32,17 @@ Page({
       url: `${url}dishes`,
       method: 'GET',
       success(res) {
-        console.log(res.data);
+        console.log(444,res.data);
         page.setData(res.data);
-        page.setMealsRecommended();
+        // add condition if no goal
+        console.log("GOALS",page.data.goals);    
+        if (page.data.goals.length > 0){
+          page.setMealsRecommended();
+        } else {
+          page.setData({no_goals: true})
+        }
+       
+       
       }
     });
 
@@ -179,7 +187,10 @@ Page({
     let fiber = 0;
     let sugar = 0;
     let protein = 0;
+  
+    console.log(333, page.data.mealsToday)
     page.data.mealsToday.forEach((dish) => {
+      console.log(111, dish)
       carb += dish.nutrients[0].amount * dish.quantity
       calorie += dish.nutrients[1].amount * dish.quantity
       total_fat += dish.nutrients[2].amount * dish.quantity
