@@ -99,15 +99,15 @@ Page({
   setTotal() {
     const page = this;
     const dish = page.data.dish;
-    let carb = dish.nutrients[0].amount * page.data.quantity;
-    let calorie = dish.nutrients[1].amount * page.data.quantity;
-    let total_fat = dish.nutrients[2].amount * page.data.quantity;
-    let sat_fat = dish.nutrients[3].amount * page.data.quantity;
-    let cholesterol = dish.nutrients[4].amount * page.data.quantity;
-    let sodium = dish.nutrients[5].amount * page.data.quantity;
+    let carb = dish.nutrients[5].amount * page.data.quantity;
+    let calorie = dish.nutrients[0].amount * page.data.quantity;
+    let total_fat = dish.nutrients[1].amount * page.data.quantity;
+    let sat_fat = dish.nutrients[2].amount * page.data.quantity;
+    let cholesterol = dish.nutrients[3].amount * page.data.quantity;
+    let sodium = dish.nutrients[4].amount * page.data.quantity;
     let fiber = dish.nutrients[6].amount * page.data.quantity;
-    let sugar = dish.nutrients[7].amount * page.data.quantity;
-    let protein = dish.nutrients[8].amount * page.data.quantity;
+    let sugar = dish.nutrients[8].amount * page.data.quantity;
+    let protein = dish.nutrients[7].amount * page.data.quantity;
 
     page.setData({
       carb: carb,

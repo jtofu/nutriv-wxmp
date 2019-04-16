@@ -391,3 +391,12 @@ canvas {
   /* height: calc(100vh - 63px); */
   margin-bottom: 63px;
 }
+
+.label-green {
+  background-color: #1EBF66;
+  color: white;
+  font-size: 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  font-weight: bold;
+}
