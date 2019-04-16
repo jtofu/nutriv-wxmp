@@ -1,10 +1,14 @@
 <!--pages/signup/signup.wxml-->
-<view class='banner' style="background-image: radial-gradient( circle farthest-corner at 40% 30%,  rgba(96, 182, 100, 0.80) 0%, rgba(255, 255, 254, 0.30) 80% ), url('https://greenkitchenstories.com/wp-content/uploads/2013/10/Smoothie_green_01.jpg');">
+<view class='banner' style="background-image: radial-gradient( circle farthest-corner at 40% 30%,  rgba(116, 112, 100, 0.80) 0%, rgba(255, 255, 255, 0.30) 80% ), url('https://greenkitchenstories.com/wp-content/uploads/2013/10/Smoothie_green_01.jpg');">
 
 
-<view class="logo">
+<!-- <view class="logo">
   <view id='title' class="logo-bordered">Nutriv</view>
-  <!-- <image class="image-logo" src="/images/nutri.png"></image> -->
+</view> -->
+
+<view class='logo'>
+  <image src="/images/diet.png" class='icon-title'></image>
+  <view id='title'>Nutriv</view>
 </view>
 
 
