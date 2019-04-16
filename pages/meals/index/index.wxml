@@ -11,20 +11,29 @@
   </view> -->
 
   <!-- HORIZONTAL SCROLLING -->
-  <scroll-view class="scroll-view" scroll-x>
+  <!-- <scroll-view class="scroll-view" scroll-x> -->
     <view class='scroll-row'>
 
    
     <!-- SECOND CAROUSEL ITEM -->
-      <view id="pic2" class="scroll-view-item_H bc_2">
-      <!-- SHOW DATE & AVATAR -->
-          <view class="border-avatar">
-            <view class="border-text">{{currentDate}}</view>
-            <view class='avatar' style="background-image: url('{{avatarUrl}}');">
-            </view>
-          </view>
-
-
+      <!-- <view id="pic2" class="scroll-view-item_H bc_2">
+        <view id="a1" class="container">
+            <gauge 
+            height="750" 
+            r="150" 
+            bgWidth="13"
+            gaugeid="g1"
+            animateMsec="700" 
+            scaleTextStyle="{{scaleTextStyle}}" 
+            indicatorTextStyle='{{indicatorTextStyle}}'
+            indicatorValueStyle='{{indicatorValueStyle}}'
+            indicatorCircleStyle='{{indicatorCircleStyle}}'
+            min="0"
+            max="{{calories}}"
+            value="{{todayCal}}"
+            />
+        </view>
+      </view> -->
           <view id="a1" class="container">
               <gauge 
               height="750" 
@@ -43,16 +52,67 @@
           </view>
       </view>
 
-      <view id="pic1" class="scroll-view-item_H bc_1">
+      <!-- <view id="pic1" class="scroll-view-item_H bc_1"> -->
+      <view id="pic1" class="scroll-view-item_H">
 
         <!-- TOP BLOCK WITH DATE AVATAR AND DAILY STAT -->
         <view class="goal1">
          
           <!-- DAILY NUTRIENT STAT -->
+          <view class="block1">
+            
+            <!-- CHANGE STYLE TO USING GRID -->
+            <view class='mt-40 grid-container'>
+
+              <!-- CALORIES -->
+              <view class='grid-item'>
+                <image class="icon fire" mode="aspectFit" src="/images/fire.png"></image>
+              </view>
+              <view class='grid-item'>
+                <text class='text-bold'>Calories</text>
+              </view>
+              <view class='grid-item'>
+                {{todayCal}}/{{calories}} kcal
+              </view>
+              <view class='grid-item'>
+                <view class='progress-half'><progress percent="{{(todayCal*100/calories)}}" stroke-width="16" /></view>
+              </view>
+
+              <!-- PROTEIN -->
+              <view class='grid-item'>
+                <image class="icon fire" mode="aspectFit" src="/images/steak.png"></image>
+              </view>
+              <view class='grid-item'>
+                <text class='text-bold'>Protein</text>
+              </view>
+              <view class='grid-item'>
+                {{todayProtein}}/{{protein}} kcal
+              </view>
+              <view class='grid-item'>
+                <view class='progress-half'><progress percent="{{(todayProtein*100/protein)}}" stroke-width="16" /></view>
+              </view>
+
+              <!-- FAT -->
+              <view class='grid-item'>
+                <image class="icon fire" mode="aspectFit" src="/images/Avocado.png"></image>
+              </view>
+              <view class='grid-item'>
+                <text class='text-bold'>Fat</text>
+              </view>
+              <view class='grid-item'>
+                {{todayFat}}/{{fat}} kcal
+              </view>
+              <view class='grid-item'>
+                <view class='progress-half'><progress percent="{{(todayFat*100/fat)}}" stroke-width="16" /></view>
+              </view>
+
+            </view> 
 
             <!-- DAILY NUTRIENT INTAKE -->
-            <view class="daily calories">
-              <image class="icon fire" mode="aspectFit" src="/images/calories.png"></image>
+            
+            <!-- COMMENT OUT
+            <view class="daily">
+              <view class='today-intake'>Today's Intake</view>
               <view class="daily-nutrient-stat">
                 <text class="daily-text">{{todayCal}} kcal</text>
                 <text class="daily-text">Goal: {{calories}} kcal</text>
@@ -74,19 +134,51 @@
                 <text class="daily-text">Goal: {{fat}}g fat</text>
               </view>
             </view>
+            COMMENT OUT -->
 
+            <!-- STATIC DAILY GOAL -->
+            <!-- <view class="daily">
+              <view class='today-intake'>Daily Goal</view>
+              <view class="daily-nutrient-stat">
+                <image class="icon fire" mode="aspectFit" src="/images/fire.png"></image>
+                <text class="daily-text">{{calories}} kcal</text>
+              </view>
+
+              <view class="daily-nutrient-stat">
+                <image class="icon steak" mode="aspectFit" src="/images/steak.png"></image>
+                <text class="daily-text">{{protein}} g protein</text>
+              </view>
+
+              <view class="daily-nutrient-stat">
+                <image class="icon-fat" mode="aspectFit" src="/images/Avocado.png"></image>
+                <text class="daily-text">{{fat}}g fat</text>
+              </view>
+            </view> -->
+            
+          </view>
         </view>
       </view>
 
-      
-      <view id="pic3" class="scroll-view-item_H bc_3">
+      <!-- PIE CHART -->
+      <!-- <view id="pic3" class="scroll-view-item_H bc_3">
         <view class="goal2">
           <canvas canvas-id="pieCanvas" class="canvas" style="height:300px" bindtouchstart="touchHandler"></canvas>
         </view>
-      </view>
+      </view> -->
+
+      <!-- LINE CHART -->
 
     </view>
-  </scroll-view>
+  <!-- </scroll-view> -->
+
+  <!-- line chart -->
+  <view class="block1">
+    <view class='chart-container'>
+      <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
+    </view>
+    
+</view>
+
 
   <!-- TODAY's MEALS -->
   <view class="weui-panel__hd label-green">Today's Meals</view>
