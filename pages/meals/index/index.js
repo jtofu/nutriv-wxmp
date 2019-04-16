@@ -5,7 +5,9 @@ const app = getApp();
 const order = ['pic1', 'pic2', 'pic3', 'pic4']
 let pieChart = null;
 let max_calories = app.globalData.max_calories;
-
+var lineChart = null;
+const user_id = app.globalData.userId;
+const url = app.globalData.url;
 
 Page({
   data: {
@@ -40,9 +42,32 @@ Page({
       ]
     }
   },
+  // touchHandler: function (e) {
+  //   console.log(pieChart.getCurrentDataIndex(e));
+  // },
+
+  // FOR LINE CHART
   touchHandler: function (e) {
-    console.log(pieChart.getCurrentDataIndex(e));
+    console.log(lineChart.getCurrentDataIndex(e));
   },
+  createSimulationData: function () {
+    var categories = [];
+    let data = [];
+    var date = new Date();
+    var day = date.getDate();
+    var month = date.getMonth() + 1;
+
+    for (var i = 6; i >= 0; i--) {
+      categories.push(`${month}-${day-i}`);
+      data.push(Math.random() * (2000 - 1000) + 1000);
+    }
+    
+    return {
+      categories: categories,
+      data: data
+    }
+  },
+  // END OF LINE CHART
 
   formatDate(currentDate) {
     var monthNames = [
@@ -82,114 +107,112 @@ Page({
     const user_id = app.globalData.userId;
     console.log(user_id)
 
-    // GOALS LIST
     wx.request({
-      url: `${url}goals?user_id=${user_id}`,
-      method: 'GET',
+      url: `${url}users/${user_id}`,
       success(res) {
-        console.log('goal res', res.data.goals)
-        const goals = res.data.goals
-        let calories = 0;
-        let protein = 0;
-        let fat = 0;
-
-        goals.forEach((goal) => {
-          if (goal.name === "Calories") {
-            calories = goal.amount
-          } else if (goal.name === "Protein") {
-            protein = goal.amount
-          } else if (goal.name === "Total Fat") {
-            fat = goal.amount
-          }
-        });
-
+        console.log('new api request res', res)
+        const data = res.data
         page.setData({
-          calories: calories,
-          protein: protein,
-          fat: fat
-        });
-
-        app.globalData.calories = calories
-        // app.setData({
-        //   calories: calories,
-        //   protein: protein,
-        //   fat: fat
-        // });
-      }
-    });
-    
-
-    // USER'S MEAL LIST
-    let todayCal = 0;
-    let todayProtein = 0;
-    let todayFat = 0;
-
-    wx.request({
-      // url: `${url}dishes`,
-      url: `${url}meals?user_id=${user_id}`,
-      method: 'GET',
-      success(res) {
-        console.log(res.data);
-        const meals = res.data.meals;
-
-        meals.forEach((meal) => {
-          let mealDate = page.formatDate(new Date(meal.date));
-          meal.date = mealDate
-          if (mealDate === page.data.currentDate) {
-            meal.nutrients.forEach((nutrient) => {
-              if (nutrient.name === "Calories") {
-                todayCal += nutrient.amount;
-              } else if (nutrient.name === "Protein") {
-                todayProtein += nutrient.amount;
-              } else if (nutrient.name === "Total Fat") {
-                todayFat += nutrient.amount;
-              }
-            });
-          }
+          calories: data.goalCal,
+          protein: data.goalProtein,
+          fat: data.goalFat,
+          todayCal: data.todayCal,
+          todayFat: data.todayFat,
+          todayProtein: data.todayProtein,
+          last7d: data.last7d
         })
-
+        
+        data.meals.forEach((meal) => {
+          let mealDate = page.formatDate(new Date(meal.date));
+          meal.date = mealDate          
+        })
         page.setData({
-          todayCal: todayCal, todayProtein: todayProtein, todayFat: todayFat
-        });
-        console.log('todayCal', todayCal);
-
-        // page.setData(res.data);
-        console.log('meals', meals);
-        page.setData({
-          meals: meals
-        });
+          meals: data.meals
+        })
+        
+        page.renderChart();
       }
-    });
+    })
 
-    var windowWidth = 320;
-    try {
-      var res = wx.getSystemInfoSync();
-      windowWidth = res.windowWidth;
-    } catch (e) {
-      console.error('getSystemInfoSync failed!');
-    }
+    // PIE CHART
+    // var windowWidth = 320;
+    // try {
+    //   var res = wx.getSystemInfoSync();
+    //   windowWidth = res.windowWidth;
+    // } catch (e) {
+    //   console.error('getSystemInfoSync failed!');
+    // }
 
-    pieChart = new wxCharts({
+    // pieChart = new wxCharts({
+    //   animation: true,
+    //   canvasId: 'pieCanvas',
+    //   type: 'pie',
+    //   series: [{
+    //     name: 'Calories',
+    //     data: 800,
+    //     color: 'lightgrey',
+    //   }, {
+    //     name: 'Proteins',
+    //     data: 65,
+    //   }, {
+    //     name: 'Fat',
+    //     data: 10,
+    //   }],
+    //   width: windowWidth,
+    //   height: 300,
+    //   dataLabel: true,
+    // });
+    // END OF PIE CHART
+
+    // START OF LINE CHART
+   
+
+
+    // END OF LINE CHART
+
+  },
+  renderChart: function(){
+    let page = this
+    var windowWidth = 300;
+
+    var simulationData = this.createSimulationData();
+    var chartData = page.data.last7d
+    console.log('chartData', chartData)
+    console.log('simulationData.data', simulationData.data)
+
+    lineChart = new wxCharts({
+      canvasId: 'lineCanvas',
+      type: 'line',
+      categories: simulationData.categories,
       animation: true,
-      canvasId: 'pieCanvas',
-      type: 'pie',
+      // background: '#f5f5f5',
       series: [{
-        name: 'Calories',
-        data: 800,
-        color: 'lightgrey',
-      }, {
-        name: 'Proteins',
-        data: 65,
-      }, {
-        name: 'Fat',
-        data: 10,
+        name: 'Last 7D Calories Intake',
+        data: chartData,
+        format: function (val, name) {
+          return val.toFixed(1);
+        }
       }],
+      xAxis: {
+        disableGrid: true
+      },
+      yAxis: {
+        // title: 'Calories',
+        format: function (val) {
+          return val.toFixed(0);
+        },
+        min: 0,
+        max: page.data.calories // 3000
+      },
       width: windowWidth,
-      height: 300,
-      dataLabel: true,
+      height: 220,
+      dataLabel: false,
+      dataPointShape: true,
+      extra: {
+        lineStyle: 'curve'
+      }
     });
   },
-
   /**
    * Page initial data
    */
@@ -253,26 +276,7 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-    // const page = this;
-    // const url = app.globalData.url;
-    // const user_id = app.globalData.userId;
-    // console.log(user_id)
-
-    // wx.request({
-    //   // url: `${url}dishes`,
-    //   url: `${url}meals?user_id=${user_id}`,
-    //   method: 'GET',
-    //   success(res) {
-    //     console.log(res.data);
-    //     const meals = res.data.meals;
-    //     // page.setData(res.data);
-    //     console.log('meals', meals);
-    //     page.setData({
-    //       meals: meals
-    //     })
-
-    //   }
-    // });
+    
   },
 
   /**
