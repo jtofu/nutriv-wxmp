@@ -1,7 +1,5 @@
 <!--pages/signup/signup.wxml-->
-<view class='banner' style="background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(128,248,174,0.4) 0%, rgba(223,244,148,0.6) 90% ), url('https://greenkitchenstories.com/wp-content/uploads/2013/10/Smoothie_green_01.jpg');">
-
-
+<view class='banner' style="background-image: radial-gradient( circle farthest-corner at 40% 30%,  rgba(96, 182, 100, 0.80) 0%, rgba(255, 255, 254, 0.30) 80% ), url('https://greenkitchenstories.com/wp-content/uploads/2013/10/Smoothie_green_01.jpg');">
 
 
 <view class="logo">
