@@ -24,7 +24,7 @@ Page({
 
     wx.request({
       url: `${url}orders/${options.id}`,
-      // url: `${url}orders/4`,
+      // url: `${url}orders/1`,
       method: 'GET',
       success(res) {
         const dishes = res.data.dishes;
