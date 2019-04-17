@@ -421,13 +421,6 @@ canvas {
   align-items: center;
   width: 60px;
 }
-.active {
-  color: steelblue;
-}
-
-
-
-
 
 .label-green-box {
   background-color: #1EBF66;
