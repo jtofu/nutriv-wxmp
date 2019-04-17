@@ -433,6 +433,7 @@ canvas {
   border-radius: 5px 5px 0px 0px;
 }
 
+
 .today-progress {
   /* margin: 0px auto; */
   display: flex;

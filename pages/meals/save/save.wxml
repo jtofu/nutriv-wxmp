@@ -1,54 +1,62 @@
 <view class='section-main'>
   <view class='title'>
-      <image src="/images/diet.png" class='icon-title'></image>
-      <text class="text-title">Nutritional Summary</text>
+      <!-- <image src="/images/diet.png" class='icon-title'></image>
+      <text class="text-title">Nutritional Summary</text> -->
     </view>
   <!-- total nutrients start -->
   <view class='section-summary'>
+    <view class='section-logo' style="background-image: url('/images/diet.png');">
+    </view>
+    <view class='label-green-box'>
+      <text class='text-center'>Nutrional Summary</text>
+      
+    </view>
+    <view class='nutrients-wrapper'>
+      <view class='text-nutrients'>
+        <view>Calories</view>
+        <view>{{calorie}}kcal</view>
+      </view>
+      <view class='text-nutrients'>
+        <view>Total Fat</view>
+        <view>{{total_fat}}g</view>
+      </view>
+      <view class='text-nutrients'>
+        <view>Saturated Fat</view>
+        <view>{{sat_fat}}g</view>
+      </view>
+      <view class='text-nutrients'>
+        <view>Cholesterol</view>
+        <view>{{cholesterol}}mg</view>
+      </view>
+      <view class='text-nutrients'>
+        <view>Sodium</view>
+        <view>{{sodium}}mg</view>
+      </view>
+      <view class='text-nutrients'>
+        <view>Total Carbohydrate</view>
+        <view>{{carb}}g</view>
+      </view>
+      <view class='text-nutrients'>
+        <view>Dietary Fiber</view>
+        <view>{{fiber}}g</view>
+      </view>
+      <view class='text-nutrients'>
+        <view>Sugars</view>
+        <view>{{sugar}}g</view>
+      </view>
+      <view class='text-nutrients'>
+        <view>Protein</view>
+        <view>{{protein}}g</view>
+      </view>
+    </view>
     
-    <view class='text-nutrients'>
-      <view>Calories</view>
-      <view>{{calorie}}kcal</view>
-    </view>
-    <view class='text-nutrients'>
-      <view>Total Fat</view>
-      <view>{{total_fat}}g</view>
-    </view>
-    <view class='text-nutrients'>
-      <view>Saturated Fat</view>
-      <view>{{sat_fat}}g</view>
-    </view>
-    <view class='text-nutrients'>
-      <view>Cholesterol</view>
-      <view>{{cholesterol}}mg</view>
-    </view>
-    <view class='text-nutrients'>
-      <view>Sodium</view>
-      <view>{{sodium}}mg</view>
-    </view>
-    <view class='text-nutrients'>
-      <view>Total Carbohydrate</view>
-      <view>{{carb}}g</view>
-    </view>
-    <view class='text-nutrients'>
-      <view>Dietary Fiber</view>
-      <view>{{fiber}}g</view>
-    </view>
-    <view class='text-nutrients'>
-      <view>Sugars</view>
-      <view>{{sugar}}g</view>
-    </view>
-    <view class='text-nutrients'>
-      <view>Protein</view>
-      <view>{{protein}}g</view>
-    </view>
   </view>
   <!-- total nutrients end -->
 
   <!-- dishes start -->
   <view class="page__bd dishes">
     <view class="weui-panel weui-panel_access">
-      <view class="weui-panel__hd label-green">Dishes</view>
+      <view class="text-title">Dishes</view>
       <view class="weui-panel__bd">
         <view url="" class="weui-media-box weui-media-box_appmsg dish background-green">
             <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
