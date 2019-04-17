@@ -1,14 +1,17 @@
-<!--pages/orders/show/show.wxml-->
-
-<view class='section-main bg-color'>
-  <view class='nutrient-fixed-top'>
-    <view class='title'>
-      <image src="/images/diet.png" class='icon-title'></image>
-      <text class="text-title">Nutritional Summary</text>
+<view class='section-main'>
+  <view class='title'>
+      <!-- <image src="/images/diet.png" class='icon-title'></image>
+      <text class="text-title">Nutritional Summary</text> -->
     </view>
-    <!-- total nutrients start -->
-    <view class='section-summary'>
+  <!-- total nutrients start -->
+  <view class='section-summary'>
+    <view class='section-logo' style="background-image: url('/images/diet.png');">
+    </view>
+    <view class='label-green-box'>
+      <text class='text-center'>Nutrional Summary</text>
       
+    </view>
+    <view class='nutrients-wrapper'>
       <view class='text-nutrients'>
         <view>Calories</view>
         <view>{{calorie}}kcal</view>
@@ -46,16 +49,17 @@
         <view>{{protein}}g</view>
       </view>
     </view>
-    <!-- total nutrients end -->
+    
   </view>
-  
+  <!-- total nutrients end -->
+
   <!-- dishes start -->
   <view class="page__bd dishes">
     <view class="weui-panel weui-panel_access">
-      <view class="weui-panel__hd label-green">Dishes</view>
+      <view class="text-title">Dishes</view>
       <view class="weui-panel__bd">
         <block wx:for='{{dishes}}' wx:for-item='dish' wx:key='dish.id'>
-          <view url="" class="weui-media-box weui-media-box_appmsg dish">
+          <view url="" class="weui-media-box weui-media-box_appmsg dish background-green">
               <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
                   <image class="weui-media-box__thumb" src="{{dish.image}}" />
               </view>
@@ -82,10 +86,6 @@
 
 <view id='footer'>
   <!-- <view>{{calorie}} Calories</view> -->
-  <!-- <view open-type="getUserInfo" bindtap="getUserInfo" class="btn-flat picker" data-id="{{globalData.userId}}" data-user-info="{{globalData.userInfo}}">Confirm Meal</view> -->
-
-   
-   <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="btn-flat" data-id="{{globalData.userId}}" data-user-info="{{globalData.userInfo}}">Confirm Meal</button>
-
+  <!-- <view bindtap='addToMeal' class="btn-flat picker">Confirm Meal</view> -->
+  <button class="btn-flat" bindtap="addToMeal">Confirm Meal</button>
 </view>
-
