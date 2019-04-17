@@ -426,9 +426,6 @@ canvas {
 }
 
 
-
-
-
 .label-green-box {
   background-color: #1EBF66;
   color: white;
@@ -439,6 +436,7 @@ canvas {
   padding: 5px 20px;
   border-radius: 5px 5px 0px 0px;
 }
+
 
 .today-progress {
   /* margin: 0px auto; */
