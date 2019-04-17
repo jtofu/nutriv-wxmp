@@ -101,6 +101,6 @@
 }
 
 .active {
-  color: steelblue;
+  color: #1EBF66;
 }
 

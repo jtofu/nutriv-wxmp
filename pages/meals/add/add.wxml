@@ -17,7 +17,7 @@
 <view class="searchbar-result" wx:if="{{inputVal.length > 0}}">
   <view wx:for="{{dishes}}" wx:for-item="dish" wx:key="{{dish.id}}" class='card-dishes'>
 
-    <view class='card-dish' style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.35)), url('{{dish.image}}')">
+    <view bindtap='mealMoreInfo' class='card-dish' data-id="{{dish.id}}" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.35)), url('{{dish.image}}')">
       <!-- DISH NAME -->
       <view class='card-text'>{{dish.name}}</view>
       
