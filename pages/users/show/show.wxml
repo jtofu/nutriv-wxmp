@@ -63,7 +63,7 @@
   <!-- <view class="border">
     <text class="border-text">My daily goals</text>
   </view> -->
-   <view class="weui-panel__hd label-green">My daily goals</view>
+   <view class="label-green">My daily goals</view>
 
   <!-- GOALS in cards -->
   <view wx:for="{{goals}}" wx:for-item="goal" wx:key="{{goal.id}}">
