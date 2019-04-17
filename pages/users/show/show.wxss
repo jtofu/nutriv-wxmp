@@ -137,5 +137,5 @@
 
 .edit-button {
   position: absolute;
-  right: 40px;
+  right: 16px;
 }
