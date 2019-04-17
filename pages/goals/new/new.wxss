@@ -41,7 +41,7 @@
   height: 3em;
   display: flex;
   align-items: center;
-  color: rgba(0,0,0,0.5);
+  color: rgba(0,0,0,0.8);
 }
 
 .upload-preview {
@@ -91,4 +91,56 @@
 
 .picker {
   margin-bottom: 20px;
+}
+
+.label-green-box {
+  background-color: #1EBF66;
+  color: white;
+  font-size: 16px;
+  /* margin-top: 16px; */
+  margin-bottom: 16px;
+  font-weight: bold;
+  padding: 5px 20px;
+  border-radius: 5px 5px 0px 0px;
+  margin-top: 88px;
+}
+.text-center {
+  text-align: center;
+}
+
+.section-logo {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  border-radius: 50%;
+  border: solid 20x white;
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  background-position: center;
+}
+
+.section-summary {
+  width: 87%;
+  margin-top: 30px;
+  margin: 0 auto;
+  background: #FFF;
+  border-radius: 5px;
+  /* border: solid 1px #1EBF66; */
+  box-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+  /* padding: 16px; */
+  font-size: 16px;
+  color: rgba(0,0,0,0.8);
+  position: relative;
+}
+
+.nutrients-wrapper {
+  margin: 0;
+  padding: 16px;
+}
+
+.image-icon {
+  width: 8px;
+  height: 8px;
+  margin: 4px;
 }
