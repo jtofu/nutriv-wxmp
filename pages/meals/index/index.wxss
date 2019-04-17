@@ -71,7 +71,7 @@
   height: 45px;
   /* border: solid 1px black; */
   position: absolute;
-  right: 30px;
+  right: 50px;
   /* top: 10px; */
 }
 .today-intake {
@@ -127,21 +127,20 @@ image {
   height: 20px;
   margin-right: 5px;
 }
-.bc_1 {
+/* .bc_1 {
   height: 320px;
   display: flex;
   justify-content: space-around;
   background-color: RGBA(247, 249, 252, 0.60);
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0,.06);
   margin-right: 15px;
-}
+} */
 .icon {
   width: 30px;
   height: 30px;
   border-radius:50%;
   background-color:white;
   padding:5px;
-  /* box-shadow:0 2px 4px 0 rgba(0, 0, 0,.06); */
 }
 .icon-fat{
   width: 30px;
@@ -150,7 +149,6 @@ image {
   border-radius:50%;
   background-color:white;
   padding:5px;
-  /* box-shadow:0 2px 4px 0 rgba(0, 0, 0,.06); */
 }
 .nutrient-icon-title {
   display: flex;
@@ -450,7 +448,7 @@ canvas {
 }
 
 .grid-wrapper {
-  box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+  box-shadow: 2px 2px 20px rgba(0,0,0,0.2);
   margin: 20px 0px;
   width: 87%;
   border-radius: 5px;
@@ -465,7 +463,6 @@ canvas {
   /* margin: 0 auto; */
   margin-left: auto;
   margin-right: auto;
-  /* box-shadow: 2px 2px 2px rgba(0,0,0,0.2); */
   padding: 10px;
   /* margin-top: 20px; */
 }
@@ -484,7 +481,7 @@ canvas {
   /* margin-bottom: 20px; */
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+  box-shadow: 2px 2px 20px rgba(0,0,0,0.2);
   /* padding: 10px;  */
   border-radius: 5px;
 }
