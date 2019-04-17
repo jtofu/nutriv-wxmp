@@ -1,116 +1,101 @@
 <view class='section-main'>
-
-  <!-- BANNER -->
-  <!-- <view class="banner" style="background-position:center; background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(128,248,174,0.6) 0%, rgba(223,244,148,0.6) 90% ), url('https://images.unsplash.com/photo-1543362906-acfc16c67564?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=401&q=80');">
-    <text class="banner-title">Nutriv</text>
-    <view class="banner-text">
-      <view class="icons">
-        <image class="icon nutri" mode="aspectFit" src="/images/nutri.png"></image>
-      </view>
-    </view>
-  </view> -->
-
-  <!-- HORIZONTAL SCROLLING -->
-  <scroll-view class="scroll-view" scroll-x>
-    <view class='scroll-row'>
-
-   
-    <!-- SECOND CAROUSEL ITEM -->
-      <view id="pic2" class="scroll-view-item_H bc_2">
-      <!-- SHOW DATE & AVATAR -->
-          <view class="border-avatar">
-            <view class="border-text">{{currentDate}}</view>
-            <view class='avatar' style="background-image: url('{{avatarUrl}}');">
-            </view>
-          </view>
-
-
-          <view id="a1" class="container">
-              <gauge 
-              height="750" 
-              r="150" 
-              bgWidth="13"
-              gaugeid="g1"
-              animateMsec="700" 
-              scaleTextStyle="{{scaleTextStyle}}" 
-              indicatorTextStyle='{{indicatorTextStyle}}'
-              indicatorValueStyle='{{indicatorValueStyle}}'
-              indicatorCircleStyle='{{indicatorCircleStyle}}'
-              min="0"
-              max="{{calories}}"
-              value="{{todayCal}}"
-              />
-          </view>
-      </view>
-
-      <view id="pic1" class="scroll-view-item_H bc_1">
-
-        <!-- TOP BLOCK WITH DATE AVATAR AND DAILY STAT -->
-        <view class="goal1">
-         
-          <!-- DAILY NUTRIENT STAT -->
-
-            <!-- DAILY NUTRIENT INTAKE -->
-            <view class="daily calories">
-              <image class="icon fire" mode="aspectFit" src="/images/calories.png"></image>
-              <view class="daily-nutrient-stat">
-                <text class="daily-text">{{todayCal}} kcal</text>
-                <text class="daily-text">Goal: {{calories}} kcal</text>
-              </view>
-            </view>
-
-            <view class="daily proteins">
-              <image class="icon steak" mode="aspectFit" src="/images/boiled.png"></image>
-              <view class="daily-nutrient-stat">
-                  <text class="daily-text">{{todayProtein}} g protein</text>
-                  <text class="daily-text">Goal: {{protein}} g protein</text>
-              </view>
-            </view>
-
-            <view class="daily fat">
-              <image class="icon-fat" mode="aspectFit" src="/images/avo.png"></image>
-              <view class="daily-nutrient-stat">
-                <text class="daily-text">{{todayFat}}g fat</text>
-                <text class="daily-text">Goal: {{fat}}g fat</text>
-              </view>
-            </view>
-
-        </view>
-      </view>
-
+  <!-- SHOW DATE & AVATAR -->
+  <view class="border-avatar">
+    <image src='/images/diet.png' class='icon'></image>
+    <view class="border-text">
       
-      <view id="pic3" class="scroll-view-item_H bc_3">
-        <view class="goal2">
-          <canvas canvas-id="pieCanvas" class="canvas" style="height:300px" bindtouchstart="touchHandler"></canvas>
-        </view>
-      </view>
-
+      {{currentDate}}
     </view>
-  </scroll-view>
+    <view class='avatar' style="background-image: url('{{avatarUrl}}');">
+    </view>
+  </view>
+  <view class='scroll-row'>
+
+    <!-- line chart -->
+    <view class="block1">
+      
+        <view class='chart-container'>
+
+          <view class='label-green-box'>
+            Your Last 7 Days
+          </view>  
+
+          <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
+        </view>    
+    </view>
+    <!-- end of line chart -->
+
+     
+
+    <view class="goal1">
+
+      <!-- DAILY NUTRIENT STAT CHANGE STYLE TO USING GRID -->
+      <view class='grid-wrapper'>
+        <view class='label-green-box'>
+          Your Daily Progress
+        </view> 
+
+        <view class='grid-container'>
+
+          <!-- CALORIES -->
+          <view class='grid-item'>
+            <image class="icon fire" mode="aspectFit" src="/images/calories.png"></image>
+          </view>
+          <view class='grid-item'>
+            <text class='text-bold'>Calories</text>
+          </view>
+          <view class='grid-item'>
+            {{todayCal}}/{{calories}} kcal
+          </view>
+          <view class='grid-item'>
+            <view class='progress-half'><progress percent="{{(todayCal*100/calories)}}" stroke-width="16" color="#1EBF66" /></view>
+          </view>
+
+          <!-- PROTEIN -->
+          <view class='grid-item'>
+            <image class="icon fire" mode="aspectFit" src="/images/boiled.png"></image>
+          </view>
+          <view class='grid-item'>
+            <text class='text-bold'>Protein</text>
+          </view>
+          <view class='grid-item'>
+            {{todayProtein}}/{{protein}} kcal
+          </view>
+          <view class='grid-item'>
+            <view class='progress-half'><progress percent="{{(todayProtein*100/protein)}}" stroke-width="16" color="#1EBF66" /></view>
+          </view>
+
+          <!-- FAT -->
+          <view class='grid-item'>
+            <image class="icon fire" mode="aspectFit" src="/images/avo.png"></image>
+          </view>
+          <view class='grid-item'>
+            <text class='text-bold'>Fat</text>
+          </view>
+          <view class='grid-item'>
+            {{todayFat}}/{{fat}} kcal
+          </view>
+          <view class='grid-item'>
+            <view class='progress-half'><progress percent="{{(todayFat*100/fat)}}" stroke-width="16" color="#1EBF66" /></view>
+          </view>
+        <!-- close grid-container -->
+        </view>
+      <!-- close grid-wrapper -->
+      </view> 
+    <!-- close goal1 -->
+    </view>
+  <!-- close class scroll-row -->
+  </view>
 
   <!-- TODAY's MEALS -->
-  <view class="weui-panel__hd label-green">Today's Meals</view>
+  <view class="text-bold" style="padding-left: 20px;">Today's Meals</view>
 
   <view class="card-dishes">
 
     <block wx:for='{{meals}}' wx:for-item='meal' wx:key='meal.id'>
-
-      <view class="card-dish" wx:if="{{meal.date === currentDate}}" style="background-image: linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.7)), url('{{meal.image}}')">
-
+      <view class="card-dish" wx:if="{{meal.date === currentDate}}" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.35)), url('{{meal.image}}')">
         <view class="card-text">
           <text class="dish-title">{{meal.dish}}</text>
-
-          <!-- <view class="fat"> -->
-          <view class="nutrient">
-            <view class="nutrient-icon-title">
-              <view class='nutrient-icon'>
-                <image class="fat-icon" mode="aspectFit" src="/images/avo.png"></image>
-              </view>
-              <view class="nutrient-text">Fat</view>
-            </view>
-
-            <view class="text-count">{{meal.nutrients[1].amount}}{{meal.nutrients[1].unit}}</view>
-          </view>
 
           <!-- <view class="calories"> -->
           <view class="nutrient">
@@ -134,6 +119,17 @@
             <view class="text-count">{{meal.nutrients[7].amount}}{{meal.nutrients[7].unit}}</view>
           </view>
 
+          <!-- <view class="fat"> -->
+          <view class="nutrient">
+            <view class="nutrient-icon-title">
+              <view class='nutrient-icon'>
+                <image class="fat-icon" mode="aspectFit" src="/images/avo.png"></image>
+              </view>
+              <view class="nutrient-text">Fat</view>
+            </view>
+
+            <view class="text-count">{{meal.nutrients[1].amount}}{{meal.nutrients[1].unit}}</view>
+          </view>
         </view>
         <!-- END OF CARD-TEXT -->
 
@@ -163,3 +159,31 @@
     <view>Profile</view>
   </navigator>
 </view>
+
+
+<!-- OLD CODES -->
+<!-- <view id="a1" class="container">
+    <gauge 
+    height="750" 
+    r="150" 
+    bgWidth="13"
+    gaugeid="g1"
+    animateMsec="700" 
+    scaleTextStyle="{{scaleTextStyle}}" 
+    indicatorTextStyle='{{indicatorTextStyle}}'
+    indicatorValueStyle='{{indicatorValueStyle}}'
+    indicatorCircleStyle='{{indicatorCircleStyle}}'
+    min="0"
+    max="{{calories}}"
+    value="{{todayCal}}"
+    />
+</view> -->
+
+
+<!-- pie chart comment out
+<view id="pic3" class="scroll-view-item_H bc_3">
+  <view class="goal2">
+    <canvas canvas-id="pieCanvas" class="canvas" style="height:300px" bindtouchstart="touchHandler"></canvas>
+  </view>
+</view> -->
+
