@@ -233,6 +233,7 @@ Page({
   setMealsRecommended() {
     const page = this;
     const mealsRecommended = [];
+    const mealsRecommendedNutrients = [];
     let current_intake = 0
     const goal_amount = page.data.goals[page.data.index].amount;
     page.data.mealsToday.forEach((dish) => {
@@ -247,12 +248,14 @@ Page({
       dish.nutrients.forEach((nutrient) => {
         if ((nutrient.name === page.data.array[page.data.index]) && (nutrient.amount <= goal_amount - current_intake)) {
           mealsRecommended.push(dish);
+          mealsRecommendedNutrients.push(`${nutrient.name}: ${nutrient.amount} ${nutrient.unit}`);
         }
       });
     });
 
     page.setData({
-      mealsRecommended: mealsRecommended
+      mealsRecommended: mealsRecommended,
+      mealsRecommendedNutrients: mealsRecommendedNutrients
     })
   }
 })
