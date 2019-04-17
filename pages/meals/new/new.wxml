@@ -37,21 +37,21 @@
   <!-- H1 TITLE -->
   <view class="label-green">Recommended Meals</view>
 
-  <!-- Filter -->
-  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-    <view class='menu' type="default">
-      <text>{{array[index]}}</text>
-      <image class='image-icon' src='/images/arrow-down.png'></image>
-    </view>
-  </picker>
-
-
 <!-- condition if goal vs if no goal -->
   <block wx:if="{{no_goals}}">
-   <text>Please set your goal to get recommendations</text>
+   <navigator url='/pages/users/show/show'>Please set goal to get recommendations</navigator>
   </block>
   <!-- Dishes -->
   <block wx:else>
+
+    <!-- Filter -->
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <view class='menu' type="default">
+        <text>{{array[index]}}</text>
+        <image class='image-icon' src='/images/arrow-down.png'></image>
+      </view>
+    </picker>
+
     <view wx:for="{{mealsRecommended}}" wx:for-item="dish" class='card-dishes'>
 
       <view class='card-dish' bindtap="mealMoreInfo" data-id="{{dish.id}}" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.35)), url('{{dish.image}}')">

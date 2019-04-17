@@ -1,19 +1,44 @@
 <!-- BANNER -->
-<view class="banner" style="background-position:center; background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(128,248,174,0.6) 0%, rgba(223,244,148,0.6) 90% ), url('https://images.unsplash.com/photo-1543362906-acfc16c67564?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=401&q=80');">
+<!-- <view class="banner" style="background-position:center; background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(128,248,174,0.6) 0%, rgba(223,244,148,0.6) 90% ), url('https://images.unsplash.com/photo-1543362906-acfc16c67564?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=401&q=80');">
   <text class="banner-title">Nutriv</text>
   <view class="banner-text">
     <view class="icons">
       <image class="icon nutri" mode="aspectFit" src="/images/nutri.png"></image>
     </view>
   </view>
-</view>
+</view> -->
 
 <!-- START OF FORM -->
+<view class='section-summary'>
+  <view class='section-logo' style="background-image: url('/images/diet.png');">
+  </view>
+  <view class='label-green-box'>
+    <text class='text-center'>Set Goal</text>
+  </view>
+  <view class='nutrients-wrapper'>
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <picker class="picker" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <!-- <button type="default">{{array[index]}}</button> -->
+        <view class="user-input input-height">
+          <text>{{array[index]}}</text>
+          <image class='image-icon' src='/images/arrow-down.png'></image>
+        </view>
+      </picker>
 
-<view class='box'>
+
+      <view><input class="user-input input-height" name= "amount" value="{{name}}" placeholder="Input amount.."></input></view>
+    <view class='button-inline'>       
+      <button class='btn-half' style="margin-bottom:20px" type="warn" bindtap="cancelSubmit">Cancel</button>     
+      <button style="margin-bottom:20px" type="primary" formType="submit" loading="{{loading}}" class='btn-half'>Submit</button>
+    </view> 
+  </form>
+  </view>
+</view>
+
+<!-- <view class='box'>
   <form bindsubmit="formSubmit" bindreset="formReset">
     <picker class="picker" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-      <!-- <button type="default">{{array[index]}}</button> -->
+      <button type="default">{{array[index]}}</button>
       <view class="user-input input-height">{{array[index]}}</view>
     </picker>
 
@@ -24,4 +49,4 @@
     <button style="margin-bottom:20px" type="primary" formType="submit" loading="{{loading}}" class='btn-half'>Submit</button>
   </view> 
   </form>
-</view>
+</view> -->

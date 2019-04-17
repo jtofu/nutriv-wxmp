@@ -91,10 +91,6 @@
   width: 60px;
 }
 
-.active {
-  color: steelblue;
-}
-
 .section-main {
   /* height: calc(100vh - 63px); */
   margin-bottom: 63px;
