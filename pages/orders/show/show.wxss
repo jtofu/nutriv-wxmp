@@ -53,16 +53,34 @@
 }
 
 .section-summary {
-  width: 75%;
+  width: 87%;
   margin-top: 30px;
   margin: 0 auto;
   background: #FFF;
-  border-radius: 10px;
-  border: solid 1px #1EBF66;
-  box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
-  padding: 16px;
+  border-radius: 5px;
+  /* border: solid 1px #1EBF66; */
+  box-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+  /* padding: 16px; */
   font-size: 16px;
   color: rgba(0,0,0,0.8);
+  position: relative;
+}
+
+.section-logo {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  border-radius: 50%;
+  border: solid 20x white;
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  background-position: center;
+}
+
+.nutrients-wrapper {
+  margin: 0;
+  padding: 16px;
 }
 
 .card-dish {
@@ -86,9 +104,10 @@
 
 .text-title {
   /* text-align: center; */
-  /* padding: 20px; */
-  font-size: 18px;
-  font-weight: bold;
+  padding-left: 20px;
+  padding-top: 20px;
+  font-size: 14px;
+  /* font-weight: bold; */
 }
 
 .text-nutrients {
@@ -153,3 +172,97 @@
   font-size: 16px;
   font-weight: bold;
 }
+
+.label-green-box {
+  background-color: #1EBF66;
+  color: white;
+  font-size: 16px;
+  /* margin-top: 16px; */
+  margin-bottom: 16px;
+  font-weight: bold;
+  padding: 5px 20px;
+  border-radius: 5px 5px 0px 0px;
+}
+.text-center {
+  text-align: center;
+}
+/* 
+#footer {
+    position: fixed;
+    height: 50px;
+    background-color: rgb(252, 252, 252);
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn-flat {
+  color: white;
+  padding: 12px 8px;
+  border-radius: 4px;
+  background: #1EDD88;
+  font-size: 16px;
+}
+
+.text-hour {
+  font-size: 10px;
+  color: grey;
+}
+
+.text-price {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.section-quantity {
+  display: flex;
+}
+
+.dishes {
+  position: relative;
+  bottom: 10px;
+  margin-top: 40px;
+}
+
+.image-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.dish-quantity {
+  display: flex;
+  position: absolute;
+  right: 16px;
+  bottom: 4px;
+  align-items: center;
+}
+
+.dish {
+  position: relative;
+}
+
+.dish-name {
+  font-weight: bold;
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+
+.dish-nutrition {
+  font-size: 12px;
+  color: grey;
+}
+
+.card {
+  border: solid 1px grey;
+  position: relative;
+}
+
+.dish-number {
+  width: 40px;
+  text-align: center;
+} */
