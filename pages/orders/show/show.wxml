@@ -5,8 +5,9 @@
     </view>
   <!-- total nutrients start -->
   <view class='section-summary'>
-    <view class='section-logo' style="background-image: url('/images/diet.png');">
-    </view>
+    <!-- <view class='section-logo' style="background-image: url('/images/diet.png');">
+    </view> -->
+    <image class='section-logo' src='/images/diet.png'></image>
     <view class='label-green-box'>
       <text class='text-center'>Nutrional Summary</text>
       
