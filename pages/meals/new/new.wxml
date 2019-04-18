@@ -52,12 +52,12 @@
       </view>
     </picker>
 
-    <view wx:for="{{mealsRecommended}}" wx:for-item="dish" class='card-dishes'>
+    <view wx:for="{{dishes}}" wx:for-item="dish" class='card-dishes'>
 
       <view class='card-dish' bindtap="mealMoreInfo" data-id="{{dish.id}}" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.35)), url('{{dish.image}}')">
         <!-- DISH NAME -->
         <view class='card-text'>{{dish.name}} </view>
-        <view class='meal-type'>{{mealsRecommendedNutrients[index]}}</view>
+        <!-- <view class='meal-type'>{{dish.nutrients.}}</view> -->
         <!-- - {{dish.nutrients[1]["name"]}}: {{dish.nutrients[1]["amount"]}} {{dish.nutrients[1]["unit"]}} -->
       </view>
 
