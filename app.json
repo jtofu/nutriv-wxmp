@@ -16,5 +16,9 @@
     "navigationBarTitleText": "Nutriv",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap.json"
+  "permission": {
+    "scope.userLocation": {
+      "desc": "Location is required"
+    }
+  }
 }
