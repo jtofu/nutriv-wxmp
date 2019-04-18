@@ -93,6 +93,14 @@ Page({
     console.log('formatted', formattedDate);
     const avatarUrl = app.globalData.userInfo.avatarUrl;
 
+    if (e.toast === 'true') {
+      wx.showToast({
+        title: 'Meal Added',
+        icon: 'success',
+        duration: 3000
+      });
+    };
+
     this.setData({
       currentDateNoFormat: currentDate,
       currentDate: formattedDate,

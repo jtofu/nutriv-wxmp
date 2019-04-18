@@ -23,8 +23,8 @@ Page({
     console.log('onLoad user_id', this.data.user_id)
 
     wx.request({
-      url: `${url}orders/${options.id}`,
-      // url: `${url}orders/1`,
+      // url: `${url}orders/${options.id}`,
+      url: `${url}orders/1`,
       method: 'GET',
       success(res) {
         const dishes = res.data.dishes;
@@ -185,7 +185,7 @@ Page({
     });
 
     wx.navigateTo({
-      url: `/pages/meals/index/index?user_id=${user_id}`
+      url: `/pages/meals/index/index?toast=true`
     });
   },
 
