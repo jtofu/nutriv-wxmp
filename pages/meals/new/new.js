@@ -87,7 +87,7 @@ Page({
             meals: data.meals
           })
           page.setMealsRecommended();
-          page.getDistanceFromLatLonInKm(page.data.current_latitude, page.data.current_longitude, page.data.latitude, page.data.longitude);
+          
         }
         
       }
@@ -198,19 +198,22 @@ Page({
         const dishes = res.data.dishes
         
         const nutrientAmount = [];
+        const distances = [];
         
         dishes.forEach((dish) => {
           dish.nutrients.forEach((n) => {
             if (n["name"] === nutrient) {
               nutrientAmount.push(`${n["name"]}: ${n["amount"]} ${n["unit"]}`)
               // const nutrientUnit = n["unit"]
-            }
-          })   
+            }            
+          })
+          distances.push(page.getDistanceFromLatLonInKm(page.data.current_latitude, page.data.current_longitude, dish.restaurant.lat, dish.restaurant.long));   
         })
 
         page.setData({
           dishes: dishes,
           nutrientAmount: nutrientAmount,
+          distances: distances
         })
       }
     })
@@ -223,7 +226,7 @@ Page({
       return deg * (Math.PI / 180)
     };
     var R = 6371; // Radius of the earth in km
-    console.log('location passthrough', lon1, lat1)
+    // console.log('location passthrough', lon1, lat1)
     var dLat = deg2rad(lat2 - lat1);  // deg2rad below
     var dLon = deg2rad(lon2 - lon1);
     var a =
@@ -233,9 +236,10 @@ Page({
     ;
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     var d = R * c; // Distance in km
-    page.setData({
-      distance: d
-    });
+    // page.setData({
+    //   distance: d
+    // });
+    return d.toFixed(2);
     console.log('distance', page.data.distance);
   }
 })
