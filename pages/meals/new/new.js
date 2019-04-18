@@ -173,14 +173,28 @@ Page({
     const diffNutrient = `diff${nutrient.replace(" ", "")}`
     const amount = page.data[`${diffNutrient}`]
     console.log('amount', amount)
+    
 
     wx.request({
       url: `${url}dishes?nutrient=${nutrient}&amount=${amount}`,
       success(res) {
         console.log('filtered dishes', res.data.dishes)
         const dishes = res.data.dishes
+        
+        const nutrientAmount = [];
+        
+        dishes.forEach((dish) => {
+          dish.nutrients.forEach((n) => {
+            if (n["name"] === nutrient) {
+              nutrientAmount.push(`${n["name"]}: ${n["amount"]} ${n["unit"]}`)
+              // const nutrientUnit = n["unit"]
+            }
+          })   
+        })
+
         page.setData({
-          dishes: dishes
+          dishes: dishes,
+          nutrientAmount: nutrientAmount,
         })
       }
     })
