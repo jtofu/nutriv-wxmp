@@ -8,7 +8,7 @@ Page({
    */
   data: {
     array: [],
-    index: 0
+    index: 0,
   },
 
   /**
@@ -31,7 +31,7 @@ Page({
           current_latitude: latitude,
           current_longitude: longitude
         })
-        console.log("location", `${page.data.current_latitude}, ${page.data.current_longitude}`)
+        console.log("location", `${page.data.current_latitude}, ${page.data.current_longitude}`);
       }
     });
 
@@ -87,10 +87,11 @@ Page({
             meals: data.meals
           })
           page.setMealsRecommended();
+          page.getDistanceFromLatLonInKm(page.data.current_latitude, page.data.current_longitude, page.data.latitude, page.data.longitude);
         }
         
       }
-    })
+    });
   },
 
   /**
@@ -214,5 +215,27 @@ Page({
       }
     })
      
+  },
+
+  getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
+    const page = this;
+    function deg2rad(deg) {
+      return deg * (Math.PI / 180)
+    };
+    var R = 6371; // Radius of the earth in km
+    console.log('location passthrough', lon1, lat1)
+    var dLat = deg2rad(lat2 - lat1);  // deg2rad below
+    var dLon = deg2rad(lon2 - lon1);
+    var a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
+      Math.sin(dLon / 2) * Math.sin(dLon / 2)
+    ;
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    var d = R * c; // Distance in km
+    page.setData({
+      distance: d
+    });
+    console.log('distance', page.data.distance);
   }
 })
