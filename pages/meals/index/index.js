@@ -97,7 +97,7 @@ Page({
       wx.showToast({
         title: 'Meal Added',
         icon: 'success',
-        duration: 3000
+        duration: 2000
       });
     };
 

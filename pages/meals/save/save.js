@@ -169,7 +169,7 @@ Page({
       success(res) {
         console.log(res);
         wx.navigateTo({
-          url: `/pages/meals/index/index?user_id=${user_id}`
+          url: `/pages/meals/index/index?toast=true`
         });
       }
     });
