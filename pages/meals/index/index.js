@@ -126,7 +126,7 @@ Page({
           todayCal: data.todayCal,
           todayFat: data.todayFat,
           todayProtein: data.todayProtein,
-          last7d: data.last7d
+          last7d: data.last7dCal
         })
 
         data.meals.forEach((meal) => {
