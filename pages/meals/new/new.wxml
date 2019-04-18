@@ -58,6 +58,8 @@
         <!-- DISH NAME -->
         <view class='card-text'>{{dish.name}} </view>
         <view class='meal-type'>{{nutrientAmount[index]}}</view>
+        <view class='distances'>{{distances[index]}}km</view>
+        <!-- <image class='map-marker-icon' src='/images/location.png'></image> -->
 
         <!-- <view class='meal-type'>{{mealsRecommendedNutrients[index]}}</view> -->
         <!-- - {{dish.nutrients[1]["name"]}}: {{dish.nutrients[1]["amount"]}} {{dish.nutrients[1]["unit"]}} -->

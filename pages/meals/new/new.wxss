@@ -98,18 +98,35 @@
   margin-left: 8px;
 }
 
-.meal-type {
+.meal-type, .distances {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
-  min-width: 100px;
-  min-height: 30px;
-  background-color: rgba(255,255,255,0.8);
   border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 14px;
-  font-weight: bold;
+  /* font-weight: bold; */
   padding:0px 10px;
 }
+
+.meal-type {
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(255,255,255,0.6);
+  min-width: 100px;
+  min-height: 30px;
+}
+
+.distances {
+  top:25px;
+  right:5px;
+  color: #fff;
+}
+/* 
+.map-marker-icon {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  width: 45px;
+  height: 45px;
+} */
