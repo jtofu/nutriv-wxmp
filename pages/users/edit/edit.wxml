@@ -1,25 +1,23 @@
 <view class='section-main'>
 
-  <!-- BANNER -->
-  <view class="banner" style="background-position:center; background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(128,248,174,0.6) 0%, rgba(223,244,148,0.6) 90% ), url('https://images.unsplash.com/photo-1543362906-acfc16c67564?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=401&q=80');">
-    
-    <view class="avatar">
-      <image class="profile" mode="aspectFill"  src="{{userInfo.avatarUrl}}"></image>
+
+
+  <view class='section-summary'>
+  <!-- <view class='section-logo' style="background-image: url('/images/diet.png');">
+  </view> -->
+    <image class='section-logo' src='/images/diet.png'></image>
+    <view class='label-green-box'>
+      <text class='text-center'>Profile Settings</text>
+    </view>
+    <view class='nutrients-wrapper'>
+        <form bindsubmit="formSubmit" bindreset="formReset">
+          <input class="card-goal" name= "firstName" value="{{first_name}}" placeholder="Enter Your First Name"></input>
+          <input class="card-goal" name= "lastName" value="{{last_name}}" placeholder="Enter Your Last Name"></input>
+          <button style="margin-bottom:10px" type="primary" formType="submit" loading="{{loading}}" class='btn-half'>Submit</button>
+        </form>
+      </view>
     </view>
 
-    <view class="banner-text">
-      <text class="banner-title">{{username}}</text>
-    </view>
-    
-  <!-- END OF BANNER --> 
-  </view>
-
-  <view class='box'>
-    <form bindsubmit="formSubmit" bindreset="formReset">
-      <view><input class="card-goal" name= "firstName" value="{{first_name}}" placeholder="Enter Your First Name"></input></view>
-      <view><input class="card-goal" name= "lastName" value="{{last_name}}" placeholder="Enter Your Last Name"></input></view>
-      <button style="margin-bottom:10px" type="primary" formType="submit" loading="{{loading}}" class='btn-half'>Submit</button>
-    </form>
-  </view>
+  
   
 </view>
