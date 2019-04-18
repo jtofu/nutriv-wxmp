@@ -102,7 +102,7 @@
   font-weight: bold;
   padding: 5px 20px;
   border-radius: 5px 5px 0px 0px;
-  margin-top: 88px;
+  margin-top: 96px;
 }
 .text-center {
   text-align: center;
