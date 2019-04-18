@@ -20,6 +20,21 @@ Page({
     const page = this;
     // const array = [];
 
+    wx.getLocation({
+      type: 'wgs84',
+      success: function (res) {
+        var latitude = res.latitude
+        var longitude = res.longitude
+        var speed = res.speed
+        var accuracy = res.accuracy
+        page.setData({
+          current_latitude: latitude,
+          current_longitude: longitude
+        })
+        console.log("location", `${page.data.current_latitude}, ${page.data.current_longitude}`)
+      }
+    });
+
     wx.request({
       url: `${url}users/${user_id}`,
       success(res) {
